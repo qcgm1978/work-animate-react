@@ -1,5 +1,5 @@
 import './bower_components/animate.css/animate.css'
-import './modules/styles/common.sass'
+import './modules/styles/common.scss'
 import $ from './bower_components/jquery/dist/jquery.js'
 import React from 'react'
 import { Router, Route, hashHistory } from 'react-router'

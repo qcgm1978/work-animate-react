@@ -1,0 +1,22 @@
+.container {
+
+  margin: 0 auto;
+  //background-size: 600px 500px
+  width: 600px;
+  height: 500px;
+  #left{
+    position:absolute;
+    top:50%;
+    left:10px;
+    transform:translateY(-50%);
+  }
+  #right{
+    position:absolute;
+    top:50%;
+    right:10px;
+    transform:translateY(-50%);
+  }
+  .none{
+    display:none;
+  }
+}
