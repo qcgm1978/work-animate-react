@@ -5,8 +5,8 @@ export default React.createClass({
     sentences: [],
     getInitialState(){
         return {
-            i: 0,
-            frameId: 0
+            eles: [],
+            animateEles: []
         }
     },
     animate: function (frameId, isMouseEvt) {
@@ -34,20 +34,20 @@ export default React.createClass({
         } else {
             $('#left').attr('src', '../work/images/common/left-gray.png')
         }
-        if (i < $('[id^="sentence"]').length -1) {
+        if (i < this.sentences.length - 1) {
             $('#right').attr('src', '../work/images/common/right.png')
         } else {
             $('#right').attr('src', '../work/images/common/right-gray.png')
         }
     },
     componentDidMount () {
-        this.sentences = $('[id^="sentence"]:hidden');
+        let classVar = "none animated";
+        this.generateNodesFromJson(classVar)
         var that = this, num = -1;
         //this.animate(this.state.frameId);
         $('#right').on('click', (evt)=> {
             var $hiddenEle = that.sentences;
             if (num + 1 < this.sentences.length) {
-                //that.sentences.push($hiddenEle)
                 $hiddenEle.eq(num + 1)
                     .removeClass('none bounceIn bounceOut')
                     .addClass('bounceIn')
@@ -68,24 +68,67 @@ export default React.createClass({
         })
     },
     componentDidUpdate(){
-        this.animate(this.state.frameId);
+        this.sentences = $('#animateContainer img');
+    },
+    getEles: function (data, isHidden) {
+        let eles = []
+        for (let i = 0; i < data.length; i++) {
+            let item = data[i]
+            var left = item.nodeProperties.left;
+            var top = item.nodeProperties.top;
+            var animate = data[i].animate;
+            eles.push(
+                <img src={item.imageSrc} key={i}
+                     className={(isHidden?'none':'')+' animated '+ (animate?animate:'')}
+                     style={{position:'absolute', left:left+(left.endsWith('%')?'':'px'), top:top+(top.endsWith('%')?'':'px')
+                     }}/>
+            )
+        }
+        return eles
+    },
+    generateNodesFromJson(){
+        $.getJSON('modules/data/1.json').done((data)=> {
+            let eles = [], eles1 = [];
+            eles = this.getEles(data.scenes[0].SceneStaticNodes);
+            eles1 = this.getEles(data.scenes[0].SceneAnimateNodes, true);
+            this.setState({
+                eles: eles,
+                animateEles: eles1
+            })
+        })
+    },
+    generateNodes (classVar) {
+        return <div id='one' className='container'>
+            <img id='cat' src='../work/images/1/cat.png'/>
+            <img id='ball' className='animated bounceInRight' src='../work/images/1/ball.png'/>
+            <img id='music' src='../work/images/1/music.png'/>
+
+            <div>
+                <img id='sentence-a' className={classVar} src='../work/images/1/sentence-a.png'/>
+                <img id='sentence-b' className={classVar} src='../work/images/1/sentence-b.png'/>
+                <img id='sentence-c' className={classVar} src='../work/images/1/sentence-c.png'/>
+            </div>
+            <img id='left' src='../work/images/common/left-gray.png'/>
+            <img id='right' src='../work/images/common/right.png'/>
+
+
+        </div>;
     },
     render() {
-        let classVar = "none animated";
-        return ( <div id='one' className='container'>
-                <img id='cat' src='../work/images/1/cat.png'/>
-                <img id='ball' className='animated bounceInRight' src='../work/images/1/ball.png'/>
-                <img id='music' src='../work/images/1/music.png'/>
-
-                <div>
-                    <img id='sentence-a' className={classVar} src='../work/images/1/sentence-a.png'/>
-                    <img id='sentence-b' className={classVar} src='../work/images/1/sentence-b.png'/>
-                    <img id='sentence-c' className={classVar} src='../work/images/1/sentence-c.png'/>
+        return (
+            <div id='one' className='container'>
+                {this.state.eles.map(function (item, i) {
+                    return item
+                })}
+                <div id='animateContainer'>
+                    {
+                        this.state.animateEles.map(function (item, i) {
+                            return item
+                        })
+                    }
                 </div>
                 <img id='left' src='../work/images/common/left-gray.png'/>
                 <img id='right' src='../work/images/common/right.png'/>
-
-
             </div>
         )
     }

@@ -1,0 +1,80 @@
+{
+  "lessonName": "句子学习",
+  "SceneName": "高效热身",
+  "scenes": [
+    {
+      "ScenePorperty": [
+        {
+          "background-color": "#ffffff"
+        }
+      ],
+      "SceneStaticNodes": [
+        {
+          "nodeName": "cat",
+          "imageSrc": "../work/images/1/cat.png",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "154",
+            "top": "308"
+          }
+        },
+        {
+          "nodeName": "music",
+          "imageSrc": "../work/images/1/music.png",
+          "nodeProperties": {
+            "width": "158",
+            "height": "68",
+            "left": "365",
+            "top": "105"
+          }
+        },
+        {
+          "nodeName": "ball",
+          "imageSrc": "../work/images/1/ball.png",
+          "animate":"bounceInRight",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "301",
+            "top": "370"
+          }
+        }
+
+      ],
+      "SceneAnimateNodes": [
+
+        {
+          "nodeName": "sentence-a",
+          "imageSrc": "../work/images/1/sentence-a.png",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "20",
+            "top": "152"
+          }
+        },
+        {
+          "nodeName": "sentence-b",
+          "imageSrc": "../work/images/1/sentence-b.png",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "65",
+            "top": "200"
+          }
+        },
+        {
+          "nodeName": "sentence-c",
+          "imageSrc": "../work/images/1/sentence-c.png",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "105",
+            "top": "271"
+          }
+        }
+      ]
+    }
+  ]
+}
