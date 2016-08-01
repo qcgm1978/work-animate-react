@@ -1,8 +1,9 @@
 module.exports = {
     entry: './index.js',
     output: {
+        path: "build",
         filename: 'bundle.js',
-        publicPath: ''
+        //publicPath: ''
     },
     module: {
         loaders: [
@@ -15,8 +16,9 @@ module.exports = {
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
                 loaders: [
-                    'file?hash=sha512&digest=hex&name=[hash].[ext]',
-                    'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+                    //'file?hash=sha512&digest=hex&name=[hash].[ext]',
+                    //'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+                    'url-loader'
                 ]
             }
         ]

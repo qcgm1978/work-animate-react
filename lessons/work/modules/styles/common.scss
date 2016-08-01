@@ -4,19 +4,31 @@
   //background-size: 600px 500px
   width: 600px;
   height: 500px;
-  #left{
-    position:absolute;
-    top:50%;
-    left:10px;
-    transform:translateY(-50%);
+  #left {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background: url('../../images/common/left-gray.png');
+    width: 50px;
+    height: 50px;
+
+  ;
   }
-  #right{
-    position:absolute;
-    top:50%;
-    right:10px;
-    transform:translateY(-50%);
+  #right {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: url('../../images/common/right.png');
+
+  ;
+
   }
-  .none{
-    display:none;
+
+  .none {
+    display: none;
   }
 }

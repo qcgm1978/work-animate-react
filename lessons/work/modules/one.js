@@ -30,14 +30,14 @@ export default React.createClass({
     },
     setArrowsUi: function (i) {
         if (i > -1) {
-            $('#left').attr('src', '../work/images/common/left.png')
+            $('#left').css('background', 'url(../work/images/common/left.png)')
         } else {
-            $('#left').attr('src', '../work/images/common/left-gray.png')
+            $('#left').css('background', 'url(../work/images/common/left-gray.png)')
         }
         if (i < this.sentences.length - 1) {
-            $('#right').attr('src', '../work/images/common/right.png')
+            $('#right').css('background', 'url(../work/images/common/right.png)')
         } else {
-            $('#right').attr('src', '../work/images/common/right-gray.png')
+            $('#right').css('background', 'url(../work/images/common/right-gray.png)')
         }
     },
     componentDidMount () {
@@ -56,6 +56,13 @@ export default React.createClass({
                 }
             }
             that.setArrowsUi.call(that, num);
+        }).hover(()=> {
+            $('#right').css('background', "url('../work/images/common/right-hover.png')")
+        }, ()=> {
+            that.setArrowsUi.call(that, num);
+        }).mousedown(()=>{
+            $('#right').css('background', "url('../work/images/common/right-active.png')")
+
         })
         $('#left').on('click', (i, n)=> {
             if (num > -1) {
@@ -64,7 +71,13 @@ export default React.createClass({
                     .addClass('bounceOut')
             }
             num == -1 ? null : num--
+        }).hover(()=> {
+            $('#left').css('background', "url('../work/images/common/left-hover.png')")
+        }, ()=> {
             that.setArrowsUi.call(that, num);
+        }).mousedown(()=>{
+            $('#left').css('background', "url('../work/images/common/left-active.png')")
+
         })
     },
     componentDidUpdate(){
@@ -127,8 +140,8 @@ export default React.createClass({
                         })
                     }
                 </div>
-                <img id='left' src='../work/images/common/left-gray.png'/>
-                <img id='right' src='../work/images/common/right.png'/>
+                <div id='left'></div>
+                <div id='right'></div>
             </div>
         )
     }
