@@ -30,14 +30,14 @@ export default React.createClass({
     },
     setArrowsUi: function (i) {
         if (i > -1) {
-            $('#left').css('background', 'url(../work/images/common/left.png)')
+            $('#left').css('background', 'url(./images/common/left.png)')
         } else {
-            $('#left').css('background', 'url(../work/images/common/left-gray.png)')
+            $('#left').css('background', 'url(./images/common/left-gray.png)')
         }
         if (i < this.sentences.length - 1) {
-            $('#right').css('background', 'url(../work/images/common/right.png)')
+            $('#right').css('background', 'url(./images/common/right.png)')
         } else {
-            $('#right').css('background', 'url(../work/images/common/right-gray.png)')
+            $('#right').css('background', 'url(./images/common/right-gray.png)')
         }
     },
     componentDidMount () {
@@ -57,11 +57,11 @@ export default React.createClass({
             }
             that.setArrowsUi.call(that, num);
         }).hover(()=> {
-            $('#right').css('background', "url('../work/images/common/right-hover.png')")
+            $('#right').css('background', "url('./images/common/right-hover.png')")
         }, ()=> {
             that.setArrowsUi.call(that, num);
         }).mousedown(()=>{
-            $('#right').css('background', "url('../work/images/common/right-active.png')")
+            $('#right').css('background', "url('./images/common/right-active.png')")
 
         })
         $('#left').on('click', (i, n)=> {
@@ -72,11 +72,11 @@ export default React.createClass({
             }
             num == -1 ? null : num--
         }).hover(()=> {
-            $('#left').css('background', "url('../work/images/common/left-hover.png')")
+            $('#left').css('background', "url('./images/common/left-hover.png')")
         }, ()=> {
             that.setArrowsUi.call(that, num);
         }).mousedown(()=>{
-            $('#left').css('background', "url('../work/images/common/left-active.png')")
+            $('#left').css('background', "url('./images/common/left-active.png')")
 
         })
     },
@@ -112,17 +112,17 @@ export default React.createClass({
     },
     generateNodes (classVar) {
         return <div id='one' className='container'>
-            <img id='cat' src='../work/images/1/cat.png'/>
-            <img id='ball' className='animated bounceInRight' src='../work/images/1/ball.png'/>
-            <img id='music' src='../work/images/1/music.png'/>
+            <img id='cat' src='./images/1/cat.png'/>
+            <img id='ball' className='animated bounceInRight' src='./images/1/ball.png'/>
+            <img id='music' src='./images/1/music.png'/>
 
             <div>
-                <img id='sentence-a' className={classVar} src='../work/images/1/sentence-a.png'/>
-                <img id='sentence-b' className={classVar} src='../work/images/1/sentence-b.png'/>
-                <img id='sentence-c' className={classVar} src='../work/images/1/sentence-c.png'/>
+                <img id='sentence-a' className={classVar} src='./images/1/sentence-a.png'/>
+                <img id='sentence-b' className={classVar} src='./images/1/sentence-b.png'/>
+                <img id='sentence-c' className={classVar} src='./images/1/sentence-c.png'/>
             </div>
-            <img id='left' src='../work/images/common/left-gray.png'/>
-            <img id='right' src='../work/images/common/right.png'/>
+            <img id='left' src='./images/common/left-gray.png'/>
+            <img id='right' src='./images/common/right.png'/>
 
 
         </div>;
