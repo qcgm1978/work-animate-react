@@ -11,7 +11,7 @@
       "SceneStaticNodes": [
         {
           "nodeName": "cat",
-          "imageSrc": "../work/images/1/cat.png",
+          "imageSrc": "./images/1/cat.png",
           "nodeProperties": {
             "width": "312",
             "height": "136",
@@ -21,7 +21,7 @@
         },
         {
           "nodeName": "music",
-          "imageSrc": "../work/images/1/music.png",
+          "imageSrc": "./images/1/music.png",
           "nodeProperties": {
             "width": "158",
             "height": "68",
@@ -31,7 +31,7 @@
         },
         {
           "nodeName": "ball",
-          "imageSrc": "../work/images/1/ball.png",
+          "imageSrc": "./images/1/ball.png",
           "animate":"bounceInRight",
           "nodeProperties": {
             "width": "312",
@@ -46,7 +46,7 @@
 
         {
           "nodeName": "sentence-a",
-          "imageSrc": "../work/images/1/sentence-a.png",
+          "imageSrc": "./images/1/sentence-a.png",
           "nodeProperties": {
             "width": "312",
             "height": "136",
@@ -56,7 +56,7 @@
         },
         {
           "nodeName": "sentence-b",
-          "imageSrc": "../work/images/1/sentence-b.png",
+          "imageSrc": "./images/1/sentence-b.png",
           "nodeProperties": {
             "width": "312",
             "height": "136",
@@ -66,7 +66,7 @@
         },
         {
           "nodeName": "sentence-c",
-          "imageSrc": "../work/images/1/sentence-c.png",
+          "imageSrc": "./images/1/sentence-c.png",
           "nodeProperties": {
             "width": "312",
             "height": "136",

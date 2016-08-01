@@ -1,0 +1,35 @@
+#two {
+
+  background: url('../../images/2/bg.png');
+  position:relative;
+  #cat{
+    position:absolute;
+    left:154px;
+    top:308px;
+  }
+  #ball{
+    position:absolute;
+    left:301px;
+    top:370px;
+  }
+  #music{
+    position:absolute;
+    left:365px;
+    top:105px;
+  }
+  #sentence-a{
+    position:absolute;
+    left:20px;
+    top:152px;
+  }
+  #sentence-b{
+    position:absolute;
+    left:65px;
+    top:200px;
+  }
+  #sentence-c{
+    position:absolute;
+    left:111px;
+    top:250px;
+  }
+}
