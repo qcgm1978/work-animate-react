@@ -10,7 +10,8 @@ import Zero from './modules/zero'
 
 import One from './modules/one'
 import Two from './modules/two'
-window.$=$
+import Three from './modules/three'
+window.$ = $
 render((
     <Router history={hashHistory}>
         <Route path="/" component={App}/>
@@ -19,5 +20,17 @@ render((
 
         <Route path="/one" component={One}/>
         <Route path="/two" component={Two}/>
+        <Route path="/three" component={Three}/>
+        {
+
+            //<Route path="/four" component={Four}/>
+            //< Route path="/five" component={Five}/>
+            //<Route path="/six" component={Six}/>
+            //<Route path="/seven" component={Seven}/>
+            //<Route path="/eight" component={Eight}/>
+            //<Route path="/nine" component={Nine}/>
+            //<Route path="/ten" component={Ten}/>
+        }
+
     </Router>
 ), document.getElementById('app'))
