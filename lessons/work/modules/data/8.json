@@ -10,8 +10,8 @@
       ],
       "SceneStaticNodes": [
         {
-          "nodeName": "b",
-          "imageSrc": "./images/5/b.png",
+          "nodeName": "ball",
+          "imageSrc": "./images/8/ball.png",
           "nodeProperties": {
             "width": "312",
             "height": "136",
@@ -21,7 +21,7 @@
         },
         {
           "nodeName": "shape-ball",
-          "imageSrc": "./images/5/shape-ball.png",
+          "imageSrc": "./images/8/shape-ball.png",
           "nodeProperties": {
             "width": "312",
             "height": "136",
@@ -34,7 +34,7 @@
       "SceneAnimateNodes": [
         {
           "nodeName": "sentence",
-          "imageSrc": "./images/5/sentence.png",
+          "imageSrc": "./images/8/sentence.png",
           "nodeProperties": {
             "width": "312",
             "height": "136",

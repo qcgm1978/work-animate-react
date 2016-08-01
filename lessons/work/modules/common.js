@@ -90,7 +90,7 @@ export default   {
         })
     },
     getElementsNodes(){
-        let arrows= <div>
+        let contents= <div>
             {this.state.eles.map(function (item, i) {
                 return item
             })}
@@ -104,7 +104,7 @@ export default   {
             <div id='left'></div>
             <div id='right'></div>
         </div>
-        return arrows
+        return contents
     },
 
 
