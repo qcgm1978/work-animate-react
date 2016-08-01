@@ -13,11 +13,11 @@ import Two from './modules/two'
 import Three from './modules/three'
 import Four from './modules/four'
 import Five from './modules/five'
-//import Three from './modules/three'
-//import Three from './modules/three'
-//import Three from './modules/three'
-//import Three from './modules/three'
-//import Three from './modules/three'
+import Six from './modules/six'
+import Seven from './modules/seven'
+import Eight from './modules/eight'
+import Nine from './modules/nine'
+import Ten from './modules/ten'
 window.$ = $
 render((
     <Router history={hashHistory}>
@@ -30,14 +30,12 @@ render((
         <Route path="/three" component={Three}/>
         <Route path="/four" component={Four}/>
         <Route path="/five" component={Five}/>
-        {
 
-            //<Route path="/six" component={Six}/>
-            //<Route path="/seven" component={Seven}/>
-            //<Route path="/eight" component={Eight}/>
-            //<Route path="/nine" component={Nine}/>
-            //<Route path="/ten" component={Ten}/>
-        }
+        <Route path="/six" component={Six}/>
+        <Route path="/seven" component={Seven}/>
+        <Route path="/eight" component={Eight}/>
+        <Route path="/nine" component={Nine}/>
+        <Route path="/ten" component={Ten}/>
 
     </Router>
 ), document.getElementById('app'))

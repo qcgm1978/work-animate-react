@@ -20,8 +20,8 @@
           }
         },
         {
-          "nodeName": "ball",
-          "imageSrc": "./images/5/ball.png",
+          "nodeName": "shape-ball",
+          "imageSrc": "./images/5/shape-ball.png",
           "nodeProperties": {
             "width": "312",
             "height": "136",

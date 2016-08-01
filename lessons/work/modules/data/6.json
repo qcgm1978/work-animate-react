@@ -10,36 +10,36 @@
       ],
       "SceneStaticNodes": [
         {
-          "nodeName": "b",
-          "imageSrc": "./images/5/b.png",
+          "nodeName": "c",
+          "imageSrc": "./images/6/c.png",
           "nodeProperties": {
             "width": "312",
             "height": "136",
-            "left": "83",
-            "top": "277"
-          }
-        },
-        {
-          "nodeName": "ball",
-          "imageSrc": "./images/5/ball.png",
-          "nodeProperties": {
-            "width": "312",
-            "height": "136",
-            "left": "389",
-            "top": "189"
+            "left": "12",
+            "top": "172"
           }
         }
 
       ],
       "SceneAnimateNodes": [
         {
-          "nodeName": "sentence",
-          "imageSrc": "./images/5/sentence.png",
+          "nodeName": "c2",
+          "imageSrc": "./images/6/c2.png",
           "nodeProperties": {
             "width": "312",
             "height": "136",
-            "left": "194",
-            "top": "395"
+            "left": "205",
+            "top": "263"
+          }
+        },
+        {
+          "nodeName": "bg-behavior",
+          "imageSrc": "./images/6/bg-behavior.png",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "332",
+            "top": "147"
           }
         }
       ]
