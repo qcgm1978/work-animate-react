@@ -1,0 +1,111 @@
+{
+  "lessonName" : "字母学习",
+  "SceneName" : "高效热身",
+  "scenes":[
+    {
+      "ScenePorperty" : [
+        {"background-color":"#ffffff"}
+      ],
+      "SceneStaticNodes" : [
+        {
+          "nodeName" : "logo",
+          "imgageSrc" : "images/bg.png",
+          "nodePropertys" :[
+            {"width" : "312px"},
+            {"height" : "136px"},
+            {"left" : "10px"},
+            {"top" : "10px"}
+          ]
+
+        },
+        {
+          "nodeName" : "note",
+          "imgageSrc" : "images/note.png",
+          "nodePropertys":[
+            {"width" : "158px"},
+            {"height" : "68px"},
+            {"left" : "347px"},
+            {"top" : "80px"}
+          ]
+        },
+        {
+          "nodeName" : "tree",
+          "imgageSrc" : "images/tree.png",
+          "nodePropertys":[
+            {"width" : "257px"},
+            {"height" : "283px"},
+            {"left" : "337px"},
+            {"top" : "187px"}
+          ]
+        },
+        {
+          "nodeName" : "catdog",
+          "imgageSrc" : "images/catdog.png",
+          "nodePropertys":[
+            {"width" : "239px"},
+            {"height" : "125px"},
+            {"left" : "60px"},
+            {"top" : "346px"}
+          ]
+        },
+        {
+          "nodeName" : "ball",
+          "imgageSrc" : "images/ball.png",
+          "nodePropertys":[
+            {"width" : "66px"},
+            {"height" : "68px"},
+            {"left" : "316px"},
+            {"top" : "404px"}
+          ]
+
+        }
+      ],
+      "SceneAnimateNodes" : [
+        {
+          "nodeName": "1",
+          "imgageSrc": "./images/1.png",
+          "nodePropertys": [
+            {"width": "312px"},
+            {"height": "136px"},
+            {"left": "17px"},
+            {"top": "160px"}
+          ]
+
+        },
+        {
+          "nodeName": "2",
+          "imgageSrc": "./images/2.png",
+          "nodePropertys": [
+            {"width": "312px"},
+            {"height": "136px"},
+            {"left": "53px"},
+            {"top": "200px"}
+          ]
+
+        },
+        {
+          "nodeName": "3",
+          "imgageSrc": "./images/3.png",
+          "nodePropertys": [
+            {"width": "312px"},
+            {"height": "136px"},
+            {"left": "93px"},
+            {"top": "235px"}
+          ]
+
+        },
+        {
+          "nodeName": "4",
+          "imgageSrc": "./images/4.png",
+          "nodePropertys": [
+            {"width": "312px"},
+            {"height": "136px"},
+            {"left": "105px"},
+            {"top": "271px"}
+          ]
+
+        }
+      ]
+    }
+  ]
+}
