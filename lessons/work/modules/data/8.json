@@ -9,39 +9,102 @@
         }
       ],
       "SceneStaticNodes": [
+
         {
-          "nodeName": "ball",
-          "imageSrc": "./images/8/ball.png",
+          "nodeName": "cat",
+          "imageSrc": "./images/8/cat.png",
           "nodeProperties": {
             "width": "312",
             "height": "136",
-            "left": "83",
-            "top": "277"
+            "left": "413",
+            "top": "390"
           }
         },
         {
-          "nodeName": "shape-ball",
-          "imageSrc": "./images/8/shape-ball.png",
+          "nodeName": "house",
+          "imageSrc": "./images/8/house.png",
           "nodeProperties": {
             "width": "312",
             "height": "136",
-            "left": "389",
-            "top": "189"
+            "left": "198",
+            "top": "87"
           }
-        }
-
-      ],
-      "SceneAnimateNodes": [
+        },
         {
           "nodeName": "sentence",
           "imageSrc": "./images/8/sentence.png",
           "nodeProperties": {
             "width": "312",
             "height": "136",
-            "left": "194",
-            "top": "395"
+            "left": "34",
+            "top": "145"
+          }
+        },
+        {
+          "nodeName": "shape-a&apple",
+          "imageSrc": "./images/8/shape-a&apple.png",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "16",
+            "top": "230"
+          }
+        },
+        {
+          "nodeName": "shape-b",
+          "imageSrc": "./images/8/shape-b.png",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "319",
+            "top": "212"
+          }
+        },
+        {
+          "nodeName": "shape-c",
+          "imageSrc": "./images/8/shape-c.png",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "413",
+            "top": "390"
+          }
+        },
+        {
+          "nodeName": "word-a",
+          "imageSrc": "./images/8/word-a.png",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "413",
+            "top": "130"
+          }
+        },
+
+        {
+          "nodeName": "word-c",
+          "imageSrc": "./images/8/word-c.png",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "175",
+            "top": "389"
+          }
+        },
+        {
+          "nodeName": "ball",
+          "imageSrc": "./images/8/ball.png",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "318",
+            "top": "371"
           }
         }
+
+      ],
+      "SceneAnimateNodes": [
+
       ]
     }
   ]

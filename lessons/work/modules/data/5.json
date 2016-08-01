@@ -18,7 +18,11 @@
             "left": "83",
             "top": "277"
           }
-        },
+        }
+
+
+      ],
+      "SceneAnimateNodes": [
         {
           "nodeName": "ball",
           "imageSrc": "./images/5/ball.png",
@@ -28,10 +32,7 @@
             "left": "389",
             "top": "189"
           }
-        }
-
-      ],
-      "SceneAnimateNodes": [
+        },
         {
           "nodeName": "sentence",
           "imageSrc": "./images/5/sentence.png",
