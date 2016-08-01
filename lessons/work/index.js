@@ -11,6 +11,13 @@ import Zero from './modules/zero'
 import One from './modules/one'
 import Two from './modules/two'
 import Three from './modules/three'
+import Four from './modules/four'
+import Five from './modules/five'
+//import Three from './modules/three'
+//import Three from './modules/three'
+//import Three from './modules/three'
+//import Three from './modules/three'
+//import Three from './modules/three'
 window.$ = $
 render((
     <Router history={hashHistory}>
@@ -21,10 +28,10 @@ render((
         <Route path="/one" component={One}/>
         <Route path="/two" component={Two}/>
         <Route path="/three" component={Three}/>
+        <Route path="/four" component={Four}/>
+        <Route path="/five" component={Five}/>
         {
 
-            //<Route path="/four" component={Four}/>
-            //< Route path="/five" component={Five}/>
             //<Route path="/six" component={Six}/>
             //<Route path="/seven" component={Seven}/>
             //<Route path="/eight" component={Eight}/>
