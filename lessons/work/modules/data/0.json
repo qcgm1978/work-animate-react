@@ -1,0 +1,132 @@
+{
+  "lessonName": "句子学习",
+  "SceneName": "高效热身",
+  "scenes": [
+    {
+      "ScenePorperty": [
+        {
+          "background-color": "#ffffff"
+        }
+      ],
+      "SceneStaticNodes": [
+        {
+          "nodeName": "alphabet",
+          "imageSrc": "./images/0/0-img-alphabet.png",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "217",
+            "top": "164"
+          }
+        },
+        {
+          "nodeName": "cat",
+          "imageSrc": "./images/0/0-img-cat.png",
+          "nodeProperties": {
+            "width": "158",
+            "height": "68",
+            "left": "18",
+            "top": "297"
+          }
+        },
+        {
+          "nodeName": "dog",
+          "imageSrc": "./images/0/0-img-dog.png",
+          "animate":"bounceInRight",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "37",
+            "top": "168"
+          }
+        },
+        {
+          "nodeName": "letter",
+          "imageSrc": "./images/0/0-img-letter.png",
+          "animate":"bounceInRight",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "67",
+            "top": "259"
+          }
+        },
+        {
+          "nodeName": "the",
+          "imageSrc": "./images/0/0-img-the.png",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "92",
+            "top": "55"
+          }
+        },
+        {
+          "nodeName": "tree",
+          "imageSrc": "./images/0/0-img-tree.png",
+          "animate":"bounceInRight",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "416",
+            "top": "63"
+          }
+        }
+
+      ],
+      "SceneAnimateNodes": [
+
+        {
+          "nodeName": "word1",
+          "imageSrc": "./images/0/0-word1.png",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "20",
+            "top": "152"
+          }
+        },
+        {
+          "nodeName": "word2",
+          "imageSrc": "./images/0/0-word2.png",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "65",
+            "top": "200"
+          }
+        },
+        {
+          "nodeName": "word3",
+          "imageSrc": "./images/0/0-word3.png",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "105",
+            "top": "271"
+          }
+        },
+        {
+          "nodeName": "word4",
+          "imageSrc": "./images/0/0-word4.png",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "105",
+            "top": "271"
+          }
+        },
+        {
+          "nodeName": "word5",
+          "imageSrc": "./images/0/0-word5.png",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "105",
+            "top": "271"
+          }
+        }
+      ]
+    }
+  ]
+}
