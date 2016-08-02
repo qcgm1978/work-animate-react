@@ -1,7 +1,10 @@
 import React from 'react'
+import Redux from './redux'
 
 export default   {
     componentDidMount: function() {
+        Redux.dispatch({type: 'INCREMENT'})
+
         let classVar = "none animated";
         this.generateNodesFromJson(classVar)
         var that = this, num = -1;

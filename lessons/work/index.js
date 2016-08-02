@@ -6,6 +6,7 @@ import { Router, Route, hashHistory } from 'react-router'
 import { render } from 'react-dom'
 import App from './modules/App'
 //render(<App/>, document.getElementById('app'))
+
 import Zero from './modules/zero'
 
 import One from './modules/one'
@@ -36,6 +37,9 @@ render((
         <Route path="/eight" component={Eight}/>
         <Route path="/nine" component={Nine}/>
         <Route path="/ten" component={Ten}/>
+        {
+            //<Route path="/rudux" component={Redux1}/>
+        }
 
     </Router>
 ), document.getElementById('app'))

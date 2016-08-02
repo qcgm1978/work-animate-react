@@ -1,5 +1,6 @@
 require('./styles/zero.scss')
 import React from 'react'
+import Redux from './redux'
 
 export default React.createClass({
     getEles: function (data, isAnimate) {
@@ -63,8 +64,8 @@ export default React.createClass({
         })
     },
     componentDidMount () {
+        console.log('You have already look up %d route page.', Redux.getState())
         this.generateNodesFromJson()
-
     },
     componentDidUpdate(){
         this.animate(this.state.frameId);
