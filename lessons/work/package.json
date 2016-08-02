@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --content-base .",
-    "serve":"webpack -d --progress --colors --watch"
-
+    "serve": "webpack -d --progress --colors --watch",
+    "copy": "copyfiles modules/**/* images/**/* ./build",
+    "copy1":"copyfiles -f ./modules/index.html ./build",
+    "dist": "npm run serve & npm run copy & npm run copy1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "copyfiles": "^1.0.0",
     "css-loader": "^0.23.1",
     "node-sass": "^3.8.0",
     "react": "^0.14.7",
@@ -29,6 +32,5 @@
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1",
     "image-webpack-loader": "^2.0.0"
-
   }
 }
