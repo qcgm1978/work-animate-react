@@ -4,11 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --inline --content-base .",
-    "serve": "webpack -d --progress --colors --watch",
+    "start": "webpack -d --progress --colors --watch",
     "copy": "copyfiles modules/**/* images/**/* ./build",
     "copy1":"copyfiles -f ./modules/index.html ./build",
-    "dist": "npm run serve & npm run copy & npm run copy1"
+    "build": "npm start & npm run copy & npm run copy1"
   },
   "author": "",
   "license": "ISC",

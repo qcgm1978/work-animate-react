@@ -1,33 +1,48 @@
-# Setting up the Project
+# Animate React
 
-First you'll need [Node.js](https://nodejs.org) and the package manager
-that comes with it: [npm](https://www.npmjs.com/).
+Animate React is a Reactjs, React-router, Animate.css powered HTML5 Animate project.
 
-Once you've got that working, head to the command line where we'll set
-up our project.
 
-## Clone the Tutorial
+### Version
+1.0
 
+### Tech
+
+Animate React uses a number of open source projects to work properly:
+
+Please reference bower.json and package.json
+
+### Installation
+
+
+
+```sh
+$ npm install & bower install
 ```
-git clone https://github.com/reactjs/react-router-tutorial
-cd react-router-tutorial
-cd lessons/01-setting-up
-npm install
-npm start
+
+### Dev and Build
+
+run the command and open /index.html in local server
+
+```sh: 
+$ npm start
 ```
 
-Now open up [http://localhost:8080](http://localhost:8080)
+run the command and deliver the build folder
 
-Feel free to poke around the code to see how we're using webpack and npm
-scripts to run the app.
+```sh
+$ npm run build
+```
 
-You should see a "Hello React Router" message in the browser.
 
-## Make Some Changes
 
-Open up `modules/App.js` and change the text to something like "Hello
-<your name>". The browser automatically reloads with your new code.
+### Todos
 
----
+ - Redux or Flux to add
 
-[Next: Rendering a Router](../02-rendering-a-route/)
+License
+----
+
+MIT
+
+
