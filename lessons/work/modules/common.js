@@ -62,7 +62,7 @@ export default   {
     },
     componentDidUpdate(){
     },
-    getEles: function (data, isHidden) {
+    getEles: function (data, isHidden,isStrict) {
         let eles = []
         for (let i = 0; i < data.length; i++) {
             let item = data[i]
@@ -72,7 +72,10 @@ export default   {
             eles.push(
                 <img src={item.imageSrc} key={i}
                      className={(isHidden?'none':'')+' animated '+ (animate?animate:'')}
-                     style={{position:'absolute', left:left+(left.endsWith('%')?'':'px'), top:top+(top.endsWith('%')?'':'px')
+                     style={{position:'absolute', left:left+(left.endsWith('%')?'':'px'), top:top+(top.endsWith('%')?'':'px'),
+                     width:isStrict?(item.nodeProperties.width?item.nodeProperties.width:'auto'):'auto',
+                     height:isStrict?(item.nodeProperties.height?item.nodeProperties.height:'auto'):'auto',
+                     "borderRadius":item.nodeProperties['border-radius']
                      }}/>
             )
         }
@@ -81,8 +84,8 @@ export default   {
     getJson: function (url) {
         $.getJSON(url).done((data)=> {
             let eles = [], eles1 = [];
-            eles = this.getEles(data.scenes[0].SceneStaticNodes);
-            eles1 = this.getEles(data.scenes[0].SceneAnimateNodes, true);
+            eles = this.getEles(data.scenes[0].SceneStaticNodes,false,data.strict);
+            eles1 = this.getEles(data.scenes[0].SceneAnimateNodes, true,data.strict);
             this.setState({
                 eles: eles,
                 animateEles: eles1

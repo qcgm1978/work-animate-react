@@ -66,7 +66,7 @@ export default React.createClass({
         })
     },
     componentDidMount () {
-        console.log('You have already looked up %d route page.', Redux.getState())
+        //console.log('You have already looked up %d route page.', Redux.getState())
         this.generateNodesFromJson()
         let that=this,num = -1
         $('#right').on('click', (evt)=> {

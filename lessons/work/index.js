@@ -19,6 +19,7 @@ import Seven from './modules/seven'
 import Eight from './modules/eight'
 import Nine from './modules/nine'
 import Ten from './modules/ten'
+import Eleven from './modules/eleven'
 window.$ = $
 render((
     <Router history={hashHistory}>
@@ -37,6 +38,7 @@ render((
         <Route path="/eight" component={Eight}/>
         <Route path="/nine" component={Nine}/>
         <Route path="/ten" component={Ten}/>
+        <Route path="/eleven" component={Eleven}/>
         {
             //<Route path="/rudux" component={Redux1}/>
         }

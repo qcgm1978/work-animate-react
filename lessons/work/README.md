@@ -31,7 +31,7 @@ $ npm start
 run the command and deliver the build folder
 
 ```sh
-$ npm run build
+$ npm run publish
 ```
 
 

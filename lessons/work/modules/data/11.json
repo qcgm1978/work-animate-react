@@ -1,0 +1,49 @@
+{
+  "lessonName": "句子学习",
+  "SceneName": "高效热身",
+  "strict":true,
+  "scenes": [
+    {
+      "ScenePorperty": [
+        {
+          "background-color": "#ffffff"
+        }
+      ],
+      "SceneStaticNodes": [
+        {
+          "nodeName": "b",
+          "imageSrc": "./images/11/bg.png",
+          "nodeProperties": {
+            "height": "380",
+            "left": "2%",
+            "top": "20",
+            "border-radius":"110px"
+          }
+        },
+        {
+          "nodeName": "shape-ball",
+          "imageSrc": "./images/11/shape-ball.png",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "389",
+            "top": "189"
+          }
+        }
+
+      ],
+      "SceneAnimateNodes": [
+        {
+          "nodeName": "sentence",
+          "imageSrc": "./images/11/sentence.png",
+          "nodeProperties": {
+            "width": "312",
+            "height": "136",
+            "left": "194",
+            "top": "395"
+          }
+        }
+      ]
+    }
+  ]
+}

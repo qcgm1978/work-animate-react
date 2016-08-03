@@ -19,6 +19,7 @@ export default React.createClass({
                     <li><Link to="/eight">Eight</Link></li>
                     <li><Link to="/nine">Nine</Link></li>
                     <li><Link to="/ten">Ten</Link></li>
+                    <li><Link to="/eleven">Eleven</Link></li>
                     {
                         //<li><Link to="/redux">Redux</Link></li>
                     }

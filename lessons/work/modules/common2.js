@@ -22,7 +22,7 @@ export default   {
         return num
     },
 
-    list: ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'],
+    list: ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten','eleven'],
 
     componentDidUpdate(){
         this.sentences = $('#animateContainer img');

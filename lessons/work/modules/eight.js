@@ -29,13 +29,12 @@ export default React.createClass({
     render() {
         return (
             <div id='eight' className='container'>
-
-
-                if(localStorage.test){
-
-                <canvas id="canvas" width='600' height='500'></canvas>
-            }
                 {
+
+                    //if(localStorage.test){
+                    //
+                    //<canvas id="canvas" width='600' height='500'></canvas>
+                    //}
                     this.getElementsNodes()
                 }
             </div>
