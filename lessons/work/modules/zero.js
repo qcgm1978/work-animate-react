@@ -1,8 +1,10 @@
 require('./styles/zero.scss')
 import React from 'react'
 import Redux from './redux'
+import CommonMixin2 from './common2'
 
 export default React.createClass({
+    mixins: [CommonMixin2],
     getEles: function (data, isAnimate) {
         let eles = [], style = {}
         for (let i = 0; i < data.length; i++) {
@@ -64,8 +66,12 @@ export default React.createClass({
         })
     },
     componentDidMount () {
-        console.log('You have already look up %d route page.', Redux.getState())
+        console.log('You have already looked up %d route page.', Redux.getState())
         this.generateNodesFromJson()
+        let that=this,num = -1
+        $('#right').on('click', (evt)=> {
+            num = this.setPageState.call(that,num);
+        })
     },
     componentDidUpdate(){
         this.animate(this.state.frameId);
@@ -86,8 +92,9 @@ export default React.createClass({
                         })
                     }
                 </div>
+                <div id='right'></div>
                 {
-
+                    //<div id='left'></div>
                     //<img id='the' src='./images/0/0-img-the.png'/>
                     //< img id='alphabet' src='./images/0/0-img-alphabet.png'/>
                     //<img id='dog' src='./images/0/0-img-dog.png'/>

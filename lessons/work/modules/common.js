@@ -1,46 +1,44 @@
 import React from 'react'
 import Redux from './redux'
 
-export default   {
-    componentDidMount: function() {
-        Redux.dispatch({type: 'INCREMENT'})
+import CommonMixin2 from './common2'
 
-        let classVar = "none animated";
-        this.generateNodesFromJson(classVar)
-        var that = this, num = -1;
+export default   {
+    mixins: [CommonMixin2],
+
+    componentDidMount: function () {
+        Redux.dispatch({type: 'INCREMENT'})
+        let classlet = "none animated";
+        this.generateNodesFromJson(classlet)
+        let that=this,num = -1
         $('#right').on('click', (evt)=> {
-            var $hiddenEle = that.sentences;
-            if (num + 1 < this.sentences.length) {
-                $hiddenEle.eq(num + 1)
-                    .removeClass('none bounceIn bounceOut')
-                    .addClass('bounceIn')
-                if (num + 1 < this.sentences.length) {
-                    num++
-                }
-            }
+            num = this.setPageState(num);
             that.setArrowsUi.call(that, num);
         }).hover(()=> {
             $('#right').css('background', "url('./images/common/right-hover.png')")
         }, ()=> {
             that.setArrowsUi.call(that, num);
-        }).mousedown(()=>{
+        }).mousedown(()=> {
             $('#right').css('background', "url('./images/common/right-active.png')")
-
         })
         $('#left').on('click', (i, n)=> {
             if (num > -1) {
                 that.sentences.eq(num)
                     //.removeClass('none')
                     .addClass('bounceOut')
+            } else {
+                let exec = /\/#\/(.+)\?.+/.exec(location.href);
+                let val = exec[1]
+                let nextInd = this.list.indexOf(val) - 1
+                that.context.router.push('/' + this.list[nextInd])
             }
             num == -1 ? null : num--
         }).hover(()=> {
             $('#left').css('background', "url('./images/common/left-hover.png')")
         }, ()=> {
             that.setArrowsUi.call(that, num);
-        }).mousedown(()=>{
+        }).mousedown(()=> {
             $('#left').css('background', "url('./images/common/left-active.png')")
-
         })
     },
     sentences: [],
@@ -63,15 +61,14 @@ export default   {
         }
     },
     componentDidUpdate(){
-        this.sentences = $('#animateContainer img');
     },
     getEles: function (data, isHidden) {
         let eles = []
         for (let i = 0; i < data.length; i++) {
             let item = data[i]
-            var left = item.nodeProperties.left;
-            var top = item.nodeProperties.top;
-            var animate = data[i].animate;
+            let left = item.nodeProperties.left;
+            let top = item.nodeProperties.top;
+            let animate = data[i].animate;
             eles.push(
                 <img src={item.imageSrc} key={i}
                      className={(isHidden?'none':'')+' animated '+ (animate?animate:'')}
@@ -93,7 +90,7 @@ export default   {
         })
     },
     getElementsNodes(){
-        let contents= <div>
+        let contents = <div>
             {this.state.eles.map(function (item, i) {
                 return item
             })}
@@ -109,6 +106,4 @@ export default   {
         </div>
         return contents
     },
-
-
 };

@@ -11,7 +11,7 @@ import { createStore } from 'redux'
  * follows a different convention (such as function maps) if it makes sense for your
  * project.
  */
-function counter(state = 0, action = {}) {
+function counter(state = 0, action={}) {
     switch (action.type) {
         case 'INCREMENT':
             return state + 1
@@ -28,7 +28,7 @@ let store = createStore(counter)
 // Normally you'd use a view binding library (e.g. React Redux) rather than subscribe() directly.
 // However it can also be handy to persist the current state in the localStorage.
 store.subscribe(() => {
-        console.log(store.getState())
+        //console.log(store.getState())
     }
 )
 // The only way to mutate the internal state is to dispatch an action.
