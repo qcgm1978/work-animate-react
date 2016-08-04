@@ -26,5 +26,28 @@ export default   {
 
     componentDidUpdate(){
         this.sentences = $('#animateContainer img');
-    }
+    },
+    getEles: function (data, isHidden, isStrict) {
+        let eles = []
+        for (let i = 0; i < data.length; i++) {
+            let item = data[i]
+            let left = String(item.nodeProperties.left);
+            let top = String(item.nodeProperties.top);
+            let animate = data[i].animate;
+            let style = {
+                position: 'absolute', left: left + (left.endsWith('%') ? '' : 'px'),
+                top: top + (top.endsWith('%') ? '' : 'px')
+            };
+            if (isStrict) {
+                style = $.extend(item.nodeProperties, style);
+            }
+            eles.push(
+                <img src={item.imageSrc} key={i}
+                     className={(isHidden?'none':'')+' animated '+ (animate?animate:'')}
+                     style={ style}/>
+            )
+        }
+        return eles
+    },
+
 };

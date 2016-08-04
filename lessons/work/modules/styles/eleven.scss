@@ -1,6 +1,106 @@
 #eleven {
 
-  background: url('../../images/11/bg-stripe.png') -20px ;
-  position:relative;
+  background: url('../../images/11/bg-stripe.png') -20px;
+  position: relative;
 
+  $elements: 10;
+  #balloons {
+    position: absolute;
+    bottom: 0;
+  }
+  #help-container {
+    width: 100%;
+    height: 100%;
+    background: url(../../images/11/help_bg.png);
+    .help {
+      width: 90%;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      bottom: 30%;
+    }
+  }
+  #help-btn{
+    position: absolute;
+    right: 2%;
+    bottom: 19%;
+    background-color: rgb(245, 163, 0);
+    width: 62px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-weight: 900;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 1px 2px rgb(203, 190, 132);
+    cursor: pointer;
+  }
+  .div {
+    float: left;
+    width: 52px;
+    height: 71px;
+    background: url(../../images/11/balloon.png) no-repeat;
+    background-size: contain;
+    text-align: center;
+    padding: 0 4px;
+    cursor: pointer;
+    &.opacity {
+      opacity: 0.4;
+    }
+    .span {
+      position: relative;
+      top: 29%;
+      word-wrap: break-word;
+    }
+  }
+  .div-fly {
+    position: absolute;
+
+    width: 65px;
+    background-size: cover;
+  }
+  .fly0 {
+    top: 131px;
+    left: 253px;
+  }
+  .fly1 {
+    top: 45px;
+    left: 257px;
+  }
+  .fly2 {
+    top: 146px;
+    left: 189px;
+  }
+  .fly3 {
+    top: 108px;
+    left: 149px;
+  }
+  .fly4 {
+    top: 98px;
+    left: 219px;
+
+  }
+  .fly5 {
+    top: 90px;
+    left: 299px;
+  }
+  .fly6 {
+    top: 49px;
+    left: 340px;
+  }
+  .fly7 {
+    top: 99px;
+    left: 373px;
+
+  }
+  .fly8 {
+    top: 167px;
+    left: 383px;
+
+  }
+  .fly9 {
+    top: 137px;
+    left: 320px;
+
+  }
 }

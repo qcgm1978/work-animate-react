@@ -5,12 +5,11 @@ import CommonMixin2 from './common2'
 
 export default   {
     mixins: [CommonMixin2],
-
     componentDidMount: function () {
         Redux.dispatch({type: 'INCREMENT'})
         let classlet = "none animated";
         this.generateNodesFromJson(classlet)
-        let that=this,num = -1
+        let that = this, num = -1
         $('#right').on('click', (evt)=> {
             num = this.setPageState(num);
             that.setArrowsUi.call(that, num);
@@ -62,30 +61,11 @@ export default   {
     },
     componentDidUpdate(){
     },
-    getEles: function (data, isHidden,isStrict) {
-        let eles = []
-        for (let i = 0; i < data.length; i++) {
-            let item = data[i]
-            let left = item.nodeProperties.left;
-            let top = item.nodeProperties.top;
-            let animate = data[i].animate;
-            eles.push(
-                <img src={item.imageSrc} key={i}
-                     className={(isHidden?'none':'')+' animated '+ (animate?animate:'')}
-                     style={{position:'absolute', left:left+(left.endsWith('%')?'':'px'), top:top+(top.endsWith('%')?'':'px'),
-                     width:isStrict?(item.nodeProperties.width?item.nodeProperties.width:'auto'):'auto',
-                     height:isStrict?(item.nodeProperties.height?item.nodeProperties.height:'auto'):'auto',
-                     "borderRadius":item.nodeProperties['border-radius']
-                     }}/>
-            )
-        }
-        return eles
-    },
     getJson: function (url) {
         $.getJSON(url).done((data)=> {
             let eles = [], eles1 = [];
-            eles = this.getEles(data.scenes[0].SceneStaticNodes,false,data.strict);
-            eles1 = this.getEles(data.scenes[0].SceneAnimateNodes, true,data.strict);
+            eles = this.getEles(data.scenes[0].SceneStaticNodes, false, data.strict);
+            eles1 = this.getEles(data.scenes[0].SceneAnimateNodes, true, data.strict);
             this.setState({
                 eles: eles,
                 animateEles: eles1

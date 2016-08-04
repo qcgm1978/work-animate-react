@@ -14,20 +14,45 @@
           "nodeName": "b",
           "imageSrc": "./images/11/bg.png",
           "nodeProperties": {
-            "height": "380",
-            "left": "2%",
-            "top": "20",
-            "border-radius":"110px"
+            "width":"90%",
+            "height": 380,
+            "left": "3%",
+            "top": 20,
+            "borderRadius":"110px",
+            "border": "14px solid white"
           }
         },
         {
-          "nodeName": "shape-ball",
-          "imageSrc": "./images/11/shape-ball.png",
+          "nodeName": "rope",
+          "imageSrc": "./images/11/rope.png",
           "nodeProperties": {
-            "width": "312",
-            "height": "136",
-            "left": "389",
-            "top": "189"
+            "left": 489,
+            "top": 34
+          }
+        },
+        {
+          "nodeName": "cat",
+          "imageSrc": "./images/11/cat.png",
+          "nodeProperties": {
+            "left": 460,
+            "top": 34
+          }
+        },
+        {
+          "nodeName": "balloons",
+          "imageSrc": "./images/11/balloons.png",
+          "nodeProperties": {
+            "left": "50%",
+            "top": 45,
+            "transform":"translate(-50%,0)"
+          }
+        },
+        {
+          "nodeName": "rabit",
+          "imageSrc": "./images/11/mouse.gif",
+          "nodeProperties": {
+            "left": "40%",
+            "top": 321
           }
         }
 
@@ -35,12 +60,10 @@
       "SceneAnimateNodes": [
         {
           "nodeName": "sentence",
-          "imageSrc": "./images/11/sentence.png",
+          "imageSrc": "./images/11/balloon.png",
           "nodeProperties": {
-            "width": "312",
-            "height": "136",
-            "left": "194",
-            "top": "395"
+            "left": 0,
+            "bottom": 5
           }
         }
       ]

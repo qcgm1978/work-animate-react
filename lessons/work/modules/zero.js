@@ -5,28 +5,28 @@ import CommonMixin2 from './common2'
 
 export default React.createClass({
     mixins: [CommonMixin2],
-    getEles: function (data, isAnimate) {
-        let eles = [], style = {}
-        for (let i = 0; i < data.length; i++) {
-            let item = data[i]
-            var left = item.nodeProperties.left;
-            var top = item.nodeProperties.top;
-            var animate = data[i].animate;
-            if (!isAnimate) {
-                style = {
-                    position: 'absolute', left: left + (left.endsWith('%') ? '' : 'px'),
-                    top: top + (top.endsWith('%') ? '' : 'px')
-                };
-            }
-            eles.push(
-                <img src={item.imageSrc} key={i}
-                     id={isAnimate?('word'+i):''}
-                     className={(isAnimate?' animated ':'')+ (animate?animate:'')}
-                     style={ style}/>
-            )
-        }
-        return eles
-    },
+    //getEles: function (data, isAnimate) {
+    //    let eles = [], style = {}
+    //    for (let i = 0; i < data.length; i++) {
+    //        let item = data[i]
+    //        var left = item.nodeProperties.left;
+    //        var top = item.nodeProperties.top;
+    //        var animate = data[i].animate;
+    //        if (!isAnimate) {
+    //            style = {
+    //                position: 'absolute', left: left + (left.endsWith('%') ? '' : 'px'),
+    //                top: top + (top.endsWith('%') ? '' : 'px')
+    //            };
+    //        }
+    //        eles.push(
+    //            <img src={item.imageSrc} key={i}
+    //                 id={isAnimate?('word'+i):''}
+    //                 className={(isAnimate?' animated ':'')+ (animate?animate:'')}
+    //                 style={ style}/>
+    //        )
+    //    }
+    //    return eles
+    //},
     generateNodesFromJson(){
         $.getJSON('modules/data/0.json').done((data)=> {
             let eles = [], animateEles = []
