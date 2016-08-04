@@ -54,7 +54,13 @@ export default React.createClass({
             num = this.setPageState.call(that, num);
         })
         $('#balloons div').one('click', function () {
-            $(this).clone().appendTo('#eleven').addClass('div-fly fly' + $(this).index())
+            $(this)
+                .clone()
+                //.wrap('<div/>')
+                //.parent()
+                .appendTo('#eleven')
+                .addClass('div-fly fly' + $(this).index())
+                .addClass('animated pulse')
             $(this).addClass('opacity')
             if ($('.opacity').length == 10) {
                 that.animateCat();

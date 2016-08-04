@@ -20,7 +20,7 @@
       bottom: 30%;
     }
   }
-  #help-btn{
+  #help-btn {
     position: absolute;
     right: 2%;
     bottom: 19%;
@@ -57,6 +57,7 @@
     position: absolute;
 
     width: 65px;
+    //transform: rotate(45deg) scale3d(1, 1, 1);
     background-size: cover;
   }
   .fly0 {
