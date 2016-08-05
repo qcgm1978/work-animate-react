@@ -1,3 +1,5 @@
+var LiveReloadPlugin = require('webpack-livereload-plugin');
+
 module.exports = {
     entry: './index.js',
     output: {
@@ -22,5 +24,8 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        new LiveReloadPlugin()
+    ]
 }

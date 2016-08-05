@@ -1,0 +1,35 @@
+img {
+  position: absolute;
+  &.transition1 {
+    transition: 1s;
+    left: 500px;
+    transform: rotate(360deg);
+  }
+  &.animation1{
+    animation:animation1 ease-in-out 3s;
+  }
+  @keyframes animation1 {
+    from{
+      left:0;
+    }
+    50%{
+      left:250px;
+      transform:scale(0.8) rotate(10deg);
+
+    }
+    to{
+      left:500px;
+      transform:scale(1.2) rotate(-20deg);
+    }
+  }
+}
+$top:290px;
+select {
+  position: absolute;
+  top: $top;
+}
+button{
+  position: absolute;
+  top: $top;
+  left: 300px;
+}

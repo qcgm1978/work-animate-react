@@ -13,7 +13,7 @@ export default   {
                     num++
                 }
             } else {
-                let exec = /\/#\/(.+)\?.+/.exec(location.href);
+                let exec = /#\/(.+)\?.+/.exec(location.href);
                 let val = exec[1]
                 let index = this.list.indexOf(val);
                 let nextInd = (index == this.list.length - 1) ? 0 : (index + 1)
@@ -55,7 +55,7 @@ export default   {
                 //.removeClass('none')
                 .addClass('bounceOut')
         } else {
-            let exec = /\/#\/(.+)\?.+/.exec(location.href);
+            let exec = /#\/(.+)\?.+/.exec(location.href);
             let val = exec[1]
             let nextInd = this.list.indexOf(val) - 1
             nextInd=nextInd==-1?(this.list.length-1):nextInd
