@@ -56,8 +56,9 @@ export default React.createClass({
         $('#balloons div').one('click', function () {
             $(this)
                 .clone()
-                //.wrap('<div/>')
-                //.parent()
+                .addClass('big-balloon')
+                .wrap('<div/>')
+                .parent()
                 .appendTo('#eleven')
                 .addClass('div-fly fly' + $(this).index())
                 .addClass('animated pulse')
