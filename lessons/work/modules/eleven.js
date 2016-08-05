@@ -53,6 +53,9 @@ export default React.createClass({
         $('#right').on('click', (evt)=> {
             num = this.setPageState.call(that, num);
         })
+        $('#left').on('click', (i, n)=> {
+            num = this.leftClickEvt(num, that);
+        })
         $('#balloons div').one('click', function () {
             $(this)
                 .clone()
@@ -125,9 +128,10 @@ export default React.createClass({
                 </div>
                 <div id='help-container' className='animated none'><img src='./images/11/help_detail.png'
                                                                         className='help'/></div>
+                <div id='left'></div>
 
                 {
-                    //<div id='right'></div>
+                    <div id='right'></div>
                 }
                 <div id='help-btn'>Help</div>
             </div>

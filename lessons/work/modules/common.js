@@ -21,17 +21,7 @@ export default   {
             $('#right').css('background', "url('./images/common/right-active.png')")
         })
         $('#left').on('click', (i, n)=> {
-            if (num > -1) {
-                that.sentences.eq(num)
-                    //.removeClass('none')
-                    .addClass('bounceOut')
-            } else {
-                let exec = /\/#\/(.+)\?.+/.exec(location.href);
-                let val = exec[1]
-                let nextInd = this.list.indexOf(val) - 1
-                that.context.router.push('/' + this.list[nextInd])
-            }
-            num == -1 ? null : num--
+            num = this.leftClickEvt(num, that);
         }).hover(()=> {
             $('#left').css('background', "url('./images/common/left-hover.png')")
         }, ()=> {

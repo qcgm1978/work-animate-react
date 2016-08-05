@@ -81,9 +81,7 @@
           "imageSrc": "./images/0/0-word1.png",
           "nodeProperties": {
             "width": "312",
-            "height": "136",
-            "left": "20",
-            "top": "152"
+            "height": "136"
           }
         },
         {
@@ -91,9 +89,7 @@
           "imageSrc": "./images/0/0-word2.png",
           "nodeProperties": {
             "width": "312",
-            "height": "136",
-            "left": "65",
-            "top": "200"
+            "height": "136"
           }
         },
         {
@@ -101,9 +97,7 @@
           "imageSrc": "./images/0/0-word3.png",
           "nodeProperties": {
             "width": "312",
-            "height": "136",
-            "left": "105",
-            "top": "271"
+            "height": "136"
           }
         },
         {
@@ -111,9 +105,7 @@
           "imageSrc": "./images/0/0-word4.png",
           "nodeProperties": {
             "width": "312",
-            "height": "136",
-            "left": "105",
-            "top": "271"
+            "height": "136"
           }
         },
         {
@@ -121,9 +113,7 @@
           "imageSrc": "./images/0/0-word5.png",
           "nodeProperties": {
             "width": "312",
-            "height": "136",
-            "left": "105",
-            "top": "271"
+            "height": "136"
           }
         }
       ]
