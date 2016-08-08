@@ -39,9 +39,36 @@ export default React.createClass({
             }, function () {
                 $(this).css('background-image', 'url("./images/public-control/follow-me/follow.png")')
             })
-        $('.close').click(function () {
-            $('.pop-up').hide()
-        })
+        $('.close')
+            .mousedown(function(){
+                $(this).css('background-image', 'url("./images/public-control/close-click.png")')
+
+            })
+            .click(function () {
+                $('.pop-up').hide()
+            }).hover(function () {
+                $(this).css('background-image', 'url("./images/public-control/close-hover.png")')
+            }, function () {
+                $(this).css('background-image', 'url("./images/public-control/close.png")')
+            })
+        $('.prev')
+            .mousedown(function () {
+                $(this).css('background-image', 'url("./images/public-control/control/prev-click.png")')
+            })
+            .hover(function () {
+                $(this).css('background-image', 'url("./images/public-control/control/prev-hover.png")')
+            }, function () {
+                $(this).css('background-image', 'url("./images/public-control/control/prev.png")')
+            })
+        $('.next')
+            .mousedown(function () {
+                $(this).css('background-image', 'url("./images/public-control/control/next-click.png")')
+            })
+            .hover(function () {
+                $(this).css('background-image', 'url("./images/public-control/control/next-hover.png")')
+            }, function () {
+                $(this).css('background-image', 'url("./images/public-control/control/next.png")')
+            })
     },
     componentDidUpdate(){
     },
@@ -52,7 +79,7 @@ export default React.createClass({
     },
     render() {
         return (
-            <div id='public-control' className='container'>
+            <div id='public-control' className='container noselect'>
                 <div className='indicate'>
                     <div className='step-show'>
                         <div className='check-mark none'></div>
@@ -74,7 +101,7 @@ export default React.createClass({
                 <div className='control'>
                     <div className='prev'></div>
                     <div className='play'>
-                    <img className='center' src='./images/public-control/control/play.png'/>
+                        <img className='center' src='./images/public-control/control/play.png'/>
                     </div>
                     <div className='next'></div>
                 </div>
