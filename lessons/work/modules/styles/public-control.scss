@@ -1,6 +1,10 @@
 .container {
   position: relative;
   right: 0;
+  @mixin transition() {
+    transition: background-image 1s ease-in-out;
+
+  }
   div.indicate {
     position: absolute;
     right: 0;
@@ -9,6 +13,7 @@
       height: 34px;
       margin: 10px;
       float: left;
+      @include transition();
     }
     @mixin check-mark() {
       width: 21px;
@@ -20,7 +25,10 @@
       margin-right: 0;
 
       background: url('../../images/public-control/step-show/help.png');
+      &:hover {
+        background: url('../../images/public-control/step-show/help-hover.png');
 
+      }
       .check-mark {
         @include check-mark();
         background: url('../../images/public-control/step-show/check-mark.png')
@@ -29,6 +37,10 @@
     div.follow-me {
       @include indicate();
       background: url('../../images/public-control/follow-me/follow.png');
+      &:hover {
+        background: url('../../images/public-control/follow-me/follow-me-hover.png');
+
+      }
       .check-mark {
         @include check-mark();
         background: url('../../images/public-control/follow-me/check-mark.png')
@@ -57,6 +69,15 @@
         height: 23px;
         float: right;
         background: url('../../images/public-control/close.png');
+        @include transition();
+
+        &:hover {
+          background: url("../../images/public-control/close-hover.png");
+        }
+        &.click {
+          background: url("../../images/public-control/close-click.png");
+
+        }
       }
     }
     dl {
@@ -91,25 +112,41 @@
     .prev {
       @include control-btn();
       left: 18%;
-      background-image:url('../../images/public-control/control/prev.png');
+      background-image: url('../../images/public-control/control/prev.png');
+      @include transition();
+      &:hover {
+        background-image: url('../../images/public-control/control/prev-hover.png');
+      }
+      &.click {
+        background-image: url('../../images/public-control/control/prev-click.png');
+
+      }
     }
     .next {
       @include control-btn();
       right: 18%;
-      background-image:url('../../images/public-control/control/next.png');
+      background-image: url('../../images/public-control/control/next.png');
+      @include transition();
+      &:hover {
+        background-image: url('../../images/public-control/control/next-hover.png');
+      }
+      &.click {
+        background-image: url('../../images/public-control/control/next-click.png');
+
+      }
     }
     .play {
-      width:40px;
-      height:40px;
+      width: 40px;
+      height: 40px;
       left: 50%;
       position: absolute;
       transform: translateX(-50%);
       background-image: url('../../images/public-control/control/btn-bg.png');
     }
   }
-  .step{
-    width:83px;
+  .step {
+    width: 83px;
     height: 61px;
-    position:absolute;
+    position: absolute;
   }
 }

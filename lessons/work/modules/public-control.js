@@ -49,51 +49,28 @@ export default React.createClass({
                     .add('.pop-up')
                     .toggle()
             })
-            .hover(function () {
-                $(this).css('background-image', 'url("./images/public-control/step-show/help-hover.png")')
-            }, function () {
-                $(this).css('background-image', 'url("./images/public-control/step-show/help.png")')
-            })
+
         $('.follow-me')
             .click({isClicked: false}, function (evt) {
                 $(this).find('.check-mark').toggle()
                 randomSteps(evt);
 
             })
-            .hover(function () {
-                $(this).css('background-image', 'url("./images/public-control/follow-me/follow-me-hover.png")')
-            }, function () {
-                $(this).css('background-image', 'url("./images/public-control/follow-me/follow.png")')
-            })
+
         $('.close')
-            .mousedown(function () {
-                $(this).css('background-image', 'url("./images/public-control/close-click.png")')
-            })
             .click(function () {
                 $('.pop-up').hide()
-            }).hover(function () {
-                $(this).css('background-image', 'url("./images/public-control/close-hover.png")')
-            }, function () {
-                $(this).css('background-image', 'url("./images/public-control/close.png")')
             })
-        $('.prev')
+        $('.prev,.next,.close')
             .mousedown(function () {
-                $(this).css('background-image', 'url("./images/public-control/control/prev-click.png")')
+                $(this).addClass('click')
             })
-            .hover(function () {
-                $(this).css('background-image', 'url("./images/public-control/control/prev-hover.png")')
-            }, function () {
-                $(this).css('background-image', 'url("./images/public-control/control/prev.png")')
+            .mouseup(function () {
+                $(this).removeClass('click')
             })
-        $('.next')
-            .mousedown(function () {
-                $(this).css('background-image', 'url("./images/public-control/control/next-click.png")')
-            })
-            .hover(function () {
-                $(this).css('background-image', 'url("./images/public-control/control/next-hover.png")')
-            }, function () {
-                $(this).css('background-image', 'url("./images/public-control/control/next.png")')
-            })
+
+
+
     },
     componentDidUpdate(){
     },
