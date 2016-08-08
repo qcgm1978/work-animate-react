@@ -6,7 +6,6 @@ import { Router, Route, hashHistory } from 'react-router'
 import { render } from 'react-dom'
 import App from './modules/App'
 //render(<App/>, document.getElementById('app'))
-
 import Zero from './modules/zero'
 
 import One from './modules/one'
@@ -21,6 +20,8 @@ import Nine from './modules/nine'
 import Ten from './modules/ten'
 import Eleven from './modules/eleven'
 import Test from './modules/test'
+import PublicControl from './modules/public-control'
+
 window.$ = $
 render((
     <Router history={hashHistory}>
@@ -41,9 +42,7 @@ render((
         <Route path="/ten" component={Ten}/>
         <Route path="/eleven" component={Eleven}/>
         <Route path="/test" component={Test}/>
-        {
-            //<Route path="/rudux" component={Redux1}/>
-        }
+        <Route path="/public-control" component={PublicControl}/>
 
     </Router>
 ), document.getElementById('app'))
