@@ -47,7 +47,7 @@
     border-radius: 10px;
     border: 1px rgba(0, 0, 0, .2) solid;
     //background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5) 31px, #fff 31px);
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 31px, #fff  31px,#fff 98%,rgba(0,0,0,0.2));
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 31px, #fff 31px, #fff 98%, rgba(0, 0, 0, 0.2));
     .header {
       color: #fff;
       text-align: center;
@@ -59,17 +59,51 @@
         background: url('../../images/public-control/close.png');
       }
     }
-    dl{
+    dl {
       padding: 10px;
-      dt{
+      dt {
         color: #f28e00;
-        float:left;
+        float: left;
       }
-      dd{
+      dd {
         float: left;
         width: 200px;
         margin-left: 10px;
       }
+    }
+  }
+  .control {
+    width: 310px;
+    height: 40px;
+    background: url('../../images/public-control/control/bg.png');
+    position: fixed;
+    top: 500px;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    @mixin control-btn() {
+      width: 58px;
+      height: 16px;
+      top: 32%;
+      position: absolute;
+      background-repeat: no-repeat;
+    }
+    .prev {
+      @include control-btn();
+      left: 18%;
+      background-image:url('../../images/public-control/control/prev.png');
+    }
+    .next {
+      @include control-btn();
+      right: 18%;
+      background-image:url('../../images/public-control/control/next.png');
+    }
+    .play {
+      width:40px;
+      height:40px;
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+      background-image: url('../../images/public-control/control/btn-bg.png');
     }
   }
 }

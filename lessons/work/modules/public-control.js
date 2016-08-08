@@ -71,6 +71,13 @@ export default React.createClass({
                         <dd>introduce yourself to the students</dd>
                     </dl>
                 </div>
+                <div className='control'>
+                    <div className='prev'></div>
+                    <div className='play'>
+                    <img className='center' src='./images/public-control/control/play.png'/>
+                    </div>
+                    <div className='next'></div>
+                </div>
             </div>
         )
     }
