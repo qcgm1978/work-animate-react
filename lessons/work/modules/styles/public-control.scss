@@ -10,15 +10,66 @@
       margin: 10px;
       float: left;
     }
+    @mixin check-mark() {
+      width: 21px;
+      height: 16px;
+      transform: translate(6px, 10px);
+    }
     div.step-show {
       @include indicate();
       margin-right: 0;
 
       background: url('../../images/public-control/step-show/help.png');
+
+      .check-mark {
+        @include check-mark();
+        background: url('../../images/public-control/step-show/check-mark.png')
+      }
     }
     div.follow-me {
       @include indicate();
       background: url('../../images/public-control/follow-me/follow.png');
+      .check-mark {
+        @include check-mark();
+        background: url('../../images/public-control/follow-me/check-mark.png')
+      }
+    }
+  }
+  .pop-up {
+    position: absolute;
+    width: 320px;
+    height: 190px;
+    left: 20px;
+    bottom: 60px;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    color: #444;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px rgba(0, 0, 0, .2) solid;
+    //background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5) 31px, #fff 31px);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 31px, #fff  31px,#fff 98%,rgba(0,0,0,0.2));
+    .header {
+      color: #fff;
+      text-align: center;
+      padding: 5px 10px;
+      .close {
+        width: 23px;
+        height: 23px;
+        float: right;
+        background: url('../../images/public-control/close.png');
+      }
+    }
+    dl{
+      padding: 10px;
+      dt{
+        color: #f28e00;
+        float:left;
+      }
+      dd{
+        float: left;
+        width: 200px;
+        margin-left: 10px;
+      }
     }
   }
 }
