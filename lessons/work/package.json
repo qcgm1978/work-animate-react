@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack -d --progress --colors --watch",
-    "copy": "copyfiles modules/**/* images/**/* ./build",
+    "copy": "copyfiles 'modules/**/*' 'images/**/*' ./build",
     "copy1": "copyfiles -f ./modules/index.html ./build",
     "publish": "npm start & npm run copy & npm run copy1 & npm run zip",
     "zip": "zip -r demo.zip build"

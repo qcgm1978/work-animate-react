@@ -1,10 +1,11 @@
 require('./styles/public-control.scss')
 import React from 'react'
-import CommonMixin from './common'
+import Utilities from './utilities'
 
 export default React.createClass({
-    mixins: [CommonMixin],
+    mixins: [Utilities],
     getInitialState(){
+        return {}
     },
     componentDidMount () {
         $.fn.clickToggle = function (func1, func2) {
@@ -18,8 +19,31 @@ export default React.createClass({
             });
             return this;
         };
+        let that = this;
+
+        function randomSteps(evt) {
+            if (evt.data.isClicked) {
+                $('.step').remove()
+            } else {
+                for (let i = 0; i < 5; i++) {
+                    $('<div>')
+                        .addClass('step animated bounceInRight')
+                        .css({
+                            left: that.randomIntFromInterval(83, 600) - 83,
+                            top: that.randomIntFromInterval(61, 500) - 61,
+                            'background-image': "url('./images/public-control/follow-me/step-" +
+                            (i+1) +
+                            ".png')"
+
+                })
+                        .appendTo('.container')
+                }
+            }
+            evt.data.isClicked = !evt.data.isClicked;
+        }
+
         $('.step-show')
-            .click(function () {
+            .click(function (evt) {
                 $(this)
                     .find('.check-mark')
                     .add('.pop-up')
@@ -31,8 +55,10 @@ export default React.createClass({
                 $(this).css('background-image', 'url("./images/public-control/step-show/help.png")')
             })
         $('.follow-me')
-            .click(function () {
+            .click({isClicked: false}, function (evt) {
                 $(this).find('.check-mark').toggle()
+                randomSteps(evt);
+
             })
             .hover(function () {
                 $(this).css('background-image', 'url("./images/public-control/follow-me/follow-me-hover.png")')
@@ -40,9 +66,8 @@ export default React.createClass({
                 $(this).css('background-image', 'url("./images/public-control/follow-me/follow.png")')
             })
         $('.close')
-            .mousedown(function(){
+            .mousedown(function () {
                 $(this).css('background-image', 'url("./images/public-control/close-click.png")')
-
             })
             .click(function () {
                 $('.pop-up').hide()

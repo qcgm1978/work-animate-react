@@ -1,4 +1,4 @@
-#public-control {
+.container {
   position: relative;
   right: 0;
   div.indicate {
@@ -38,7 +38,7 @@
   .pop-up {
     position: absolute;
     width: 320px;
-    height: 190px;
+    min-height: 190px;
     left: 20px;
     bottom: 60px;
     font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
@@ -60,6 +60,7 @@
       }
     }
     dl {
+      margin: 0;
       padding: 10px;
       dt {
         color: #f28e00;
@@ -105,5 +106,10 @@
       transform: translateX(-50%);
       background-image: url('../../images/public-control/control/btn-bg.png');
     }
+  }
+  .step{
+    width:83px;
+    height: 61px;
+    position:absolute;
   }
 }
