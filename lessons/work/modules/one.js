@@ -10,6 +10,11 @@ export default React.createClass({
     componentDidMount () {
     },
     componentDidUpdate(){
+        for (let i = 0; i < this.sentences.length; i++) {
+            this.num = this.setPageState(this.num);
+            this.setArrowsUi(this.num);
+        }
+        this.setTxtHover('[src*="sentence-"]');
     },
     generateNodesFromJson(){
         this.getJson('modules/data/1.json');
@@ -18,7 +23,11 @@ export default React.createClass({
         return (
             <div id='one' className='container'>
                 {this.getElementsNodes()}
-                <PublicControl/>
+                <PublicControl toShowControl={false} arrows={{
+                    ordinal: 2,
+                    left: 271,
+                    top: 100
+                }}/>
             </div>
         )
     }

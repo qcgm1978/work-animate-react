@@ -101,7 +101,7 @@ export default React.createClass({
                 </div>
 
                 <PublicControl toShowControl={false} arrows={{
-                    ordinal: 2,
+                    ordinal: 3,
                     left: 497,
                     top: 379
                 }} />

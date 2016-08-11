@@ -1,33 +1,31 @@
 import React from 'react'
 import Redux from './redux'
+import Utilities from './utilities'
 
 import CommonMixin2 from './common2'
 
 export default   {
-    mixins: [CommonMixin2],
+    mixins: [CommonMixin2,Utilities],
+    num:-1,
+    flyEles (num, that) {
+        for (let i = 0; i < this.sentences.length; i++) {
+            num = this.setPageState(num);
+            that.setArrowsUi.call(that, num);
+        }
+        return num;
+    },
     componentDidMount: function () {
         Redux.dispatch({type: 'INCREMENT'})
         let classlet = "none animated";
         this.generateNodesFromJson(classlet)
-        let that = this, num = -1
+        let that = this
+        //this.num = this.flyEles(this.num, that);
         $('#right').on('click', (evt)=> {
-            num = this.setPageState(num);
-            that.setArrowsUi.call(that, num);
-        }).hover(()=> {
-            $('#right').css('background', "url('./images/common/right-hover.png')")
-        }, ()=> {
-            that.setArrowsUi.call(that, num);
-        }).mousedown(()=> {
-            $('#right').css('background', "url('./images/common/right-active.png')")
+            this.num = this.setPageState(this.num);
+            that.setArrowsUi.call(that, this.num);
         })
         $('#left').on('click', (i, n)=> {
-            num = this.leftClickEvt(num, that);
-        }).hover(()=> {
-            $('#left').css('background', "url('./images/common/left-hover.png')")
-        }, ()=> {
-            that.setArrowsUi.call(that, num);
-        }).mousedown(()=> {
-            $('#left').css('background', "url('./images/common/left-active.png')")
+            this.num = this.leftClickEvt(this.num, that);
         })
     },
     sentences: [],
@@ -39,17 +37,20 @@ export default   {
     },
     setArrowsUi: function (i) {
         if (i > -1) {
-            $('#left').css('background', 'url(./images/common/left.png)')
+            $('#left').css('opacity', 1)
         } else {
-            $('#left').css('background', 'url(./images/common/left-gray.png)')
+            $('#left').css('opacity', 0.5)
         }
         if (i < this.sentences.length - 1) {
-            $('#right').css('background', 'url(./images/common/right.png)')
+            $('#right').css('opacity', 1)
+
         } else {
-            $('#right').css('background', 'url(./images/common/right-gray.png)')
+            $('#right').css('opacity', 0.5)
+
         }
     },
     componentDidUpdate(){
+
     },
     getJson: function (url) {
         $.getJSON(url).done((data)=> {
@@ -74,8 +75,6 @@ export default   {
                     })
                 }
             </div>
-            <div id='left'></div>
-            <div id='right'></div>
         </div>
         return contents
     },

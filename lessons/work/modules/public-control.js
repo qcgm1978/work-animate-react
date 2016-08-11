@@ -16,12 +16,12 @@ export default React.createClass({
                 left: left,
                 top: top,
                 'background-image': "url('./images/public-control/follow-me/step-" +
-                (i + 1) +
+                i +
                 ".png')"
             })
             .appendTo('.container')
     },
-    componentDidMount () {
+     componentDidMount () {
         $.fn.clickToggle = function (func1, func2) {
             var funcs = [func1, func2];
             this.data('toggleclicked', 0);
@@ -76,6 +76,7 @@ export default React.createClass({
             .mouseup(function () {
                 $(this).removeClass('click')
             })
+        this.setTxtHover('dd');
     },
     componentDidUpdate(){
     },
@@ -86,7 +87,7 @@ export default React.createClass({
     },
     render() {
         return (
-            <div id='public-control' className='container noselect'>
+            <div id='public-control' className='noselect'>
                 <div className='indicate'>
                     <div className='step-show'>
                         <div className='check-mark none'></div>
@@ -109,11 +110,11 @@ export default React.createClass({
                     (()=> {
                         if (this.props.toShowControl) {
                             return <div className='control'>
-                                <div className='prev'></div>
+                                <div className='prev' id='left'></div>
                                 <div className='play'>
                                     <img className='center' src='./images/public-control/control/play.png'/>
                                 </div>
-                                <div className='next'></div>
+                                <div className='next' id='right'></div>
                             </div>
                         }
                     })()
