@@ -2,6 +2,7 @@ require('./styles/zero.scss')
 import React from 'react'
 import Redux from './redux'
 import CommonMixin2 from './common2'
+import PublicControl from './public-control.js'
 
 export default React.createClass({
     mixins: [CommonMixin2],
@@ -101,24 +102,7 @@ export default React.createClass({
                 <div id='left'></div>
 
                 <div id='right'></div>
-                {
-                    //<div id='left'></div>
-                    //<img id='the' src='./images/0/0-img-the.png'/>
-                    //< img id='alphabet' src='./images/0/0-img-alphabet.png'/>
-                    //<img id='dog' src='./images/0/0-img-dog.png'/>
-                    //<img id='letter' src='./images/0/0-img-letter.png'/>
-                    //<img id='cat' src='./images/0/0-img-cat.png'/>
-                    //<img id='tree' src='./images/0/0-img-tree.png'/>
-                    //
-                    //<div id='words'>
-                    //<img id='word1' className={classVar} src='./images/0/0-word1.png'/>
-                    //<img id='word2' className={classVar} src='./images/0/0-word2.png'/>
-                    //<img id='word3' className={classVar} src='./images/0/0-word3.png'/>
-                    //<img id='word4' className={classVar} src='./images/0/0-word4.png'/>
-                    //<img id='word5' className={classVar} src='./images/0/0-word5.png'/>
-                    //
-                    //</div>
-                }
+                <PublicControl/>
             </div>
         )
     }

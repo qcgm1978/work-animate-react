@@ -59,7 +59,10 @@ export default React.createClass({
 
         $('.close')
             .click(function () {
-                $('.pop-up').hide()
+                $('.step-show')
+                    .find('.check-mark')
+                    .add('.pop-up')
+                    .toggle()
             })
         $('.prev,.next,.close')
             .mousedown(function () {

@@ -58,8 +58,7 @@
     font-size: 18px;
     border-radius: 10px;
     border: 1px rgba(0, 0, 0, .2) solid;
-    //background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5) 31px, #fff 31px);
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 31px, #fff 31px, #fff 98%, rgba(0, 0, 0, 0.2));
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 31px, rgba(255, 255, 255, 0.9) 31px, rgba(255, 255, 255, 0.9) 98%, rgba(0, 0, 0, 0.2));
     .header {
       color: #fff;
       text-align: center;
@@ -101,7 +100,7 @@
     position: fixed;
     top: 500px;
     left: 50%;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -83%);
     @mixin control-btn() {
       width: 62px;
       height: 16px;
@@ -140,8 +139,13 @@
       height: 40px;
       left: 50%;
       position: absolute;
-      transform: translateX(-50%);
+      transform: translateX(-50%) rotate(0deg);
+      transition: transform .8s ease-in-out;
+
       background-image: url('../../images/public-control/control/btn-bg.png');
+      &:hover {
+        transform: translateX(-50%) rotate(360deg);
+      }
     }
   }
   .step {
