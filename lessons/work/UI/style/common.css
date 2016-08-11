@@ -1,0 +1,48 @@
+.container {
+  margin: 0 auto;
+  width: 600px;
+  height: 500px; }
+  .container #left {
+    position: absolute;
+    bottom: 3%;
+    left: 10px;
+    transform: translateY(-50%);
+    background: url("../../images/common/left-gray.png");
+    width: 50px;
+    height: 50px; }
+  .container #right {
+    position: absolute;
+    bottom: 3%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: url("../../images/common/right.png"); }
+  .container .none {
+    display: none; }
+
+.block {
+  display: block; }
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%); }
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+     not supported by any browser */ }
+
+/*# sourceMappingURL=common.css.map */
