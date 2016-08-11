@@ -7,6 +7,20 @@ export default React.createClass({
     getInitialState(){
         return {}
     },
+    flyArrow (i = 0, left = this.randomIntFromInterval(83, 600) - 83,
+              top = this.randomIntFromInterval(61, 500) - 61) {
+
+        $('<div>')
+            .addClass('step animated bounceInRight')
+            .css({
+                left: left,
+                top: top,
+                'background-image': "url('./images/public-control/follow-me/step-" +
+                (i + 1) +
+                ".png')"
+            })
+            .appendTo('.container')
+    },
     componentDidMount () {
         $.fn.clickToggle = function (func1, func2) {
             var funcs = [func1, func2];
@@ -21,22 +35,16 @@ export default React.createClass({
         };
         let that = this;
 
-        function randomSteps(evt) {
+        function randomSteps(evt, obj) {
             if (evt.data.isClicked) {
                 $('.step').remove()
             } else {
-                for (let i = 0; i < 5; i++) {
-                    $('<div>')
-                        .addClass('step animated bounceInRight')
-                        .css({
-                            left: that.randomIntFromInterval(83, 600) - 83,
-                            top: that.randomIntFromInterval(61, 500) - 61,
-                            'background-image': "url('./images/public-control/follow-me/step-" +
-                            (i+1) +
-                            ".png')"
-
-                })
-                        .appendTo('.container')
+                if (obj) {
+                    this.flyArrow(obj.ordinal, obj.left, obj.top);
+                } else {
+                    for (let i = 0; i < 5; i++) {
+                        this.flyArrow(i);
+                    }
                 }
             }
             evt.data.isClicked = !evt.data.isClicked;
@@ -49,14 +57,11 @@ export default React.createClass({
                     .add('.pop-up')
                     .toggle()
             })
-
         $('.follow-me')
             .click({isClicked: false}, function (evt) {
                 $(this).find('.check-mark').toggle()
-                randomSteps(evt);
-
+                randomSteps.call(that, evt, that.props.arrows);
             })
-
         $('.close')
             .click(function () {
                 $('.step-show')
@@ -71,9 +76,6 @@ export default React.createClass({
             .mouseup(function () {
                 $(this).removeClass('click')
             })
-
-
-
     },
     componentDidUpdate(){
     },
@@ -103,13 +105,19 @@ export default React.createClass({
                         <dd>introduce yourself to the students</dd>
                     </dl>
                 </div>
-                <div className='control'>
-                    <div className='prev'></div>
-                    <div className='play'>
-                        <img className='center' src='./images/public-control/control/play.png'/>
-                    </div>
-                    <div className='next'></div>
-                </div>
+                {
+                    (()=> {
+                        if (this.props.toShowControl) {
+                            return <div className='control'>
+                                <div className='prev'></div>
+                                <div className='play'>
+                                    <img className='center' src='./images/public-control/control/play.png'/>
+                                </div>
+                                <div className='next'></div>
+                            </div>
+                        }
+                    })()
+                }
             </div>
         )
     }

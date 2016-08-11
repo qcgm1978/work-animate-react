@@ -99,10 +99,12 @@ export default React.createClass({
                         })
                     }
                 </div>
-                <div id='left'></div>
 
-                <div id='right'></div>
-                <PublicControl/>
+                <PublicControl toShowControl={false} arrows={{
+                    ordinal: 2,
+                    left: 497,
+                    top: 379
+                }} />
             </div>
         )
     }
