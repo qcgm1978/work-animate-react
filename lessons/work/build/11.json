@@ -1,0 +1,73 @@
+{
+  "lessonName": "句子学习",
+  "SceneName": "高效热身",
+  "strict":true,
+  "scenes": [
+    {
+      "ScenePorperty": [
+        {
+          "background-color": "#ffffff"
+        }
+      ],
+      "SceneStaticNodes": [
+        {
+          "nodeName": "b",
+          "imageSrc": "./images/11/bg.png",
+          "nodeProperties": {
+            "width":"90%",
+            "height": 380,
+            "left": "3%",
+            "top": 20,
+            "borderRadius":"110px",
+            "border": "14px solid white"
+          }
+        },
+        {
+          "nodeName": "rope",
+          "imageSrc": "./images/11/rope.png",
+          "nodeProperties": {
+            "left": 489,
+            "top": 34
+          }
+        },
+        {
+          "nodeName": "cat",
+          "imageSrc": "./images/11/cat.png",
+          "nodeProperties": {
+            "left": 460,
+            "top": 34
+          }
+        },
+        {
+          "nodeName": "balloons",
+          "imageSrc": "./images/11/balloons.png",
+          "nodeProperties": {
+            "left": "50%",
+            "top": 45,
+            "transform":"translate(-50%,0)"
+          }
+        },
+        {
+          "nodeName": "rabit",
+          "imageSrc": "./images/11/mouse.gif",
+          "nodeProperties": {
+            "left": "40%",
+            "top": 321
+          }
+        }
+
+      ],
+      "SceneAnimateNodes": [
+        {
+          "nodeName": "sentence",
+          "imageSrc": "./images/11/balloon.png",
+          "nodeProperties": {
+            "left": 0,
+            "bottom": 5,
+            "display":"none"
+          }
+        }
+      ]
+    }
+  ]
+}

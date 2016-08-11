@@ -5,7 +5,7 @@ module.exports = {
     output: {
         path: "build",
         filename: 'bundle.js',
-        //publicPath: ''
+        publicPath: 'index-reactjs.html'
     },
     module: {
         loaders: [

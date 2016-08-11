@@ -7,8 +7,17 @@
     "start": "webpack -d --progress --colors --watch",
     "copy": "copyfiles 'modules/**/*' 'images/**/*' ./build",
     "copy1": "copyfiles -f ./modules/index.html ./build",
+    "copy-pure": "copyfiles -f ./bower_components/jquery/dist/jquery.js ./build/script",
+    "copy-pure-html": "copyfiles -f ./modules/index-pure.html ./build/index.html",
+    "copy-pure-img": "copyfiles './images/public-control/**/*' ./build/images/public-control",
     "publish": "npm start & npm run copy & npm run copy1 & npm run zip",
-    "zip": "zip -r demo.zip build"
+    "zip": "zip -r demo.zip build",
+    "zip-pure": "zip -r demo.zip build/images build/script build/style build/index.html",
+    "sass": "mkdir build/style & sass modules/styles/common.scss build/style/common.css",
+    "sass1": "sass modules/styles/public-control.scss build/style/public-control.css",
+    "sass2": "sass modules/styles/eleven.scss build/style/eleven.css",
+    "babel": "babel ./modules/public-control-pure.js -o ./build/script/public-control-pure.js",
+    "publish-pure": "npm run sass"
   },
   "author": "",
   "license": "ISC",
