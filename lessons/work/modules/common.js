@@ -7,19 +7,18 @@ import CommonMixin2 from './common2'
 export default   {
     mixins: [CommonMixin2, Utilities],
     num: -1,
-    flyEles (num, that) {
+    flyEles () {
         for (let i = 0; i < this.sentences.length; i++) {
-            num = this.setPageState(num);
-            that.setArrowsUi.call(that, num);
+            this.num = this.setPageState(this.num);
+            this.setArrowsUi(this.num);
         }
-        return num;
+        return this.num;
     },
     componentDidMount: function () {
         Redux.dispatch({type: 'INCREMENT'})
         let classlet = "none animated";
         this.generateNodesFromJson(classlet)
         let that = this
-        //this.num = this.flyEles(this.num, that);
         $('#right').on('click', (evt)=> {
             this.num = this.setPageState(this.num);
             that.setArrowsUi.call(that, this.num);
@@ -27,7 +26,9 @@ export default   {
         $('#left').on('click', (i, n)=> {
             this.num = this.leftClickEvt(this.num, that);
             that.setArrowsUi.call(that, this.num);
-
+        })
+        $('.play').click(()=> {
+            this.flyEles()
         })
     },
     sentences: [],

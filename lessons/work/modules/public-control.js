@@ -34,7 +34,7 @@ export default React.createClass({
         };
         let that = this;
 
-        function randomSteps(evt, arrows) {
+        function generateSteps(evt, arrows) {
             if (evt.data.isClicked) {
                 $('.step').remove()
             } else {
@@ -64,7 +64,7 @@ export default React.createClass({
         $('.follow-me')
             .click({isClicked: false}, function (evt) {
                 $(this).find('.check-mark').toggle()
-                randomSteps.call(that, evt, that.props.arrows);
+                generateSteps.call(that, evt, that.props.arrows);
             })
         $('.close')
             .click(function () {
