@@ -6,21 +6,28 @@ export default React.createClass({
     getInitialState(){
         return {
             popup: 'none',
-            face: 'none',
-            options:''
+            face: this.props.face,
+            options: this.props.options
         }
+    },
+    componentWillReceiveProps(){
+        this.setState({
+            face: this.props.face,
+            options: this.props.options,
+            popup:'none'
+        })
     },
     componentDidMount () {
         $('#question').click(()=> {
             this.setState({
                 popup: 'd-i-b',
-                options:'',
+                options: '',
                 face: 'none'
             })
         })
         $('#options div').click(()=> {
             this.setState({
-                options:'none',
+                options: 'none',
                 face: ''
             })
         })
