@@ -29,8 +29,6 @@ export default React.createClass({
     generateNodesFromJson(){
         this.getJson('modules/data/8.json');
     },
-    generateNodes (classVar) {
-    },
     render() {
         return (
             <div id='eight' className='container'>

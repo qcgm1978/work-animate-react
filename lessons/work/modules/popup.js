@@ -7,7 +7,9 @@ export default React.createClass({
         return {
             popup: 'none',
             face: this.props.face,
-            options: this.props.options
+            options: this.props.options,
+            chosen:'',
+            toShow:'none'
         }
     },
     componentWillReceiveProps(){
@@ -22,13 +24,16 @@ export default React.createClass({
             this.setState({
                 popup: 'd-i-b',
                 options: '',
-                face: 'none'
+                face: 'none',
+                toShow:'none'
             })
         })
-        $('#options div').click(()=> {
+        $('#options div').click((evt)=> {
             this.setState({
                 options: 'none',
-                face: ''
+                face: '',
+                chosen:$(evt.target).text(),
+                toShow:''
             })
         })
     },
@@ -37,6 +42,7 @@ export default React.createClass({
     generateNodesFromJson(){
     },
     render() {
+        let fillClass='fill '+this.state.toShow;
         return (
             <div className={this.props.className} id="popup-container">
                 <div id='popup' className={this.state.popup} style={this.props.popup}>
@@ -49,6 +55,7 @@ export default React.createClass({
                     <img id='right-face' className={this.state.face} src="./images/phonics/icons/right.png"
                         />
                     <img className={this.state.face} src="./images/phonics/icons/wrong.png"/>
+                    <span className={fillClass}>{this.state.chosen}</span>
                 </div>
 
                 <img id='question' src="./images/8/sentence.png" style={this.props.popup}/>
