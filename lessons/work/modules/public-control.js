@@ -9,7 +9,6 @@ export default React.createClass({
     },
     flyArrow (i = 0, left = this.randomIntFromInterval(83, 600) - 83,
               top = this.randomIntFromInterval(61, 500) - 61) {
-
         $('<div>')
             .addClass('step animated bounceInRight')
             .css({
@@ -21,7 +20,7 @@ export default React.createClass({
             })
             .appendTo('.container')
     },
-     componentDidMount () {
+    componentDidMount () {
         $.fn.clickToggle = function (func1, func2) {
             var funcs = [func1, func2];
             this.data('toggleclicked', 0);
@@ -35,13 +34,18 @@ export default React.createClass({
         };
         let that = this;
 
-        function randomSteps(evt, obj) {
+        function randomSteps(evt, arrows) {
             if (evt.data.isClicked) {
                 $('.step').remove()
             } else {
-                if (obj) {
-                    this.flyArrow(obj.ordinal, obj.left, obj.top);
-                } else {
+                if ($.isPlainObject(arrows)) {
+                    this.flyArrow(arrows.ordinal, arrows.left, arrows.top);
+                } else if ($.isArray(arrows)) {
+                    $.each(arrows, (i, n)=> {
+                        this.flyArrow(n.ordinal, n.left, n.top);
+                    })
+                }
+                else {
                     for (let i = 0; i < 5; i++) {
                         this.flyArrow(i);
                     }
