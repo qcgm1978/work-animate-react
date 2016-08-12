@@ -5,8 +5,8 @@ import Utilities from './utilities'
 import CommonMixin2 from './common2'
 
 export default   {
-    mixins: [CommonMixin2,Utilities],
-    num:-1,
+    mixins: [CommonMixin2, Utilities],
+    num: -1,
     flyEles (num, that) {
         for (let i = 0; i < this.sentences.length; i++) {
             num = this.setPageState(num);
@@ -26,6 +26,8 @@ export default   {
         })
         $('#left').on('click', (i, n)=> {
             this.num = this.leftClickEvt(this.num, that);
+            that.setArrowsUi.call(that, this.num);
+
         })
     },
     sentences: [],
@@ -43,14 +45,11 @@ export default   {
         }
         if (i < this.sentences.length - 1) {
             $('#right').css('opacity', 1)
-
         } else {
             $('#right').css('opacity', 0.5)
-
         }
     },
     componentDidUpdate(){
-
     },
     getJson: function (url) {
         $.getJSON(url).done((data)=> {
