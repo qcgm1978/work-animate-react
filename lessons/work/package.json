@@ -17,7 +17,8 @@
     "sass1": "sass modules/styles/public-control.scss build/style/public-control.css",
     "sass2": "sass modules/styles/eleven.scss build/style/eleven.css",
     "babel": "babel ./modules/public-control-pure.js -o ./build/script/public-control-pure.js",
-    "publish-pure": "npm run sass"
+    "publish-pure": "npm run sass",
+    "connect":" sudo umount -f '/Volumes/data'"
   },
   "author": "",
   "license": "ISC",

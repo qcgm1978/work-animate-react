@@ -1,7 +1,6 @@
 require('./styles/two.scss')
 import React from 'react'
 import CommonMixin from './common'
-import PublicControl from './public-control.js'
 
 export default React.createClass({
     mixins: [CommonMixin],
@@ -20,15 +19,7 @@ export default React.createClass({
         return (
             <div id='two' className='container'>
                 {this.getElementsNodes()}
-                <PublicControl toShowControl={true} arrows={[{
-                    ordinal: 2,
-                    left: 311,
-                    top: 400
-                },{
-                    ordinal: 1,
-                    left: 390,
-                    top: 400
-                }]} />
+
             </div>
         )
     }

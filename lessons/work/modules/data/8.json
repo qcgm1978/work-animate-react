@@ -20,66 +20,19 @@
             "top": "390"
           }
         },
+
         {
-          "nodeName": "house",
-          "imageSrc": "./images/8/house.png",
+          "nodeName": "apple",
+          "imageSrc": "./images/8/apple.png",
           "nodeProperties": {
             "width": "312",
             "height": "136",
-            "left": "198",
-            "top": "87"
+            "left": "91",
+            "top": "243"
           }
         },
-        {
-          "nodeName": "sentence",
-          "imageSrc": "./images/8/sentence.png",
-          "nodeProperties": {
-            "width": "312",
-            "height": "136",
-            "left": "34",
-            "top": "145"
-          }
-        },
-        {
-          "nodeName": "shape-a&apple",
-          "imageSrc": "./images/8/shape-a&apple.png",
-          "nodeProperties": {
-            "width": "312",
-            "height": "136",
-            "left": "16",
-            "top": "230"
-          }
-        },
-        {
-          "nodeName": "shape-b",
-          "imageSrc": "./images/8/shape-b.png",
-          "nodeProperties": {
-            "width": "312",
-            "height": "136",
-            "left": "319",
-            "top": "212"
-          }
-        },
-        {
-          "nodeName": "shape-c",
-          "imageSrc": "./images/8/shape-c.png",
-          "nodeProperties": {
-            "width": "312",
-            "height": "136",
-            "left": "413",
-            "top": "390"
-          }
-        },
-        {
-          "nodeName": "word-a",
-          "imageSrc": "./images/8/word-a.png",
-          "nodeProperties": {
-            "width": "312",
-            "height": "136",
-            "left": "413",
-            "top": "130"
-          }
-        },
+
+
 
         {
           "nodeName": "word-c",

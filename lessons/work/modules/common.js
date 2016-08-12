@@ -3,6 +3,7 @@ import Redux from './redux'
 import Utilities from './utilities'
 
 import CommonMixin2 from './common2'
+import PublicControl from './public-control.js'
 
 export default   {
     mixins: [CommonMixin2, Utilities],
@@ -44,7 +45,7 @@ export default   {
         } else {
             $('#left').css('opacity', 0.5)
         }
-        if (i < this.sentences.length - 1) {
+        if (i < this.list.length - 1) {
             $('#right').css('opacity', 1)
         } else {
             $('#right').css('opacity', 0.5)
@@ -75,6 +76,15 @@ export default   {
                     })
                 }
             </div>
+            <PublicControl toShowControl={true} arrows={[{
+                    ordinal: 2,
+                    left: 311,
+                    top: 400
+                },{
+                    ordinal: 1,
+                    left: 390,
+                    top: 400
+                }]} />
         </div>
         return contents
     },
