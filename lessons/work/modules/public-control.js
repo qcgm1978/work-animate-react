@@ -91,39 +91,42 @@ export default React.createClass({
     },
     render() {
         return (
-            <div id='public-control' className='noselect'>
-                <div className='indicate'>
-                    <div className='step-show'>
-                        <div className='check-mark'></div>
-                    </div>
-                    <div className='follow-me'>
-                        <div className='check-mark none'></div>
+            <div className='public-container'>
+                <div id='public-control' className='noselect'>
+                    <div className='indicate'>
+                        <div className='step-show'>
+                            <div className='check-mark'></div>
+                        </div>
+                        <div className='follow-me'>
+                            <div className='check-mark none'></div>
 
+                        </div>
                     </div>
-                </div>
-                <div className='pop-up'>
-                    <div className='header'>STEP SHOW
-                        <div className='close'></div>
+                    <div className='pop-up'>
+                        <div className='header'>STEP SHOW
+                            <div className='close'></div>
+                        </div>
+                        <dl>
+                            <dt>STEP 1</dt>
+                            <dd>introduce yourself to the students</dd>
+                        </dl>
                     </div>
-                    <dl>
-                        <dt>STEP 1</dt>
-                        <dd>introduce yourself to the students</dd>
-                    </dl>
-                </div>
-                {
-                    (()=> {
-                        if (this.props.toShowControl) {
-                            return <div className='control'>
-                                <div className='prev' id='left'></div>
-                                <div className='play'>
-                                    <img className='center' src='./images/public-control/control/play.png'/>
+                    {
+                        (()=> {
+                            if (this.props.toShowControl) {
+                                return <div className='control'>
+                                    <div className='prev' id='left'></div>
+                                    <div className='play'>
+                                        <img className='center' src='./images/public-control/control/play.png'/>
+                                    </div>
+                                    <div className='next' id='right'></div>
                                 </div>
-                                <div className='next' id='right'></div>
-                            </div>
-                        }
-                    })()
-                }
+                            }
+                        })()
+                    }
+                </div>
             </div>
+
         )
     }
 })

@@ -1,6 +1,30 @@
 #nine {
 
   background: url('../../images/9/bg.png');
-  position:relative;
+  position: relative;
+  #a {
+    position: absolute;
+    left: 8px;
+    top: 140px;
+  }
+  #b {
+    position: absolute;
+    left: 23px;
+    top: 201px;
+  }
+  #c {
+    position: absolute;
+    left: 42px;
+    top: 262px;
+  }
+  p {
+    float: right;
+    font-size: 24px;
+    margin: 10px;
+    margin-left: 20px;
+  }
+  .apple, .ball, .cat {
+    transform: translate(10px, -10px);
 
+  }
 }

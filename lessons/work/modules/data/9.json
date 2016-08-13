@@ -29,68 +29,11 @@
             "top": "198"
           }
         }
+
       ],
       "SceneAnimateNodes": [
-        {
-          "nodeName": "a",
-          "imageSrc": "./images/9/a.png",
-          "nodeProperties": {
-            "width": "312",
-            "height": "136",
-            "left": "18",
-            "top": "151"
-          }
-        },
-        {
-          "nodeName": "a",
-          "imageSrc": "./images/9/apple.png",
-          "nodeProperties": {
-            "width": "312",
-            "height": "136",
-            "left": "268",
-            "top": "137"
-          }
-        },
-        {
-          "nodeName": "b",
-          "imageSrc": "./images/9/b.png",
-          "nodeProperties": {
-            "width": "312",
-            "height": "136",
-            "left": "65",
-            "top": "198"
-          }
-        },
-        {
-          "nodeName": "ball",
-          "imageSrc": "./images/9/ball.png",
-          "nodeProperties": {
-            "width": "312",
-            "height": "136",
-            "left": "274",
-            "top": "199"
-          }
-        },
-        {
-          "nodeName": "c",
-          "imageSrc": "./images/9/c.png",
-          "nodeProperties": {
-            "width": "312",
-            "height": "136",
-            "left": "112",
-            "top": "270"
-          }
-        },
-        {
-          "nodeName": "cat",
-          "imageSrc": "./images/9/cat.png",
-          "nodeProperties": {
-            "width": "312",
-            "height": "136",
-            "left": "323",
-            "top": "255"
-          }
-        }
+
+
       ]
     }
   ]

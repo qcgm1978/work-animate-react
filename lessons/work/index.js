@@ -1,3 +1,4 @@
+import './node_modules/normalize.css/normalize.css'
 import './bower_components/animate.css/animate.css'
 import './modules/styles/common.scss'
 import $ from './bower_components/jquery/dist/jquery.js'

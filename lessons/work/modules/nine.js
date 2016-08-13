@@ -5,26 +5,46 @@ import CommonMixin from './common'
 export default React.createClass({
     mixins: [CommonMixin],
     getInitialState(){
-
     },
     componentDidMount () {
-
     },
     componentDidUpdate(){
+        $('#a,#b,#c').find(':first').click(function func() {
+            $(this).nextAll().animateCss('pulse', true)
+        })
     },
     generateNodesFromJson(){
         this.getJson('modules/data/9.json');
-
     },
     generateNodes (classVar) {
-
     },
     render() {
         return (
             <div id='nine' className='container'>
-
-
                 {this.getElementsNodes()}
+                <div>
+                    <div id='a'>
+                        <img src="./images/9/apple.png"/>
+                        <img className='apple none' src="./images/9/a.png"/>
+
+                        <p className='none'>is for apple, a a</p></div>
+
+                    <div id='b'>
+                        <img src="./images/9/ball.png"/>
+
+                        <img className='ball none' src="./images/9/b.png"/>
+
+                        <p className='none'>is for ball, b b</p></div>
+
+                    <div id='c'>
+                        <img src="./images/9/cat.png"/>
+
+                        <img className='cat none' src="./images/9/c.png"/>
+
+                        <p className='none'>is for cat, c c</p></div>
+
+                </div>
+
             </div>
         )
     }

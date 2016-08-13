@@ -14,8 +14,11 @@ let obj = {
     },
     extendJquery(){
         $.fn.extend({
-            animateCss: function (animationName) {
+            animateCss: function (animationName,isHidden) {
                 var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+                if(isHidden){
+                    $(this).removeClass('none')
+                }
                 $(this).addClass('animated ' + animationName).one(animationEnd, function () {
                     $(this).removeClass('animated ' + animationName);
                 });
