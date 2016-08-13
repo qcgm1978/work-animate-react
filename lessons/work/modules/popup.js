@@ -6,17 +6,19 @@ export default React.createClass({
     getInitialState(){
         return {
             popup: 'none',
-            face: this.props.face,
+            faceRight: this.props.face,
+            faceWrong: this.props.face,
             options: this.props.options,
-            chosen:'',
-            toShow:'none'
+            chosen: '',
+            toShow: 'none'
         }
     },
     componentWillReceiveProps(){
         this.setState({
-            face: this.props.face,
+            faceRight: this.props.face,
+            faceWrong: this.props.face,
             options: this.props.options,
-            popup:'none'
+            popup: 'none'
         })
     },
     componentDidMount () {
@@ -24,16 +26,27 @@ export default React.createClass({
             this.setState({
                 popup: 'd-i-b',
                 options: '',
-                face: 'none',
-                toShow:'none'
+                faceRight: 'none',
+                faceWrong:'none',
+                toShow: 'none'
             })
         })
         $('#options div').click((evt)=> {
+            let word = /([^/]+)\.png$/.exec(this.props.src)[1],str='',strWrong=''
+            if ($(evt.target).text().indexOf(word)!=-1){
+                str=''
+                strWrong='none'
+            }else{
+                str='none'
+                strWrong=''
+            }
+            debugger;
             this.setState({
                 options: 'none',
-                face: '',
-                chosen:$(evt.target).text(),
-                toShow:''
+                faceRight: str,
+                faceWrong:strWrong,
+                chosen: $(evt.target).text(),
+                toShow: ''
             })
         })
     },
@@ -42,19 +55,18 @@ export default React.createClass({
     generateNodesFromJson(){
     },
     render() {
-        let fillClass='fill '+this.state.toShow;
+        let fillClass = 'fill ' + this.state.toShow;
         return (
             <div className={this.props.className} id="popup-container">
                 <div id='popup' className={this.state.popup} style={this.props.popup}>
                     <div id='options' className={this.state.options}>
                         <div>A. apple</div>
                         <div>B. cat</div>
-                        <div>C. jump</div>
-                        <div>D. fly</div>
+                        <div>C. ball</div>
                     </div>
-                    <img id='right-face' className={this.state.face} src="./images/phonics/icons/right.png"
+                    <img id='right-face' className={this.state.faceRight} src="./images/phonics/icons/right.png"
                         />
-                    <img className={this.state.face} src="./images/phonics/icons/wrong.png"/>
+                    <img className={this.state.faceWrong} src="./images/phonics/icons/wrong.png"/>
                     <span className={fillClass}>{this.state.chosen}</span>
                 </div>
 

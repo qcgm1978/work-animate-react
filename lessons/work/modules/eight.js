@@ -22,7 +22,8 @@ export default React.createClass({
             $(this).addClass('pulse')
             that.setState({
                 popup: '',
-                position: $(this).position()
+                position: $(this).position(),
+                src:$(this).attr('src')
             })
         });
     },
@@ -37,7 +38,7 @@ export default React.createClass({
 
                     this.getElementsNodes()
                 }
-                <Popup className={this.state.popup} popup={this.state.position} face='none' options={''}/>
+                <Popup className={this.state.popup} popup={this.state.position} face='none' options={''} src={this.state.src}/>
             </div>
         )
     }
