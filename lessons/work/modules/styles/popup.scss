@@ -1,6 +1,6 @@
 #popup-container {
   #popup {
-    z-index:10;
+    z-index: 10;
     position: absolute;
     min-width: 100px;
     max-width: 200px;
@@ -17,19 +17,29 @@
         background: #7BD339;
       }
     }
-    img{
+    img {
       position: absolute;
-      transform: translate(0,-100%);
+      transform: translate(0, -100%);
     }
-    .fill{
+    .fill {
       position: absolute;
       top: 10px;
       left: 30px;
       pointer-events: none;
     }
   }
-  #question {
-    transform: translate(-80px, -100%);
+  #question-container {
+    position: absolute;
 
+    #question {
+      transform: translate(-80px, -100%);
+      position: absolute;
+    }
+    #num-icon {
+      position: absolute;
+      pointer-events: none;
+      left: 30px;
+      top: -41px;
+    }
   }
 }

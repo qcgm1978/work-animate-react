@@ -11,7 +11,8 @@ export default React.createClass({
             options: this.props.options,
             chosen: '',
             toShow: 'none',
-            color:'right-txt'
+            color: 'right-txt',
+            toShowNum: ''
         }
     },
     componentWillReceiveProps(){
@@ -19,7 +20,8 @@ export default React.createClass({
             faceRight: this.props.face,
             faceWrong: this.props.face,
             options: this.props.options,
-            popup: 'none'
+            popup: 'none',
+            toShowNum: ''
         })
     },
     componentDidMount () {
@@ -29,28 +31,30 @@ export default React.createClass({
                 options: '',
                 faceRight: 'none',
                 faceWrong: 'none',
-                toShow: 'none'
+                toShow: 'none',
+                toShowNum: ''
             })
         })
+
         $('#options div').click((evt)=> {
-            let word = /([^/]+)\.png$/.exec(this.props.src)[1], str = '', strWrong = '',color=''
-            if ($(evt.target).text().indexOf(word) != -1) {
+            let str = '', strWrong = '', color = ''
+            if ($(evt.target).text().indexOf(this.props.word) != -1) {
                 str = ''
                 strWrong = 'none'
-                color='right-txt'
+                color = 'right-txt'
             } else {
                 str = 'none'
                 strWrong = ''
-                color='wrong-txt'
+                color = 'wrong-txt'
             }
-            debugger;
             this.setState({
                 options: 'none',
                 faceRight: str,
                 faceWrong: strWrong,
                 chosen: $(evt.target).text(),
                 toShow: '',
-                color:color
+                toShowNum: 'none',
+                color: color
             })
             setTimeout(()=> {
                 this.setState({
@@ -80,7 +84,13 @@ export default React.createClass({
                     <span className={fillClass}>{this.state.chosen}</span>
                 </div>
 
-                <img id='question' src="./images/8/sentence.png" style={this.props.popup}/>
+                <div style={this.props.popup} id='question-container'>
+                    <img id='question' src="./images/8/sentence.png"/>
+                    <img className={this.state.toShowNum} id='num-icon' src={'./images/public-control/judgement/icons/' +
+                     this.props.num +
+                      '.png'}/>
+                </div>
+
 
             </div>
 

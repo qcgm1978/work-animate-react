@@ -10,7 +10,8 @@ export default React.createClass({
             position: {
                 left: 0,
                 top: 0
-            }
+            },
+            src:''
         }
     },
     componentDidMount () {
@@ -31,6 +32,17 @@ export default React.createClass({
         this.getJson('modules/data/8.json');
     },
     render() {
+        let exec = /([^/]+)\.png$/.exec(this.state.src),word='',num=1;
+        if ($.isArray(exec)) {
+            word = exec[1]
+            if (word == 'apple') {
+                num = 1;
+            } else if (word == 'ball') {
+                num = 2;
+            } else {
+                num = 3
+            }
+        }
         return (
             <div id='eight' className='container'>
                 {
@@ -38,7 +50,7 @@ export default React.createClass({
 
                     this.getElementsNodes(true)
                 }
-                <Popup className={this.state.popup} popup={this.state.position} face='none' options={''} src={this.state.src}/>
+                <Popup className={this.state.popup} popup={this.state.position} face='none' options={''} word={word} num={num}/>
             </div>
         )
     }
