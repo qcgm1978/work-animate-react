@@ -1,5 +1,7 @@
 require('./styles/public-control.scss')
+//import '../bower_components/jquery-ui-1.12.0.custom/jquery-ui.js'
 import React from 'react'
+
 import Utilities from './utilities'
 
 export default React.createClass({
@@ -21,6 +23,7 @@ export default React.createClass({
             .appendTo('.container')
     },
     componentDidMount () {
+        $( ".pop-up" ).draggable()
         $.fn.clickToggle = function (func1, func2) {
             var funcs = [func1, func2];
             this.data('toggleclicked', 0);
@@ -102,7 +105,7 @@ export default React.createClass({
 
                         </div>
                     </div>
-                    <div className='pop-up'>
+                    <div className='pop-up' draggable='true' onDragStart={Utilities.dragStart} onDragOver={Utilities.dragOver} onDragEnd={Utilities.drop}>
                         <div className='header'>STEP SHOW
                             <div className='close'></div>
                         </div>
