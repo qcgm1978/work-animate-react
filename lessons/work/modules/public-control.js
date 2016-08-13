@@ -94,14 +94,14 @@ export default React.createClass({
             <div id='public-control' className='noselect'>
                 <div className='indicate'>
                     <div className='step-show'>
-                        <div className='check-mark none'></div>
+                        <div className='check-mark'></div>
                     </div>
                     <div className='follow-me'>
                         <div className='check-mark none'></div>
 
                     </div>
                 </div>
-                <div className='pop-up none'>
+                <div className='pop-up'>
                     <div className='header'>STEP SHOW
                         <div className='close'></div>
                     </div>

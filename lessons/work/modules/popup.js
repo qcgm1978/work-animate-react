@@ -10,7 +10,8 @@ export default React.createClass({
             faceWrong: this.props.face,
             options: this.props.options,
             chosen: '',
-            toShow: 'none'
+            toShow: 'none',
+            color:'right-txt'
         }
     },
     componentWillReceiveProps(){
@@ -27,27 +28,36 @@ export default React.createClass({
                 popup: 'd-i-b',
                 options: '',
                 faceRight: 'none',
-                faceWrong:'none',
+                faceWrong: 'none',
                 toShow: 'none'
             })
         })
         $('#options div').click((evt)=> {
-            let word = /([^/]+)\.png$/.exec(this.props.src)[1],str='',strWrong=''
-            if ($(evt.target).text().indexOf(word)!=-1){
-                str=''
-                strWrong='none'
-            }else{
-                str='none'
-                strWrong=''
+            let word = /([^/]+)\.png$/.exec(this.props.src)[1], str = '', strWrong = '',color=''
+            if ($(evt.target).text().indexOf(word) != -1) {
+                str = ''
+                strWrong = 'none'
+                color='right-txt'
+            } else {
+                str = 'none'
+                strWrong = ''
+                color='wrong-txt'
             }
             debugger;
             this.setState({
                 options: 'none',
                 faceRight: str,
-                faceWrong:strWrong,
+                faceWrong: strWrong,
                 chosen: $(evt.target).text(),
-                toShow: ''
+                toShow: '',
+                color:color
             })
+            setTimeout(()=> {
+                this.setState({
+                    faceRight: 'none',
+                    faceWrong: 'none'
+                })
+            }, 2000);
         })
     },
     componentDidUpdate(){
@@ -55,7 +65,7 @@ export default React.createClass({
     generateNodesFromJson(){
     },
     render() {
-        let fillClass = 'fill ' + this.state.toShow;
+        let fillClass = this.state.color + ' fill ' + this.state.toShow;
         return (
             <div className={this.props.className} id="popup-container">
                 <div id='popup' className={this.state.popup} style={this.props.popup}>

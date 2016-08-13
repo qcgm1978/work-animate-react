@@ -64,7 +64,7 @@ export default   {
             })
         })
     },
-    getElementsNodes(){
+    getElementsNodes(notToShowControl){
         let contents = <div>
             {this.state.eles.map(function (item, i) {
                 return item
@@ -76,7 +76,7 @@ export default   {
                     })
                 }
             </div>
-            <PublicControl toShowControl={true} arrows={[{
+            <PublicControl toShowControl={!notToShowControl} arrows={[{
                     ordinal: 2,
                     left: 311,
                     top: 400

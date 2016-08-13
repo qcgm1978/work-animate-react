@@ -36,7 +36,7 @@ export default React.createClass({
                 {
 
 
-                    this.getElementsNodes()
+                    this.getElementsNodes(true)
                 }
                 <Popup className={this.state.popup} popup={this.state.position} face='none' options={''} src={this.state.src}/>
             </div>
