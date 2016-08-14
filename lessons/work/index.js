@@ -1,14 +1,13 @@
 import './node_modules/normalize.css/normalize.css'
 import './bower_components/animate.css/animate.css'
 import './modules/styles/common.scss'
-//import $ from './bower_components/jquery/dist/jquery.js'
+import $ from './bower_components/jquery/dist/jquery.js'
+import './bower_components/jquery-ui-1.12.0.custom/jquery-ui.js'
 import React from 'react'
 import { Router, Route, hashHistory } from 'react-router'
 import { render } from 'react-dom'
 import App from './modules/App'
-//render(<App/>, document.getElementById('app'))
 import Zero from './modules/zero'
-
 import One from './modules/one'
 import Two from './modules/two'
 import Three from './modules/three'
@@ -23,7 +22,6 @@ import Eleven from './modules/eleven'
 import Test from './modules/test'
 import PublicControl from './modules/public-control'
 
-//window.$ = $
 render((
     <Router history={hashHistory}>
         <Route path="/" component={App}/>
