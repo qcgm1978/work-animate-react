@@ -18,10 +18,10 @@ export default React.createClass({
     componentWillUnmount(){
         //Redux.dispatch({
         //    stepShow:$('.step-show .check-mark').is(':visible'),
-        //    followMe:$('.follow-me .check-mark').is(':visible'),
+        //    follwMe:$('.follow-me .check-mark').is(':visible'),
         //    type:'public-control'
         //
-        //})
+        //}o)
 
     },
     generateNodesFromJson(){

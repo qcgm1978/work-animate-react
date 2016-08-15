@@ -19,7 +19,7 @@ export default   {
             let exec = /#\/(.+)\?.+/.exec(location.href);
             let val = exec[1]
             let index = this.list.indexOf(val);
-            let nextInd = (index == this.list.length - 1) ? 0 : (index + 1)
+            let nextInd = (index == this.list.length - 1) ? index : (index + 1)
             this.context.router.push('/' + this.list[nextInd])
         }
         return num
@@ -59,7 +59,7 @@ export default   {
             let exec = /#\/(.+)\?.+/.exec(location.href);
             let val = exec[1]
             let nextInd = this.list.indexOf(val) - 1
-            nextInd = nextInd == -1 ? (this.list.length - 1) : nextInd
+            nextInd = nextInd == -1 ? (0) : nextInd
             that.context.router.push('/' + this.list[nextInd])
         }
         num == -1 ? null : num--

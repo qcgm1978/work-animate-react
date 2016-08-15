@@ -2,7 +2,6 @@ import React from 'react'
 import Utilities from './utilities'
 
 import CommonMixin2 from './common2'
-import PublicControl from './public-control.js'
 
 export default   {
     mixins: [CommonMixin2, Utilities],
