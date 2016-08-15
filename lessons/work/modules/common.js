@@ -6,12 +6,11 @@ import CommonMixin2 from './common2'
 export default   {
     mixins: [CommonMixin2, Utilities],
     num: -1,
-    flyEles () {
-        for (let i = 0; i < this.sentences.length; i++) {
+    playPics () {
+        this.loopPicsId = setInterval(()=> {
             this.num = this.setPageState(this.num);
             this.setArrowsUi(this.num);
-        }
-        return this.num;
+        }, 1000)
     },
     componentDidMount: function () {
         let classlet = "none animated";
@@ -19,14 +18,14 @@ export default   {
         let that = this
         $('#right').on('click', (evt)=> {
             this.num = this.setPageState(this.num);
-            that.setArrowsUi.call(that, this.num);
+            this.setArrowsUi.call(that, this.num);
         })
         $('#left').on('click', (i, n)=> {
             this.num = this.leftClickEvt(this.num, that);
-            that.setArrowsUi.call(that, this.num);
+            this.setArrowsUi.call(that, this.num);
         })
         $('.play').click(()=> {
-            this.flyEles()
+            this.playPics()
         })
     },
     sentences: [],
@@ -69,7 +68,15 @@ export default   {
             <div id='animateContainer'>
                 {
                     this.state.animateEles.map(function (item, i) {
-                        return item
+                        return (
+                            <div key={i}>
+                                {
+                                    item.map(function (img, i) {
+                                        return img
+                                    })
+                                }
+                            </div>
+                        )
                     })
                 }
             </div>
