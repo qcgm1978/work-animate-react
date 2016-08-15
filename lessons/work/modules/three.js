@@ -1,5 +1,7 @@
 require('./styles/three.scss')
 import React from 'react'
+//import Store from './redux.js'
+
 import CommonMixin from './common'
 
 export default React.createClass({
@@ -7,6 +9,13 @@ export default React.createClass({
     getInitialState(){
     },
     componentDidMount () {
+        //let that=this
+        //    Store.subscribe(() => {
+        //            //that.setState({
+        //                that.control= Store.getState()
+        //            //});
+        //        }
+        //    )
     },
     componentDidUpdate(){
     },
@@ -21,7 +30,7 @@ export default React.createClass({
 
 
                 {this.getElementsNodes()}
-                {this.getCommonControl()}
+                {this.getCommonControl(this.state.control)}
 
             </div>
         )

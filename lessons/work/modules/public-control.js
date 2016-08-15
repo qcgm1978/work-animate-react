@@ -1,12 +1,14 @@
 require('./styles/public-control.scss')
 import React from 'react'
-
 import Utilities from './utilities'
 
 export default React.createClass({
     mixins: [Utilities],
     getInitialState(){
-        return {}
+        return this.props.btns||{
+            stepShow: true,
+            followMe: true,
+        }
     },
     flyArrow (i = 0, left = this.randomIntFromInterval(83, 600) - 83,
               top = this.randomIntFromInterval(61, 500) - 61) {
@@ -21,8 +23,26 @@ export default React.createClass({
             })
             .appendTo('.public-container')
     },
+    generateSteps(arrows) {
+        if (!this.state.followMe) {
+            $('.step').remove()
+        } else {
+            if ($.isPlainObject(arrows)) {
+                this.flyArrow(arrows.ordinal, arrows.left, arrows.top);
+            } else if ($.isArray(arrows)) {
+                $.each(arrows, (i, n)=> {
+                    this.flyArrow(n.ordinal, n.left, n.top);
+                })
+            }
+            else {
+                //for (let i = 1; i < 6; i++) {
+                //    this.flyArrow(i);
+                //}
+            }
+        }
+    },
     componentDidMount () {
-        $( ".pop-up" ).draggable()
+        $(".pop-up").draggable()
         $.fn.clickToggle = function (func1, func2) {
             var funcs = [func1, func2];
             this.data('toggleclicked', 0);
@@ -35,40 +55,19 @@ export default React.createClass({
             return this;
         };
         let that = this;
-
-        function generateSteps(evt, arrows) {
-            if (evt.data.isClicked) {
-                $('.step').remove()
-            } else {
-                if ($.isPlainObject(arrows)) {
-                    this.flyArrow(arrows.ordinal, arrows.left, arrows.top);
-                } else if ($.isArray(arrows)) {
-                    $.each(arrows, (i, n)=> {
-                        this.flyArrow(n.ordinal, n.left, n.top);
-                    })
-                }
-                else {
-                    //for (let i = 1; i < 6; i++) {
-                    //    this.flyArrow(i);
-                    //}
-                }
-            }
-            evt.data.isClicked = !evt.data.isClicked;
-        }
-
         $('.step-show')
             .click(function (evt) {
-                $(this)
-                    .find('.check-mark')
-                    .add('.pop-up')
-                    .toggle()
+                that.setState({
+                    stepShow: !that.state.stepShow
+                })
             })
         $('.follow-me')
-            .click({isClicked: false}, function (evt) {
-                $(this).find('.check-mark').toggle()
-                generateSteps.call(that, evt, that.props.arrows);
-            }).click()
-
+            .click(function (evt) {
+                that.setState({
+                    followMe: !that.state.followMe
+                })
+                that.generateSteps.call(that, that.props.arrows);
+            })
         $('.close')
             .click(function () {
                 $('.step-show')
@@ -84,8 +83,12 @@ export default React.createClass({
                 $(this).removeClass('click')
             })
         this.setTxtHover('dd');
+        if (this.state.followMe) {
+            this.generateSteps.call(that, that.props.arrows);
+        }
     },
     componentDidUpdate(){
+
     },
     generateNodesFromJson(){
         this.getJson('modules/data/10.json');
@@ -93,19 +96,23 @@ export default React.createClass({
     generateNodes (classVar) {
     },
     render() {
+        var stepVisible = (this.state.stepShow ? '' : 'none');
+        let stepClass = 'check-mark ' + stepVisible,
+            followClass = 'check-mark ' + (this.state.followMe ? '' : 'none'),
+            popupClass = 'pop-up ' + stepVisible
         return (
             <div className='public-container'>
                 <div id='public-control' className='noselect'>
                     <div className='indicate'>
                         <div className='step-show'>
-                            <div className='check-mark'></div>
+                            <div className={stepClass}></div>
                         </div>
                         <div className='follow-me'>
-                            <div className='check-mark none'></div>
+                            <div className={followClass}></div>
 
                         </div>
                     </div>
-                    <div className='pop-up' >
+                    <div className={popupClass}>
                         <div className='header'>STEP SHOW
                             <div className='close'></div>
                         </div>

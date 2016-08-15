@@ -1,5 +1,4 @@
 import React from 'react'
-import Redux from './redux'
 import Utilities from './utilities'
 
 import CommonMixin2 from './common2'
@@ -16,7 +15,6 @@ export default   {
         return this.num;
     },
     componentDidMount: function () {
-        Redux.dispatch({type: 'INCREMENT'})
         let classlet = "none animated";
         this.generateNodesFromJson(classlet)
         let that = this

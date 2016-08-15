@@ -1,5 +1,6 @@
 require('./styles/two.scss')
 import React from 'react'
+//import Redux from './redux'
 import CommonMixin from './common'
 
 export default React.createClass({
@@ -7,10 +8,21 @@ export default React.createClass({
     getInitialState(){
     },
     componentDidMount () {
+
     },
     componentDidUpdate(){
         this.num = this.setPageState(this.num);
         this.setArrowsUi(this.num);
+
+    },
+    componentWillUnmount(){
+        //Redux.dispatch({
+        //    stepShow:$('.step-show .check-mark').is(':visible'),
+        //    followMe:$('.follow-me .check-mark').is(':visible'),
+        //    type:'public-control'
+        //
+        //})
+
     },
     generateNodesFromJson(){
         this.getJson('modules/data/2.json');
