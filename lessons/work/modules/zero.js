@@ -2,7 +2,6 @@ require('./styles/zero.scss')
 import React from 'react'
 import Redux from './redux'
 import CommonMixin2 from './common2'
-import PublicControl from './public-control.js'
 
 export default React.createClass({
     mixins: [CommonMixin2],
@@ -78,8 +77,8 @@ export default React.createClass({
         })
     },
     componentDidUpdate(){
-        $('#words .animated').attr('id', function (i,n) {
-            return 'word'+(i+1)
+        $('#words .animated').attr('id', function (i, n) {
+            return 'word' + (i + 1)
         })
         this.animate(this.state.frameId);
         $('.animated').off().hover((i, n)=> {
@@ -87,7 +86,6 @@ export default React.createClass({
         })
     },
     render() {
-        let classVar = "animated";
         return ( <div id='zero' className='container'>
                 {this.state.eles.map(function (item, i) {
                     return item
@@ -100,11 +98,11 @@ export default React.createClass({
                     }
                 </div>
 
-                <PublicControl toShowControl={false} arrows={{
+                {this.getPublicControl(false, {
                     ordinal: 3,
                     left: 497,
                     top: 379
-                }} />
+                })}
             </div>
         )
     }

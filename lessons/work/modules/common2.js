@@ -1,4 +1,6 @@
 import React from 'react'
+import PublicControl from './public-control.js'
+
 export default   {
     contextTypes: {
         router: React.PropTypes.object.isRequired
@@ -64,4 +66,7 @@ export default   {
         num == -1 ? null : num--
         return num;
     },
+    getPublicControl(toShowControl, arrows){
+        return <PublicControl toShowControl={ toShowControl} arrows={ arrows} />
+    }
 };

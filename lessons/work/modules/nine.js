@@ -21,7 +21,7 @@ export default React.createClass({
     render() {
         return (
             <div id='nine' className='container'>
-                {this.getElementsNodes()}
+                {this.getElementsNodes(true)}
                 <div>
                     <div id='a'>
                         <img src="./images/9/apple.png"/>
@@ -44,6 +44,7 @@ export default React.createClass({
                         <p className='none'>is for cat, c c</p></div>
 
                 </div>
+                {this.getPublicControl(false)}
 
             </div>
         )

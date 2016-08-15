@@ -19,6 +19,15 @@ export default React.createClass({
         return (
             <div id='two' className='container'>
                 {this.getElementsNodes()}
+                {this.getPublicControl(true, [{
+                    ordinal: 2,
+                    left: 311,
+                    top: 400
+                },{
+                    ordinal: 1,
+                    left: 390,
+                    top: 400
+                }])}
 
             </div>
         )

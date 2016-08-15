@@ -19,7 +19,7 @@ export default React.createClass({
                 i +
                 ".png')"
             })
-            .appendTo('.container')
+            .appendTo('.public-container')
     },
     componentDidMount () {
         $( ".pop-up" ).draggable()
@@ -48,9 +48,9 @@ export default React.createClass({
                     })
                 }
                 else {
-                    for (let i = 0; i < 5; i++) {
-                        this.flyArrow(i);
-                    }
+                    //for (let i = 1; i < 6; i++) {
+                    //    this.flyArrow(i);
+                    //}
                 }
             }
             evt.data.isClicked = !evt.data.isClicked;
@@ -67,7 +67,8 @@ export default React.createClass({
             .click({isClicked: false}, function (evt) {
                 $(this).find('.check-mark').toggle()
                 generateSteps.call(that, evt, that.props.arrows);
-            })
+            }).click()
+
         $('.close')
             .click(function () {
                 $('.step-show')
