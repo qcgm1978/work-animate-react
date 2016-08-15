@@ -10,7 +10,7 @@ export default React.createClass({
     },
     componentDidUpdate(){
         $('#a,#b,#c').find(':first').click(function func() {
-            $(this).nextAll().animateCss('pulse', true)
+            $(this).nextAll().animateCss('flipInX', true)
         })
     },
     generateNodesFromJson(){
