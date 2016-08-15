@@ -25,6 +25,8 @@ export default React.createClass({
 
 
                 {this.getElementsNodes()}
+                {this.getCommonControl()}
+
             </div>
         )
     }

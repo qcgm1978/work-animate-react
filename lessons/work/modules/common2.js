@@ -68,5 +68,16 @@ export default   {
     },
     getPublicControl(toShowControl, arrows){
         return <PublicControl toShowControl={ toShowControl} arrows={ arrows} />
+    },
+    getCommonControl(){
+        return this.getPublicControl(true, [{
+            ordinal: 2,
+            left: 311,
+            top: 400
+        },{
+            ordinal: 1,
+            left: 390,
+            top: 400
+        }])
     }
 };
