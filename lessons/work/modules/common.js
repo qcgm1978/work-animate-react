@@ -43,11 +43,13 @@ export default   {
                     .attr('src', './images/public-control/control/pause.png')
                 this.playPics()
                 this.isFinished=false;
+                evt.data.isPlay = false
+
             } else {
                 $(evt.currentTarget).find('img').attr('src', './images/public-control/control/play.png').removeClass('pause')
                 clearInterval(this.loopPicsId)
+                evt.data.isPlay = true
             }
-            evt.data.isPlay = !evt.data.isPlay
         })
     },
     sentences: [],
@@ -68,7 +70,7 @@ export default   {
         } else {
             $('#right').css('opacity', 0.5)
         }
-        if (i == this.sentences.length - 1 || i == 0) {
+        if (i == this.sentences.length - 1) {
             $('.play img').attr('src', './images/public-control/control/play.png').removeClass('pause')
         }
     },

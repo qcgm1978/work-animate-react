@@ -13,7 +13,9 @@ export default React.createClass({
             this.num = this.setPageState(this.num);
             this.setArrowsUi(this.num);
         }
-        this.setTxtHover('[src*="sentence-"]');
+        $('[src*="sentence-"]').mouseover(function(){
+            $(this).removeClass().animateCss('pulse')
+        });
     },
     generateNodesFromJson(){
         this.getJson('modules/data/1.json');

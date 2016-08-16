@@ -44,7 +44,11 @@ export default React.createClass({
                         <p className='none'>is for cat, c c</p></div>
 
                 </div>
-                {this.getPublicControl(false)}
+                {this.getPublicControl(false,{},[
+                    'ask student click the apple and answer the question',
+                    'ask studentclick the ball and answer the question',
+                    'ask studentclick the cat and answer the question'
+                ])}
 
             </div>
         )
