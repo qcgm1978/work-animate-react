@@ -26,7 +26,11 @@ export default React.createClass({
                     ordinal: 2,
                     left: 271,
                     top: 100
-                })}
+                },[
+                    'say"let\'s sing the song',
+                    '(pause after each sentence)sing the song and guide the student to repeat',
+                    'sing the song with the student'
+                ])}
 
             </div>
         )

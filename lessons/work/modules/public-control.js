@@ -27,7 +27,7 @@ export default React.createClass({
         if (!this.state.followMe) {
             $('.step').remove()
         } else {
-            if ($.isPlainObject(arrows)) {
+            if ($.isPlainObject(arrows)&&!$.isEmptyObject(this.props.arrows)) {
                 this.flyArrow(arrows.ordinal, arrows.left, arrows.top);
             } else if ($.isArray(arrows)) {
                 $.each(arrows, (i, n)=> {
@@ -80,7 +80,8 @@ export default React.createClass({
         var stepVisible = (this.state.stepShow ? '' : 'none');
         let stepClass = 'check-mark ' + stepVisible,
             followClass = 'check-mark ' + (this.state.followMe ? '' : 'none'),
-            popupClass = 'pop-up ' + stepVisible
+            popupClass = 'pop-up ' + stepVisible,
+            arr = this.props.data;
         return (
             <div className='public-container'>
                 <div id='public-control' className='noselect'>
@@ -98,12 +99,17 @@ export default React.createClass({
                             <div className='close'></div>
                         </div>
                         <dl>
-                            <dt>STEP 1</dt>
-                            <dd>introduce yourself to the students</dd>
-                            <dt>STEP 2</dt>
-                            <dd>ask the student's name and greet the student</dd>
-                            <dt>STEP 3</dt>
-                            <dd>click and say</dd>
+                            {
+                                arr.map((item, i)=> {
+                                    return (
+                                        <div key={i}>
+                                            <dt>STEP {i+1}</dt>
+                                            <dd>{item}</dd>
+                                        </div>
+                                    )
+                                })
+
+                            }
                         </dl>
                     </div>
                     {

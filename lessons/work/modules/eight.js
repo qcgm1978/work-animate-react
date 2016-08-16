@@ -51,6 +51,9 @@ export default React.createClass({
                     this.getElementsNodes(true)
                 }
                 <Popup className={this.state.popup} popup={this.state.position} face='none' options={''} word={word} num={num}/>
+                {this.getPublicControl(false, {
+
+                },['ask student click the apple and answer the question', 'ask student click the ball and answer the question', 'ask student click the cat and answer the question'])}
             </div>
         )
     }

@@ -85,14 +85,14 @@ export default   {
         num == 0 ? null : num--
         return num;
     },
-    getPublicControl(toShowControl, arrows){
+    getPublicControl(toShowControl, arrows,data){
         var $step = $('.step-show .check-mark');
         var $follow = $('.follow-me .check-mark');
         let btns = {
             stepShow: $step.length ? $step.is(':visible') : true,
             followMe: $follow.length ? $follow.is(':visible') : true,
         }
-        return <PublicControl toShowControl={ toShowControl} arrows={ arrows} btns={btns}/>
+        return <PublicControl toShowControl={ toShowControl} arrows={ arrows} btns={btns} data={data}/>
     },
     getCommonControl(){
         return this.getPublicControl(true, [{
@@ -103,6 +103,9 @@ export default   {
             ordinal: 1,
             left: 390,
             top: 400
-        }])
+        }],[
+            'click next frame to see the next frame',
+            'click all frame to see all frame'
+        ])
     }
 };
