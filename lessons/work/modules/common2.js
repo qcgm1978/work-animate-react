@@ -67,7 +67,7 @@ export default   {
         return div
     },
     leftClickEvt: function (num, that) {
-        if (num > -1) {
+        if (num > 0) {
             that.sentences
                 .eq(num)
                 .parent()
