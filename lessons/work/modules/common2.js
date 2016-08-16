@@ -82,7 +82,7 @@ export default   {
             //nextInd = nextInd == -1 ? (0) : nextInd
             //that.context.router.push('/' + this.list[nextInd])
         }
-        num == -1 ? null : num--
+        num == 0 ? null : num--
         return num;
     },
     getPublicControl(toShowControl, arrows){

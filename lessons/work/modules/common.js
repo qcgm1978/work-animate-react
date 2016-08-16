@@ -50,7 +50,7 @@ export default   {
         }
     },
     setArrowsUi: function (i) {
-        if (i > -1) {
+        if (i > 0) {
             $('#left').css('opacity', 1)
         } else {
             $('#left').css('opacity', 0.5)
@@ -60,7 +60,7 @@ export default   {
         } else {
             $('#right').css('opacity', 0.5)
         }
-        if (i == this.sentences.length - 1||i == -1) {
+        if (i == this.sentences.length - 1||i == 0) {
             $('.play img').attr('src', './images/public-control/control/play.png').removeClass('pause')
         }
 
