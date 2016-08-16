@@ -22,7 +22,7 @@ export default React.createClass({
         return (
             <div id='one' className='container'>
                 {this.getElementsNodes()}
-                {this.getPublicControl(true, {
+                {this.getPublicControl(false, {
                     ordinal: 2,
                     left: 271,
                     top: 100

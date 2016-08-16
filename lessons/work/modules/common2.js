@@ -9,8 +9,9 @@ export default   {
     setPageState: function (num) {
         let $hiddenEle = this.sentences;
         if (num + 1 < this.sentences.length) {
-            if (num > -1 && $hiddenEle.eq(num).next().length == 0) {
-                $hiddenEle.eq(num).parent().addClass('none')
+            var $cur = $hiddenEle.eq(num);
+            if (num > -1 && $cur.next().length == 0&&$cur.index()!=0) {
+                $cur.parent().addClass('none')
             }
             $hiddenEle.eq(num + 1)
                 .removeClass('none bounceIn bounceOut')
