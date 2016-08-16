@@ -13,9 +13,8 @@ export default   {
             if (num > -1 && $cur.next().length == 0&&$cur.index()!=0) {
                 $cur.parent().addClass('none')
             }
-            $hiddenEle.eq(num + 1)
-                .removeClass('none bounceIn bounceOut')
-                .addClass('bounceIn')
+            $hiddenEle.eq(num + 1).animateCss('bounceIn',true)
+
             if (num + 1 < this.sentences.length) {
                 num++
             }

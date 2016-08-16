@@ -5,10 +5,10 @@ import Utilities from './utilities'
 export default React.createClass({
     mixins: [Utilities],
     getInitialState(){
-        return this.props.btns||{
-            stepShow: true,
-            followMe: true,
-        }
+        return this.props.btns || {
+                stepShow: true,
+                followMe: true,
+            }
     },
     flyArrow (i = 0, left = this.randomIntFromInterval(83, 600) - 83,
               top = this.randomIntFromInterval(61, 500) - 61) {
@@ -43,9 +43,8 @@ export default React.createClass({
     },
     componentDidMount () {
         $(".pop-up").draggable()
-
         let that = this;
-        $('.step-show')
+        $('.step-show,.close')
             .click(function (evt) {
                 that.setState({
                     stepShow: !that.state.stepShow
@@ -57,13 +56,6 @@ export default React.createClass({
                     followMe: !that.state.followMe
                 })
                 that.generateSteps.call(that, that.props.arrows);
-            })
-        $('.close')
-            .click(function () {
-                $('.step-show')
-                    .find('.check-mark')
-                    .add('.pop-up')
-                    .toggle()
             })
         $('.prev,.next,.close')
             .mousedown(function () {
@@ -78,7 +70,6 @@ export default React.createClass({
         }
     },
     componentDidUpdate(){
-
     },
     generateNodesFromJson(){
         this.getJson('modules/data/10.json');
@@ -109,6 +100,10 @@ export default React.createClass({
                         <dl>
                             <dt>STEP 1</dt>
                             <dd>introduce yourself to the students</dd>
+                            <dt>STEP 2</dt>
+                            <dd>ask the student's name and greet the student</dd>
+                            <dt>STEP 3</dt>
+                            <dd>click and say</dd>
                         </dl>
                     </div>
                     {

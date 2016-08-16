@@ -4,10 +4,8 @@ let obj = {
         return Math.floor(Math.random() * (max - min + 1) + min);
     },
     setTxtHover (selector) {
-        $(selector).hover(function () {
-            $(this).removeClass().addClass('animated pulse')
-        }, function () {
-            $(this).removeClass('animated pulse')
+        $(selector).mouseover(function () {
+            $(this).animateCss('pulse')
         })
     },
     extendJquery(){
