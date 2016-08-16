@@ -6,11 +6,18 @@ import CommonMixin2 from './common2'
 export default   {
     mixins: [CommonMixin2, Utilities],
     num: -1,
-    playPics () {
+    triggerCotrol: function ($btn) {
         this.loopPicsId = setInterval(()=> {
-            this.num = this.setPageState(this.num);
-            this.setArrowsUi(this.num);
+            $btn.trigger('click')
         }, 1000)
+    },
+    playPics () {
+        if (this.num + 1 < this.sentences.length) {
+            this.triggerCotrol($('#right'));
+
+        } else {
+            this.triggerCotrol($('#left'));
+        }
     },
     componentDidMount: function () {
         let classlet = "none animated";
@@ -25,10 +32,13 @@ export default   {
             this.setArrowsUi.call(that, this.num);
         })
         $('.play').clickToggle((evt)=> {
-            $(evt.currentTarget).find('img').attr('src', './images/public-control/control/pause.png')
+            $(evt.currentTarget)
+                .find('img')
+                .addClass('pause')
+                .attr('src', './images/public-control/control/pause.png')
             this.playPics()
         }, (evt)=> {
-            $(evt.currentTarget).find('img').attr('src', './images/public-control/control/play.png')
+            $(evt.currentTarget).find('img').attr('src', './images/public-control/control/play.png').removeClass('pause')
             clearInterval(this.loopPicsId)
         })
     },
@@ -50,6 +60,10 @@ export default   {
         } else {
             $('#right').css('opacity', 0.5)
         }
+        if (i == this.sentences.length - 1||i == -1) {
+            $('.play img').attr('src', './images/public-control/control/play.png').removeClass('pause')
+        }
+
     },
     componentDidUpdate(){
     },

@@ -10,7 +10,7 @@ export default   {
         let $hiddenEle = this.sentences;
         if (num + 1 < this.sentences.length) {
             if (num > -1 && $hiddenEle.eq(num).next().length == 0) {
-                $hiddenEle.eq(num).parent().hide()
+                $hiddenEle.eq(num).parent().addClass('none')
             }
             $hiddenEle.eq(num + 1)
                 .removeClass('none bounceIn bounceOut')
@@ -20,6 +20,7 @@ export default   {
             }
         } else {
             clearInterval(this.loopPicsId)
+            //num=-1
             //let exec = /#\/(.+)\?.+/.exec(location.href);
             //let val = exec[1]
             //let index = this.list.indexOf(val);
@@ -67,15 +68,19 @@ export default   {
     },
     leftClickEvt: function (num, that) {
         if (num > -1) {
-            that.sentences.eq(num)
-                //.removeClass('none')
+            that.sentences
+                .eq(num)
+                .parent()
+                .removeClass('none')
+                .end()
                 .addClass('bounceOut')
         } else {
-            let exec = /#\/(.+)\?.+/.exec(location.href);
-            let val = exec[1]
-            let nextInd = this.list.indexOf(val) - 1
-            nextInd = nextInd == -1 ? (0) : nextInd
-            that.context.router.push('/' + this.list[nextInd])
+            clearInterval(this.loopPicsId)
+            //let exec = /#\/(.+)\?.+/.exec(location.href);
+            //let val = exec[1]
+            //let nextInd = this.list.indexOf(val) - 1
+            //nextInd = nextInd == -1 ? (0) : nextInd
+            //that.context.router.push('/' + this.list[nextInd])
         }
         num == -1 ? null : num--
         return num;

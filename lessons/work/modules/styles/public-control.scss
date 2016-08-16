@@ -153,7 +153,7 @@
         }
         img.pause{
           @include transition();
-          background-image: url('../../images/public-control/control/pause.png');
+          transform: translate(-50%, -50%)
 
         }
       }
