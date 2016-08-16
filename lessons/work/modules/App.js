@@ -11,17 +11,10 @@ export default React.createClass({
 
                     <li><Link to="/one">One</Link></li>
                     <li><Link to="/two">Two</Link></li>
-                    <li><Link to="/three">Three</Link></li>
-                    <li><Link to="/four">Four</Link></li>
-                    <li><Link to="/five">Five</Link></li>
-                    <li><Link to="/six">Six</Link></li>
-                    <li><Link to="/seven">Seven</Link></li>
-                    <li><Link to="/eight">Eight</Link></li>
-                    <li><Link to="/nine">Nine</Link></li>
-                    <li><Link to="/ten">Ten</Link></li>
-                    <li><Link to="/eleven">Eleven</Link></li>
-                    <li><Link to="/test">Test</Link></li>
-                    <li><Link to="/public-control">Public control</Link></li>
+
+                    <li><Link to="/eight">Three</Link></li>
+                    <li><Link to="/nine">Four</Link></li>
+
 
                 </ul>
             </div>

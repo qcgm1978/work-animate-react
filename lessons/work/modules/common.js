@@ -14,7 +14,6 @@ export default   {
     playPics () {
         if (this.num + 1 < this.sentences.length) {
             this.triggerCotrol($('#right'));
-
         } else {
             this.triggerCotrol($('#left'));
         }
@@ -31,15 +30,24 @@ export default   {
             this.num = this.leftClickEvt(this.num, that);
             this.setArrowsUi.call(that, this.num);
         })
-        $('.play').clickToggle((evt)=> {
-            $(evt.currentTarget)
-                .find('img')
-                .addClass('pause')
-                .attr('src', './images/public-control/control/pause.png')
-            this.playPics()
-        }, (evt)=> {
-            $(evt.currentTarget).find('img').attr('src', './images/public-control/control/play.png').removeClass('pause')
-            clearInterval(this.loopPicsId)
+        $('.play').click({isPlay: true}, (evt)=> {
+            if (evt.data.isPlay||this.isFinished) {
+                if (this.num + 1 == this.sentences.length) {
+                    let $cur=this.sentences.eq(this.num)
+                    $cur.prevAll().add($cur).addClass('none')
+                    this.num = -1
+                }
+                $(evt.currentTarget)
+                    .find('img')
+                    .addClass('pause')
+                    .attr('src', './images/public-control/control/pause.png')
+                this.playPics()
+                this.isFinished=false;
+            } else {
+                $(evt.currentTarget).find('img').attr('src', './images/public-control/control/play.png').removeClass('pause')
+                clearInterval(this.loopPicsId)
+            }
+            evt.data.isPlay = !evt.data.isPlay
         })
     },
     sentences: [],
@@ -60,10 +68,9 @@ export default   {
         } else {
             $('#right').css('opacity', 0.5)
         }
-        if (i == this.sentences.length - 1||i == 0) {
+        if (i == this.sentences.length - 1 || i == 0) {
             $('.play img').attr('src', './images/public-control/control/play.png').removeClass('pause')
         }
-
     },
     componentDidUpdate(){
     },

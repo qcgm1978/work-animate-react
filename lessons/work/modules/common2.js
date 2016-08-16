@@ -10,17 +10,18 @@ export default   {
         let $hiddenEle = this.sentences;
         if (num + 1 < this.sentences.length) {
             var $cur = $hiddenEle.eq(num);
-            if (num > -1 && $cur.next().length == 0&&$cur.index()!=0) {
-                $cur.parent().addClass('none')
+            if ($cur.next().length == 0 && $cur.index() != 0) {
+                $cur.prevAll().add($cur).addClass('none')
             }
-            $hiddenEle.eq(num + 1).animateCss('bounceIn',true)
-
+            $hiddenEle.eq(num + 1)
+                .removeClass('none bounceIn bounceOut')
+                .addClass('bounceIn')
             if (num + 1 < this.sentences.length) {
                 num++
             }
         } else {
             clearInterval(this.loopPicsId)
-            //num=-1
+            this.isFinished = true
             //let exec = /#\/(.+)\?.+/.exec(location.href);
             //let val = exec[1]
             //let index = this.list.indexOf(val);
@@ -67,13 +68,14 @@ export default   {
         return div
     },
     leftClickEvt: function (num, that) {
-        if (num > 0) {
-            that.sentences
-                .eq(num)
-                .parent()
+        if (num > -1) {
+            var $cur = that.sentences
+                .eq(num);
+            $cur
+                .prevAll()
+                .add($cur)
                 .removeClass('none')
-                .end()
-                .addClass('bounceOut')
+            $cur.addClass('bounceOut animated')
         } else {
             clearInterval(this.loopPicsId)
             //let exec = /#\/(.+)\?.+/.exec(location.href);
@@ -82,10 +84,10 @@ export default   {
             //nextInd = nextInd == -1 ? (0) : nextInd
             //that.context.router.push('/' + this.list[nextInd])
         }
-        num == 0 ? null : num--
+        num == -1 ? null : num--
         return num;
     },
-    getPublicControl(toShowControl, arrows,data){
+    getPublicControl(toShowControl, arrows, data){
         var $step = $('.step-show .check-mark');
         var $follow = $('.follow-me .check-mark');
         let btns = {
@@ -103,7 +105,7 @@ export default   {
             ordinal: 1,
             left: 390,
             top: 400
-        }],[
+        }], [
             'click next frame to see the next frame',
             'click all frame to see all frame'
         ])
