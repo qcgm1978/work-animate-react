@@ -24,8 +24,12 @@ export default   {
             this.num = this.leftClickEvt(this.num, that);
             this.setArrowsUi.call(that, this.num);
         })
-        $('.play').click(()=> {
+        $('.play').clickToggle((evt)=> {
+            $(evt.currentTarget).find('img').attr('src', './images/public-control/control/pause.png')
             this.playPics()
+        }, (evt)=> {
+            $(evt.currentTarget).find('img').attr('src', './images/public-control/control/play.png')
+            clearInterval(this.loopPicsId)
         })
     },
     sentences: [],
@@ -41,7 +45,7 @@ export default   {
         } else {
             $('#left').css('opacity', 0.5)
         }
-        if (i < this.list.length - 1) {
+        if (i < this.sentences.length - 1) {
             $('#right').css('opacity', 1)
         } else {
             $('#right').css('opacity', 0.5)

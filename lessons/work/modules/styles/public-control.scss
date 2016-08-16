@@ -151,6 +151,11 @@
         &:hover {
           transform: translateX(-50%) rotate(360deg);
         }
+        img.pause{
+          @include transition();
+          background-image: url('../../images/public-control/control/pause.png');
+
+        }
       }
     }
     .step {

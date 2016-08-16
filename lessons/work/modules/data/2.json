@@ -75,7 +75,18 @@
             "top": "403"
           }
         }],
-        [{
+        [
+          {
+            "nodeName": "a",
+            "imageSrc": "./images/4/b.png",
+            "nodeProperties": {
+              "width": "312",
+              "height": "136",
+              "left": "28",
+              "top": "173"
+            }
+          },
+          {
           "nodeName": "b2",
           "imageSrc": "./images/4/b2.png",
           "nodeProperties": {
@@ -95,7 +106,18 @@
             "top": "149"
           }
         }],
-        [{
+        [
+          {
+            "nodeName": "b",
+            "imageSrc": "./images/5/b.png",
+            "nodeProperties": {
+              "width": "312",
+              "height": "136",
+              "left": "83",
+              "top": "277"
+            }
+          },
+          {
           "nodeName": "ball",
           "imageSrc": "./images/5/ball.png",
           "nodeProperties": {
@@ -115,7 +137,18 @@
             "top": "395"
           }
         }],
-        [{
+        [
+          {
+            "nodeName": "c",
+            "imageSrc": "./images/6/c.png",
+            "nodeProperties": {
+              "width": "312",
+              "height": "136",
+              "left": "12",
+              "top": "172"
+            }
+          },
+          {
           "nodeName": "c2",
           "imageSrc": "./images/6/c2.png",
           "nodeProperties": {
@@ -135,7 +168,18 @@
             "top": "147"
           }
         }],
-        [{
+        [
+          {
+            "nodeName": "c",
+            "imageSrc": "./images/7/c.png",
+            "nodeProperties": {
+              "width": "312",
+              "height": "136",
+              "left": "64",
+              "top": "281"
+            }
+          },
+          {
           "nodeName": "word-cat",
           "imageSrc": "./images/7/word-cat.png",
           "nodeProperties": {

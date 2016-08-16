@@ -22,6 +22,17 @@ let obj = {
                 });
             }
         });
+        $.fn.clickToggle = function (func1, func2) {
+            var funcs = [func1, func2];
+            this.data('toggleclicked', 0);
+            this.click(function (evt) {
+                var data = $(this).data();
+                var tc = data.toggleclicked;
+                $.proxy(funcs[tc], this,evt)();
+                data.toggleclicked = (tc + 1) % 2;
+            });
+            return this;
+        };
     },
 };
 obj.extendJquery();

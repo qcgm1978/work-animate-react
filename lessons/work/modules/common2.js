@@ -9,7 +9,7 @@ export default   {
     setPageState: function (num) {
         let $hiddenEle = this.sentences;
         if (num + 1 < this.sentences.length) {
-            if($hiddenEle.eq(num).next().length==0){
+            if (num > -1 && $hiddenEle.eq(num).next().length == 0) {
                 $hiddenEle.eq(num).parent().hide()
             }
             $hiddenEle.eq(num + 1)
