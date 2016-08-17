@@ -14,6 +14,7 @@ export default React.createClass({
               top = this.randomIntFromInterval(61, 500) - 61) {
         $('<div>')
             .addClass('step animated bounceInRight')
+            .attr('ordinal',i)
             .css({
                 left: left,
                 top: top,
@@ -27,7 +28,7 @@ export default React.createClass({
         if (!this.state.followMe) {
             $('.step').remove()
         } else {
-            if ($.isPlainObject(arrows)&&!$.isEmptyObject(this.props.arrows)) {
+            if ($.isPlainObject(arrows) && !$.isEmptyObject(this.props.arrows)) {
                 this.flyArrow(arrows.ordinal, arrows.left, arrows.top);
             } else if ($.isArray(arrows)) {
                 $.each(arrows, (i, n)=> {
@@ -51,11 +52,14 @@ export default React.createClass({
                 })
             })
         $('.follow-me')
-            .click(function (evt) {
+            .click({ini:true},function (evt) {
                 that.setState({
                     followMe: !that.state.followMe
                 })
-                that.generateSteps.call(that, that.props.arrows);
+                if (evt.data.ini) {
+                    that.generateSteps.call(that, that.props.arrows);
+                    evt.data.ini=false
+                }
             })
         $('.prev,.next,.close')
             .mousedown(function () {
@@ -64,7 +68,13 @@ export default React.createClass({
             .mouseup(function () {
                 $(this).removeClass('click')
             })
-        this.setTxtClick('dd');
+        $('dd').click(function () {
+            $(this)
+                .parents('dl')
+                .find('dd')
+                .removeClass('txt-click')
+            $(this).addClass('txt-click')
+        })
         if (this.state.followMe) {
             this.generateSteps.call(that, that.props.arrows);
         }
@@ -103,7 +113,7 @@ export default React.createClass({
                                 arr.map((item, i)=> {
                                     return (
                                         <div key={i}>
-                                            <dt>STEP {i+1}</dt>
+                                            <dt>STEP {i + 1}</dt>
                                             <dd>{item}</dd>
                                         </div>
                                     )

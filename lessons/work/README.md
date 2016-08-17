@@ -39,6 +39,10 @@ $ npm run publish
 ### Todos
 
  - Redux or Flux to add
+ - 只放大一行，同时隐藏相关箭头，以后不再显示follow me的箭头(solved)
+ - 播放时点击back或next也暂停播放
+ - eight: zoom in 1.5; arrows for apple, ball, cat
+ - nine: teacher can't click;
 
 License
 ----

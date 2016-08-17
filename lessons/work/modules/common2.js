@@ -6,6 +6,7 @@ export default   {
     contextTypes: {
         router: React.PropTypes.object.isRequired
     },
+
     setPageState: function (num) {
         let $hiddenEle = this.sentences;
         if (num + 1 < this.sentences.length) {
@@ -22,6 +23,7 @@ export default   {
         } else {
             clearInterval(this.loopPicsId)
             this.isFinished = true
+            this.isPlaying=false;
             //let exec = /#\/(.+)\?.+/.exec(location.href);
             //let val = exec[1]
             //let index = this.list.indexOf(val);

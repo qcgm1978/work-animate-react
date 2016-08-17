@@ -6,34 +6,43 @@ import CommonMixin2 from './common2'
 export default   {
     mixins: [CommonMixin2, Utilities],
     num: -1,
-    triggerCotrol: function ($btn) {
+    triggerCotrol: function () {
         this.loopPicsId = setInterval(()=> {
-            $btn.trigger('click')
+            this.num = this.setPageState(this.num);
+            this.setArrowsUi(this.num);
         }, 1000)
     },
     playPics () {
-        if (this.num + 1 < this.sentences.length) {
-            this.triggerCotrol($('#right'));
-        } else {
-            this.triggerCotrol($('#left'));
-        }
+        this.triggerCotrol();
     },
     componentDidMount: function () {
         let classlet = "none animated";
         this.generateNodesFromJson(classlet)
         let that = this
         $('#right').on('click', (evt)=> {
-            this.num = this.setPageState(this.num);
-            this.setArrowsUi.call(that, this.num);
+            if (!$._data($('.play')[0], 'events').click[0].data.isPlay) {
+                $('.play').find('img').attr('src', './images/public-control/control/play.png').removeClass('pause')
+                clearInterval(this.loopPicsId)
+                $._data($('.play')[0], 'events').click[0].data.isPlay = true
+            } else {
+                this.num = this.setPageState(this.num);
+                this.setArrowsUi.call(that, this.num);
+            }
         })
         $('#left').on('click', (i, n)=> {
-            this.num = this.leftClickEvt(this.num, that);
-            this.setArrowsUi.call(that, this.num);
+            if (!$._data($('.play')[0], 'events').click[0].data.isPlay) {
+                $('.play').find('img').attr('src', './images/public-control/control/play.png').removeClass('pause')
+                clearInterval(this.loopPicsId)
+                $._data($('.play')[0], 'events').click[0].data.isPlay = true
+            } else {
+                this.num = this.leftClickEvt(this.num, that);
+                this.setArrowsUi.call(that, this.num);
+            }
         })
         $('.play').click({isPlay: true}, (evt)=> {
-            if (evt.data.isPlay||this.isFinished) {
+            if (evt.data.isPlay || this.isFinished) {
                 if (this.num + 1 == this.sentences.length) {
-                    let $cur=this.sentences.eq(this.num)
+                    let $cur = this.sentences.eq(this.num)
                     $cur.prevAll().add($cur).addClass('none')
                     this.num = -1
                 }
@@ -42,13 +51,13 @@ export default   {
                     .addClass('pause')
                     .attr('src', './images/public-control/control/pause.png')
                 this.playPics()
-                this.isFinished=false;
+                this.isFinished = false;
                 evt.data.isPlay = false
-
             } else {
                 $(evt.currentTarget).find('img').attr('src', './images/public-control/control/play.png').removeClass('pause')
                 clearInterval(this.loopPicsId)
                 evt.data.isPlay = true
+                this.isPlaying = false;
             }
         })
     },
