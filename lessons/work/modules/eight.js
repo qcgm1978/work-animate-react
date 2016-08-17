@@ -2,6 +2,7 @@ require('./styles/eight.scss')
 import React from 'react'
 import CommonMixin from './common'
 import Popup from './popup.js'
+
 export default React.createClass({
     mixins: [CommonMixin],
     getInitialState(){
@@ -11,7 +12,8 @@ export default React.createClass({
                 left: 0,
                 top: 0
             },
-            src: ''
+            src: '',
+            order: 1
         }
     },
     componentDidMount () {
@@ -23,7 +25,7 @@ export default React.createClass({
             $(this).click(function () {
                 $('.pulse').removeClass('pulse')
                 $(this).addClass('pulse')
-                $('[ordinal=' + (i+1)+']').remove()
+                $('[ordinal=' + (i + 1) + ']').remove()
                 that.setState({
                     popup: '',
                     position: $(this).position(),
@@ -57,21 +59,26 @@ export default React.createClass({
                 <Popup className={this.state.popup} popup={this.state.position} face='none' options={''} word={word}
                        num={num}/>
                 {this.getPublicControl(false, [
-                    {
-                        ordinal: 1,
-                        left: 121,
-                        top: 180
-                    },
-                    {
-                        ordinal: 2,
-                        left: 350,
-                        top: 310
-                    },
-                    {
-                        ordinal: 3,
-                        left: 440,
-                        top: 330
-                    }], ['ask student click the apple and answer the question', 'ask student click the ball and answer the question', 'ask student click the cat and answer the question'])}
+                        {
+                            ordinal: 1,
+                            left: 121,
+                            top: 180
+                        },
+                        {
+                            ordinal: 2,
+                            left: 350,
+                            top: 310
+                        },
+                        {
+                            ordinal: 3,
+                            left: 440,
+                            top: 330
+                        }],
+                    ['ask student click the apple and answer the question', 'ask student click the ball and answer the question', 'ask student click the cat and answer the question'],
+                    this.state.order
+                )
+
+                }
             </div>
         )
     }

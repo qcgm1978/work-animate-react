@@ -85,21 +85,21 @@ export default   {
         num == -1 ? null : num--
         return num;
     },
-    getPublicControl(toShowControl, arrows, data){
-        return <PublicControl toShowControl={ toShowControl} arrows={ arrows} data={data} isTeacher={this.isTeacher}/>
+    getPublicControl(toShowControl, arrows, data,order){
+        return <PublicControl toShowControl={ toShowControl} arrows={ arrows} data={data} isTeacher={this.isTeacher} order={order}/>
     },
     getCommonControl(){
-        return this.getPublicControl(true, [{
+        return this.getPublicControl(true, [/*{
             ordinal: 2,
             left: 311,
             top: 400
-        }, {
+        },*/ {
             ordinal: 1,
             left: 390,
             top: 400
         }], [
             'click next frame to see the next frame',
-            'click all frame to see all frame'
+            //'click all frame to see all frame'
         ])
     }
 };

@@ -1,21 +1,21 @@
 require('./styles/public-control.scss')
 import React from 'react'
 import Utilities from './utilities'
-
+import Store from './redux.js'
 export default React.createClass({
-
+    order: 0,
     mixins: [Utilities],
     getInitialState(){
         return {
-                stepShow: true,
-                followMe: true,
-            }
+            stepShow: true,
+            followMe: true,
+        }
     },
     flyArrow (i = 0, left = this.randomIntFromInterval(83, 600) - 83,
               top = this.randomIntFromInterval(61, 500) - 61) {
         $('<div>')
             .addClass('step animated bounceInRight')
-            .attr('ordinal',i)
+            .attr('ordinal', i)
             .css({
                 left: left,
                 top: top,
@@ -32,9 +32,13 @@ export default React.createClass({
             if ($.isPlainObject(arrows) && !$.isEmptyObject(this.props.arrows)) {
                 this.flyArrow(arrows.ordinal, arrows.left, arrows.top);
             } else if ($.isArray(arrows)) {
-                $.each(arrows, (i, n)=> {
-                    this.flyArrow(n.ordinal, n.left, n.top);
-                })
+                if (this.props.order) {
+                    this.flyArrow(arrows[this.order].ordinal, arrows[this.order].left, arrows[this.order].top);
+                } else {
+                    $.each(arrows, (i, n)=> {
+                        this.flyArrow(n.ordinal, n.left, n.top);
+                    })
+                }
             }
             else {
                 //for (let i = 1; i < 6; i++) {
@@ -53,13 +57,13 @@ export default React.createClass({
                 })
             })
         $('.follow-me')
-            .click({ini:true},function (evt) {
+            .click({ini: true}, function (evt) {
                 that.setState({
                     followMe: !that.state.followMe
                 })
                 if (evt.data.ini) {
                     that.generateSteps.call(that, that.props.arrows);
-                    evt.data.ini=false
+                    evt.data.ini = false
                 }
             })
         $('.prev,.next,.close')
@@ -79,6 +83,13 @@ export default React.createClass({
         if (this.state.followMe) {
             this.generateSteps.call(that, that.props.arrows);
         }
+        Store.subscribe(function () {
+                var order = (++this.order);
+                if (order < this.props.arrows.length) {
+                    this.flyArrow(this.props.arrows[order].ordinal, this.props.arrows[order].left, this.props.arrows[order].top);
+                }
+            }.bind(this)
+        )
     },
     componentDidUpdate(){
     },
@@ -86,7 +97,7 @@ export default React.createClass({
         this.getJson('modules/data/10.json');
     },
     render() {
-        if(this.props.isTeacher) {
+        if (this.props.isTeacher) {
             var stepVisible = (this.state.stepShow ? '' : 'none');
             let stepClass = 'check-mark ' + stepVisible,
                 followClass = 'check-mark ' + (this.state.followMe ? '' : 'none'),
@@ -139,7 +150,7 @@ export default React.createClass({
                 </div>
 
             )
-        }else{
+        } else {
             return null;
         }
     }

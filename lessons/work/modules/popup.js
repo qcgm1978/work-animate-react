@@ -1,6 +1,6 @@
 require('./styles/popup.scss')
 import React from 'react'
-//import CommonMixin from './common'
+import Store from './redux.js'
 export default React.createClass({
     //mixins: [CommonMixin],
     getInitialState(){
@@ -56,6 +56,7 @@ export default React.createClass({
                 toShowNum: 'none',
                 color: color
             })
+            Store.dispatch({type: 'INCREMENT'})
             setTimeout(()=> {
                 this.setState({
                     faceRight: 'none',
