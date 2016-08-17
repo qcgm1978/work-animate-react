@@ -3,9 +3,10 @@ import React from 'react'
 import Utilities from './utilities'
 
 export default React.createClass({
+
     mixins: [Utilities],
     getInitialState(){
-        return this.props.btns || {
+        return {
                 stepShow: true,
                 followMe: true,
             }
@@ -84,60 +85,62 @@ export default React.createClass({
     generateNodesFromJson(){
         this.getJson('modules/data/10.json');
     },
-    generateNodes (classVar) {
-    },
     render() {
-        var stepVisible = (this.state.stepShow ? '' : 'none');
-        let stepClass = 'check-mark ' + stepVisible,
-            followClass = 'check-mark ' + (this.state.followMe ? '' : 'none'),
-            popupClass = 'pop-up ' + stepVisible,
-            arr = this.props.data;
-        return (
-            <div className='public-container'>
-                <div id='public-control' className='noselect'>
-                    <div className='indicate'>
-                        <div className='step-show'>
-                            <div className={stepClass}></div>
-                        </div>
-                        <div className='follow-me'>
-                            <div className={followClass}></div>
+        if(this.props.isTeacher) {
+            var stepVisible = (this.state.stepShow ? '' : 'none');
+            let stepClass = 'check-mark ' + stepVisible,
+                followClass = 'check-mark ' + (this.state.followMe ? '' : 'none'),
+                popupClass = 'pop-up ' + stepVisible,
+                arr = this.props.data;
+            return (
+                <div className='public-container'>
+                    <div id='public-control' className='noselect'>
+                        <div className='indicate'>
+                            <div className='step-show'>
+                                <div className={stepClass}></div>
+                            </div>
+                            <div className='follow-me'>
+                                <div className={followClass}></div>
 
+                            </div>
                         </div>
-                    </div>
-                    <div className={popupClass}>
-                        <div className='header'>STEP SHOW
-                            <div className='close'></div>
+                        <div className={popupClass}>
+                            <div className='header'>STEP SHOW
+                                <div className='close'></div>
+                            </div>
+                            <dl>
+                                {
+                                    arr.map((item, i)=> {
+                                        return (
+                                            <div key={i}>
+                                                <dt>STEP {i + 1}</dt>
+                                                <dd>{item}</dd>
+                                            </div>
+                                        )
+                                    })
+
+                                }
+                            </dl>
                         </div>
-                        <dl>
-                            {
-                                arr.map((item, i)=> {
-                                    return (
-                                        <div key={i}>
-                                            <dt>STEP {i + 1}</dt>
-                                            <dd>{item}</dd>
+                        {
+                            (()=> {
+                                if (this.props.toShowControl) {
+                                    return <div className='control'>
+                                        <div className='prev' id='left'></div>
+                                        <div className='play'>
+                                            <img className='center' src='./images/public-control/control/play.png'/>
                                         </div>
-                                    )
-                                })
-
-                            }
-                        </dl>
-                    </div>
-                    {
-                        (()=> {
-                            if (this.props.toShowControl) {
-                                return <div className='control'>
-                                    <div className='prev' id='left'></div>
-                                    <div className='play'>
-                                        <img className='center' src='./images/public-control/control/play.png'/>
+                                        <div className='next' id='right'></div>
                                     </div>
-                                    <div className='next' id='right'></div>
-                                </div>
-                            }
-                        })()
-                    }
+                                }
+                            })()
+                        }
+                    </div>
                 </div>
-            </div>
 
-        )
+            )
+        }else{
+            return null;
+        }
     }
 })

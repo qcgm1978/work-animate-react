@@ -21,7 +21,6 @@ import Ten from './modules/ten'
 import Eleven from './modules/eleven'
 import Test from './modules/test'
 import PublicControl from './modules/public-control'
-import API from './modules/api.js'
 render((
     <Router history={hashHistory}>
         <Route path="/" component={App}/>

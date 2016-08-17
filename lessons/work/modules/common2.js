@@ -1,12 +1,13 @@
 import React from 'react'
 
 import PublicControl from './public-control.js'
+import isTeacher from './api.js'
 
 export default   {
     contextTypes: {
         router: React.PropTypes.object.isRequired
     },
-
+    isTeacher: isTeacher,
     setPageState: function (num) {
         let $hiddenEle = this.sentences;
         if (num + 1 < this.sentences.length) {
@@ -23,7 +24,7 @@ export default   {
         } else {
             clearInterval(this.loopPicsId)
             this.isFinished = true
-            this.isPlaying=false;
+            this.isPlaying = false;
             //let exec = /#\/(.+)\?.+/.exec(location.href);
             //let val = exec[1]
             //let index = this.list.indexOf(val);
@@ -80,23 +81,12 @@ export default   {
             $cur.addClass('bounceOut animated')
         } else {
             clearInterval(this.loopPicsId)
-            //let exec = /#\/(.+)\?.+/.exec(location.href);
-            //let val = exec[1]
-            //let nextInd = this.list.indexOf(val) - 1
-            //nextInd = nextInd == -1 ? (0) : nextInd
-            //that.context.router.push('/' + this.list[nextInd])
         }
         num == -1 ? null : num--
         return num;
     },
     getPublicControl(toShowControl, arrows, data){
-        var $step = $('.step-show .check-mark');
-        var $follow = $('.follow-me .check-mark');
-        let btns = {
-            stepShow: $step.length ? $step.is(':visible') : true,
-            followMe: $follow.length ? $follow.is(':visible') : true,
-        }
-        return <PublicControl toShowControl={ toShowControl} arrows={ arrows} btns={btns} data={data}/>
+        return <PublicControl toShowControl={ toShowControl} arrows={ arrows} data={data} isTeacher={this.isTeacher}/>
     },
     getCommonControl(){
         return this.getPublicControl(true, [{

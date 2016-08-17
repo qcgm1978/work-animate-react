@@ -34,3 +34,7 @@ let getData = ()=> {
 }
 init(data, sendData())
 init(data, getData)
+
+let isTeacher=true;
+
+export default isTeacher

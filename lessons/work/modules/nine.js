@@ -9,9 +9,11 @@ export default React.createClass({
     componentDidMount () {
     },
     componentDidUpdate(){
-        $('#a,#b,#c').find(':first').click(function func() {
-            $(this).nextAll().animateCss('flipInX', true)
-        })
+        if (!this.isTeacher) {
+            $('#a,#b,#c').find(':first').click(function func() {
+                $(this).nextAll().animateCss('flipInX', true)
+            })
+        }
     },
     generateNodesFromJson(){
         this.getJson('modules/data/9.json');
