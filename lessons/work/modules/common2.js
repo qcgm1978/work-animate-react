@@ -95,8 +95,8 @@ export default   {
             top: 400
         },*/ {
             ordinal: 1,
-            left: 390,
-            top: 400
+            left: '57%',
+            bottom: 40
         }], [
             'click next frame to see the next frame',
             //'click all frame to see all frame'

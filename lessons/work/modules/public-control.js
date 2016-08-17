@@ -12,13 +12,14 @@ export default React.createClass({
         }
     },
     flyArrow (i = 0, left = this.randomIntFromInterval(83, 600) - 83,
-              top = this.randomIntFromInterval(61, 500) - 61) {
+              top = 'initial',bottom=0) {
         $('<div>')
             .addClass('step animated bounceInRight')
             .attr('ordinal', i)
             .css({
                 left: left,
                 top: top,
+                bottom:bottom,
                 'background-image': "url('./images/public-control/follow-me/step-" +
                 i +
                 ".png')"
@@ -30,13 +31,13 @@ export default React.createClass({
             $('.step').remove()
         } else {
             if ($.isPlainObject(arrows) && !$.isEmptyObject(this.props.arrows)) {
-                this.flyArrow(arrows.ordinal, arrows.left, arrows.top);
+                this.flyArrow(arrows.ordinal, arrows.left, arrows.top,arrows.bottom);
             } else if ($.isArray(arrows)) {
                 if (this.props.order) {
-                    this.flyArrow(arrows[this.order].ordinal, arrows[this.order].left, arrows[this.order].top);
+                    this.flyArrow(arrows[this.order].ordinal, arrows[this.order].left, arrows[this.order].top,arrows.bottom);
                 } else {
                     $.each(arrows, (i, n)=> {
-                        this.flyArrow(n.ordinal, n.left, n.top);
+                        this.flyArrow(n.ordinal, n.left, n.top,n.bottom);
                     })
                 }
             }
