@@ -2,6 +2,30 @@
 
   background: url('../../images/1/bg.png');
   position:relative;
+  #a {
+    position: absolute;
+    left: 36px;
+    top: 140px;
+  }
+  #b {
+    position: absolute;
+    left: 36px;
+    top: 201px;
+  }
+  #c {
+    position: absolute;
+    left: 40px;
+    top: 262px;
+  }
+  p {
+    float: right;
+    font-size: 24px;
+    margin: 10px;
+    margin-left: 20px;
+    &:hover{
+      color:#FD8A3D;
+    }
+  }
   #cat{
     position:absolute;
     left:154px;

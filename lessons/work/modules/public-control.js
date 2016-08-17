@@ -64,7 +64,7 @@ export default React.createClass({
             .mouseup(function () {
                 $(this).removeClass('click')
             })
-        this.setTxtHover('dd');
+        this.setTxtClick('dd');
         if (this.state.followMe) {
             this.generateSteps.call(that, that.props.arrows);
         }

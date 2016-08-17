@@ -3,9 +3,10 @@ let obj = {
     randomIntFromInterval(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
     },
-    setTxtHover (selector) {
-        $(selector).mouseover(function () {
-            $(this).animateCss('pulse')
+    setTxtClick (selector) {
+        $(selector).click(function () {
+            //$(this).animateCss('pulse')
+            $(this).addClass('txt-click')
         })
     },
     extendJquery(){

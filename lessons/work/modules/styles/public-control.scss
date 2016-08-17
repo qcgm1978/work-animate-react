@@ -54,9 +54,10 @@
       }
     }
     .pop-up {
+      z-index: 20;
       position: absolute;
       width: 320px;
-      height: 190px;
+      height: 234px;
       left: 20px;
       bottom: 60px;
       color: #444;
@@ -85,6 +86,8 @@
         }
       }
       dl {
+        height: 170px;
+        overflow: scroll;
         margin: 0;
         padding: 10px;
         dt {
@@ -95,9 +98,11 @@
           float: left;
           width: 200px;
           margin-left: 10px;
+          margin-bottom: 10px;
           &:hover{
             color:#FD8A3D;
           }
+
         }
       }
     }

@@ -44,36 +44,7 @@
       ],
       "SceneAnimateNodes": [
 
-        {
-          "nodeName": "sentence-a",
-          "imageSrc": "./images/1/sentence-a.png",
-          "nodeProperties": {
-            "width": "312",
-            "height": "136",
-            "left": "20",
-            "top": "152"
-          }
-        },
-        {
-          "nodeName": "sentence-b",
-          "imageSrc": "./images/1/sentence-b.png",
-          "nodeProperties": {
-            "width": "312",
-            "height": "136",
-            "left": "65",
-            "top": "200"
-          }
-        },
-        {
-          "nodeName": "sentence-c",
-          "imageSrc": "./images/1/sentence-c.png",
-          "nodeProperties": {
-            "width": "312",
-            "height": "136",
-            "left": "105",
-            "top": "271"
-          }
-        }
+
       ]
     }
   ]

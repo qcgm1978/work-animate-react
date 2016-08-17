@@ -99,9 +99,9 @@ export default React.createClass({
                 </div>
 
                 {this.getPublicControl(false, {
-                    ordinal: 3,
-                    left: 497,
-                    top: 379
+                    //ordinal: 3,
+                    //left: 497,
+                    //top: 379
                 },['introduce yourself to the students', 'ask the student\'s name and greet the student', 'click and say'])}
             </div>
         )
