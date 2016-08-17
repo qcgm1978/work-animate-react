@@ -1,6 +1,7 @@
 import './node_modules/normalize.css/normalize.css'
 import './bower_components/animate.css/animate.css'
 import './modules/styles/common.scss'
+//import './modules/styles/responsive.scss'
 //import $ from './bower_components/jquery/dist/jquery.js'
 import './bower_components/jquery-ui-1.12.0.custom/jquery-ui.js'
 import React from 'react'

@@ -1,0 +1,16 @@
+@media (min-width: 640px) and (min-height: 360px) {
+  html, body, #app, .public-container #public-control
+  {
+    height: 100%;
+    .container {
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      .public-container .control{
+        top: 100%;
+        transform: translate(-50%, -100%);
+      }
+    }
+  }
+}
