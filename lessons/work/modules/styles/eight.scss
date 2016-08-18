@@ -2,6 +2,18 @@
 
   background: url('../../images/8/bg.png');
   position: relative;
+  .popup-0 {
+    left: 100px;
+    top: 250px;
+  }
+  .popup-1 {
+    left: 320px;
+    top: 380px;
+  }
+  .popup-2 {
+    left: 430px;
+    top: 400px;
+  }
 }
 
 @keyframes pulse {
