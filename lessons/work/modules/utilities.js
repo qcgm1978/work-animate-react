@@ -11,14 +11,16 @@ let obj = {
     },
     extendJquery(){
         $.fn.extend({
-            animateCss: function (animationName, isHidden) {
+            animateCss: function (animationName, isHidden, otherClass = '',callback=()=>{}) {
                 var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
                 if (isHidden) {
                     $(this).removeClass('none')
                 }
-                $(this).addClass('animated ' + animationName).one(animationEnd, function () {
+                $(this).addClass(otherClass + ' animated ' + animationName).one(animationEnd, function () {
                     $(this).removeClass('animated ' + animationName);
+                    callback.call(this)
                 });
+                return this
             }
         });
         $.fn.clickToggle = function (func1, func2) {
@@ -27,7 +29,7 @@ let obj = {
             this.click(function (evt) {
                 var data = $(this).data();
                 var tc = data.toggleclicked;
-                $.proxy(funcs[tc], this,evt)();
+                $.proxy(funcs[tc], this, evt)();
                 data.toggleclicked = (tc + 1) % 2;
             });
             return this;
