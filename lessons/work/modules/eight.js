@@ -22,13 +22,13 @@ export default React.createClass({
         let that = this;
         var arr = ['[src$="apple.png"]', '[src$="ball.png"]', '[src$="cat.png"]'];
         $.each(arr, function (i, n) {
-            $(this).click(function () {
+            $(this).off().click(function () {
                 $('.pulse').removeClass('pulse')
                 $(this).addClass('pulse')
                 $('[ordinal=' + (i + 1) + ']').remove()
                 that.setState({
                     popup: '',
-                    position: $(this).position(),
+                    position: 'popup-' + i,
                     src: $(this).attr('src')
                 })
             })
@@ -54,6 +54,7 @@ export default React.createClass({
                 {
 
 
+
                     this.getElementsNodes(true)
                 }
                 <Popup className={this.state.popup} popup={this.state.position} face='none' options={''} word={word}
@@ -75,7 +76,7 @@ export default React.createClass({
                             top: 330
                         }],
                     ['ask student click the apple and answer the question', 'ask student click the ball and answer the question', 'ask student click the cat and answer the question'],
-                    this.state.order
+                                        this.state.order
                 )
 
                 }

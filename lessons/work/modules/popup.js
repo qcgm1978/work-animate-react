@@ -70,10 +70,11 @@ export default React.createClass({
     generateNodesFromJson(){
     },
     render() {
-        let fillClass = this.state.color + ' fill ' + this.state.toShow;
+        let fillClass = this.state.color + ' fill ' + this.state.toShow,
+            popupClass=this.state.popup+' '+this.props.popup;
         return (
             <div className={this.props.className} id="popup-container">
-                <div id='popup' className={this.state.popup} style={this.props.popup}>
+                <div id='popup' className={popupClass} >
                     <div id='options' className={this.state.options}>
                         <div>A. apple</div>
                         <div>B. cat</div>
@@ -85,7 +86,7 @@ export default React.createClass({
                     <span className={fillClass}>{this.state.chosen}</span>
                 </div>
 
-                <div style={this.props.popup} id='question-container'>
+                <div className={this.props.popup} id='question-container'>
                     <img id='question' src="./images/8/sentence.png"/>
                     <img className={this.state.toShowNum} id='num-icon' src={'./images/public-control/judgement/icons/' +
                      this.props.num +
