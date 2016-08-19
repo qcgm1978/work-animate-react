@@ -1,7 +1,7 @@
 require('./styles/eleven.scss')
 import React from 'react'
 import Redux from './redux'
-import CommonMixin2 from './common2'
+import CommonMixin2 from './base'
 
 export default React.createClass({
     mixins: [CommonMixin2],

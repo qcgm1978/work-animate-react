@@ -22,6 +22,8 @@ import Ten from './modules/ten'
 import Eleven from './modules/eleven'
 import Test from './modules/test'
 import PublicControl from './modules/public-control'
+import HardTwo from './modules/phonics-hard/one'
+
 render((
     <Router history={hashHistory}>
         <Route path="/" component={App}/>
@@ -33,7 +35,6 @@ render((
         <Route path="/three" component={Three}/>
         <Route path="/four" component={Four}/>
         <Route path="/five" component={Five}/>
-
         <Route path="/six" component={Six}/>
         <Route path="/seven" component={Seven}/>
         <Route path="/eight" component={Eight}/>
@@ -42,6 +43,9 @@ render((
         <Route path="/eleven" component={Eleven}/>
         <Route path="/test" component={Test}/>
         <Route path="/public-control" component={PublicControl}/>
+
+        <Route path="/phonics-hard/one" component={HardTwo}/>
+
 
     </Router>
 ), document.getElementById('app'))

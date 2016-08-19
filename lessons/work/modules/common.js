@@ -1,7 +1,7 @@
 import React from 'react'
 import Utilities from './utilities'
 
-import CommonMixin2 from './common2'
+import CommonMixin2 from './base'
 
 export default   {
     mixins: [CommonMixin2, Utilities],
