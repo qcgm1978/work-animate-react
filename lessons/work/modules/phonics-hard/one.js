@@ -54,8 +54,8 @@ export default React.createClass({
                 {
                     this.getPublicControl(false, {
                         ordinal: 2,
-                        left: 236,
-                        top: 105,
+                        left: '24%',
+                        top: '23%',
                         big:true
                     }, [
                         'say"let\'s sing the song',

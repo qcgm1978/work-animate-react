@@ -41,12 +41,27 @@ export default   {
     setFullScreen() {
         $('.container').css('transform-origin', '50% 0')
         $(window).resize(()=> {
-            let scaleX = $(window).width() / 600, scaleY = $(window).height() / 500
+            let scaleX = $(window).width() / 1920, scaleY = $(window).height() / 1080
             $('.container').css('transform', 'scale(' + scaleX + ',' + scaleY + ')')
+        }).resize()
+    },
+    setHeightFullScreen() {
+        $('.container').css('transform-origin', '0 0')
+        $(window).resize(()=> {
+            var width = $(window).width();
+            let scaleX = width / 1920, scaleY = $(window).height() / 1080
+            let scale=scaleX<scaleY?scaleX:scaleY
+            var $container = $('.container');
+            $container
+                .css('transform', 'scale(' + scale + ')')
+            let marginLeft=(width-$('.container').width())/2
+            $container.css('margin-left',marginLeft)
+
         }).resize()
     },
     componentDidMount(){
         //this.setFullScreen();
+        this.setHeightFullScreen();
     },
     componentDidUpdate(){
         this.sentences = $('#animateContainer img');

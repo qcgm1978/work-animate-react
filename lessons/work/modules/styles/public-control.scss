@@ -15,41 +15,41 @@
       position: absolute;
       right: 0;
       @mixin indicate() {
-        width: 120px;
-        height: 34px;
+        width: 240px;
+        height: 68px;
         margin: 10px;
         float: left;
         @include transition();
       }
       @mixin check-mark() {
-        width: 21px;
-        height: 16px;
-        transform: translate(6px, 10px);
+        width: 43px;
+        height: 33px;
+        transform: translate(11px, 18px);
       }
       div.step-show {
         @include indicate();
         margin-right: 0;
 
-        background: url('../../images/public-control/step-show/help.png');
+        background: url('../../images/public-control/1920/step-show/help.png');
         &:hover {
-          background: url('../../images/public-control/step-show/help-hover.png');
+          background: url('../../images/public-control/1920/step-show/help-hover.png');
 
         }
         .check-mark {
           @include check-mark();
-          background: url('../../images/public-control/step-show/check-mark.png')
+          background: url('../../images/public-control/1920/step-show/check-mark.png')
         }
       }
       div.follow-me {
         @include indicate();
-        background: url('../../images/public-control/follow-me/follow.png');
+        background: url('../../images/public-control/1920/follow-me/follow.png');
         &:hover {
-          background: url('../../images/public-control/follow-me/follow-me-hover.png');
+          background: url('../../images/public-control/1920/follow-me/follow-hover.png');
 
         }
         .check-mark {
           @include check-mark();
-          background: url('../../images/public-control/follow-me/check-mark.png')
+          background: url('../../images/public-control/1920/follow-me/check-mark.png')
         }
       }
     }
@@ -87,7 +87,7 @@
             background: url("../../images/public-control/1920/close-hover.png");
           }
           &.click {
-            background: url("../../images/public-control/close-click.png");
+            background: url("../../images/public-control/1920/close-click.png");
 
           }
         }
@@ -116,7 +116,7 @@
     .control {
       width: 310px;
       height: 40px;
-      background: url('../../images/public-control/control/bg.png');
+      background: url('../../images/public-control/1920/control/bg.png');
       position: fixed;
       top: 500px;
       left: 50%;
@@ -131,26 +131,26 @@
       .prev {
         @include control-btn();
         left: 18%;
-        background-image: url('../../images/public-control/control/prev.png');
+        background-image: url('../../images/public-control/1920/control/prev.png');
         @include transition();
         &:hover {
-          background-image: url('../../images/public-control/control/prev-hover.png');
+          background-image: url('../../images/public-control/1920/control/prev-hover.png');
         }
         &.click {
-          background-image: url('../../images/public-control/control/prev-click.png');
+          background-image: url('../../images/public-control/1920/control/prev-click.png');
 
         }
       }
       .next {
         @include control-btn();
         right: 18%;
-        background-image: url('../../images/public-control/control/next.png');
+        background-image: url('../../images/public-control/1920/control/next.png');
         @include transition();
         &:hover {
-          background-image: url('../../images/public-control/control/next-hover.png');
+          background-image: url('../../images/public-control/1920/control/next-hover.png');
         }
         &.click {
-          background-image: url('../../images/public-control/control/next-click.png');
+          background-image: url('../../images/public-control/1920/control/next-click.png');
 
         }
       }
@@ -162,7 +162,7 @@
         transform: translateX(-50%) rotate(0deg);
         transition: transform .8s ease-in-out;
 
-        background-image: url('../../images/public-control/control/btn-bg.png');
+        background-image: url('../../images/public-control/1920/control/btn-bg.png');
         &:hover {
           transform: translateX(-50%) rotate(360deg);
         }
