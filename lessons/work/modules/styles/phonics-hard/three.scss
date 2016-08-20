@@ -1,0 +1,49 @@
+#hard-three {
+  &.container {
+
+    > img {
+
+      position: absolute;
+
+    }
+    @mixin block() {
+      position: absolute;
+      left: 10%;
+      width: 80%;
+      img:nth-child(n+2) {
+        //margin-left: 12%;
+
+      }
+      $elements: 4;
+      @for $i from 0 to $elements {
+        img:nth-child(#{$i}) {
+          position: absolute;
+          left: percentage($i*25);
+        }
+      }
+    }
+    #words {
+      @include block();
+      top: 30%;
+    }
+    #pics {
+      @include block();
+      top: 50%;
+    }
+    #a {
+
+    }
+    #b {
+
+    }
+    #c {
+
+    }
+    #d {
+
+    }
+    p {
+
+    }
+  }
+}

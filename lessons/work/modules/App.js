@@ -18,7 +18,10 @@ export default React.createClass({
                         <li><Link to="/eleven">Balloon</Link></li>
                     </ul>
                     <ul>Lesson Two
-                        <li><Link to="/phonics-hard/one">One</Link></li>
+                        <li>
+                            <Link to="/phonics-hard/one">One</Link>
+                            <Link to="/phonics-hard/three">Three</Link>
+                        </li>
 
                     </ul>
 

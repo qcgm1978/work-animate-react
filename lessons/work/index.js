@@ -24,6 +24,7 @@ import Eleven from './modules/eleven'
 import Test from './modules/test'
 import PublicControl from './modules/public-control'
 import HardTwo from './modules/phonics-hard/one'
+import HardThree from './modules/phonics-hard/three'
 
 render((
     <Router history={hashHistory}>
@@ -46,6 +47,7 @@ render((
         <Route path="/public-control" component={PublicControl}/>
 
         <Route path="/phonics-hard/one" component={HardTwo}/>
+        <Route path="/phonics-hard/three" component={HardThree}/>
 
 
     </Router>
