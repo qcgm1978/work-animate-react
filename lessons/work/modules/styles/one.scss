@@ -1,6 +1,8 @@
 #one {
 
-  background-image: url('../../images/1/bg.png');
+  &.one{
+    background-image: url('../../images/1/bg.png');
+  }
   position:relative;
   #a {
     position: absolute;
@@ -17,6 +19,7 @@
     left: 40px;
     top: 262px;
   }
+
   p {
     float: right;
     font-size: 24px;

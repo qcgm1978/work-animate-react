@@ -15,7 +15,7 @@ export default   {
     playPics () {
         this.triggerCotrol();
     },
-    componentDidMount: function () {
+    componentDidMount () {
         let classlet = "none animated";
         this.generateNodesFromJson(classlet)
         let that = this

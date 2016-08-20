@@ -12,9 +12,10 @@ export default React.createClass({
         }
     },
     flyArrow (i = 0, left = this.randomIntFromInterval(83, 600) - 83,
-              top = 'initial', bottom = 0) {
+              top = 'initial', bottom = 0, isBig = false) {
+        var otherClass = 'step'+(isBig?' big':'');
         $('<div>')
-            .animateCss('bounceInRight', false, 'step', function() {
+            .animateCss('bounceInRight', false, otherClass, function () {
                 $(this).addClass('loop pulse animated')
             })
             .attr('ordinal', i)
@@ -23,6 +24,7 @@ export default React.createClass({
                 top: top,
                 bottom: bottom,
                 'background-image': "url('./images/public-control/follow-me/step-" +
+                (isBig ? 'big-' : '') +
                 i +
                 ".png')"
             })
@@ -33,13 +35,13 @@ export default React.createClass({
             $('.step').remove()
         } else {
             if ($.isPlainObject(arrows) && !$.isEmptyObject(this.props.arrows)) {
-                this.flyArrow(arrows.ordinal, arrows.left, arrows.top, arrows.bottom);
+                this.flyArrow(arrows.ordinal, arrows.left, arrows.top, arrows.bottom, arrows.big);
             } else if ($.isArray(arrows)) {
                 if (this.props.order) {
-                    this.flyArrow(arrows[this.order].ordinal, arrows[this.order].left, arrows[this.order].top, arrows.bottom);
+                    this.flyArrow(arrows[this.order].ordinal, arrows[this.order].left, arrows[this.order].top, arrows.bottom, arrows.big);
                 } else {
                     $.each(arrows, (i, n)=> {
-                        this.flyArrow(n.ordinal, n.left, n.top, n.bottom);
+                        this.flyArrow(n.ordinal, n.left, n.top, n.bottom, arrows.big);
                     })
                 }
             }

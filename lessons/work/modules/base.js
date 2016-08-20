@@ -38,6 +38,16 @@ export default   {
         return num
     },
     list: ['two', 'three', 'four', 'five', 'six', 'seven'],
+    setFullScreen() {
+        $('.container').css('transform-origin', '50% 0')
+        $(window).resize(()=> {
+            let scaleX = $(window).width() / 600, scaleY = $(window).height() / 500
+            $('.container').css('transform', 'scale(' + scaleX + ',' + scaleY + ')')
+        }).resize()
+    },
+    componentDidMount(){
+        //this.setFullScreen();
+    },
     componentDidUpdate(){
         this.sentences = $('#animateContainer img');
     },
@@ -85,15 +95,16 @@ export default   {
         num == -1 ? null : num--
         return num;
     },
-    getPublicControl(toShowControl, arrows, data,order){
-        return <PublicControl toShowControl={ toShowControl} arrows={ arrows} data={data} isTeacher={this.isTeacher} order={order}/>
+    getPublicControl(toShowControl, arrows, data, order){
+        return <PublicControl toShowControl={ toShowControl} arrows={ arrows} data={data} isTeacher={this.isTeacher}
+                              order={order}/>
     },
     getCommonControl(){
         return this.getPublicControl(true, [/*{
-            ordinal: 2,
-            left: 311,
-            top: 400
-        },*/ {
+         ordinal: 2,
+         left: 311,
+         top: 400
+         },*/ {
             ordinal: 1,
             left: '57%',
             bottom: 40
@@ -101,5 +112,14 @@ export default   {
             'click next frame to see the next frame',
             //'click all frame to see all frame'
         ])
-    }
+    },
+    setMouseOver () {
+        $('p')
+            .click(function () {
+                $(this).css('font-size', '3.4rem')
+            })
+            .mouseover(function () {
+                $(this).animateCss('pulse')
+            });
+    },
 };
