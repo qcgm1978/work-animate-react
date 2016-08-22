@@ -56,11 +56,13 @@ export default   {
                 $('body').css({
                     overflow: 'scroll'
                 })
-                return;
+                scaleX = minX
+                scaleY = minY
+            } else {
+                $('body').css({
+                    overflow: 'hidden'
+                })
             }
-            $('body').css({
-                overflow: 'hidden'
-            })
             let scale = scaleX < scaleY ? scaleX : scaleY
             var $container = $('.container');
             $container
@@ -72,9 +74,11 @@ export default   {
             let $containerScale = $('.container');
             let marginLeft = (width - $containerScale.width()) / 2,
                 marginTop = (height - $containerScale.height()) / 2
+            if (marginLeft>0) {
             $containerScale
                 .css('margin-left', marginLeft)
             //.css('margin-top', marginTop)
+            }
         });
     },
     componentDidMount(){
