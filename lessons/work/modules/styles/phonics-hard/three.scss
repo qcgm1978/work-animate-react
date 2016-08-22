@@ -14,11 +14,11 @@
         //margin-left: 12%;
 
       }
-      $elements: 4;
-      @for $i from 0 to $elements {
+      $elements: 5;
+      @for $i from 2 to $elements {
         img:nth-child(#{$i}) {
           position: absolute;
-          left: percentage($i*25);
+          left: percentage((($i)-1)*0.27);
         }
       }
     }
@@ -28,8 +28,18 @@
     }
     #pics {
       @include block();
-      top: 50%;
+      top: 60%;
     }
+    #check {
+      background-image: url(../../../images/phonics/hard/3/check.png);
+      width: 259px;
+      height: 73px;
+      position: absolute;
+      bottom: 7%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
     #a {
 
     }

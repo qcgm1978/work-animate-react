@@ -42,6 +42,7 @@ module.exports = {
         new LiveReloadPlugin(),
         new webpack.ProvidePlugin({
             $: "jquery",
+            jQuery:'jquery'
             //jQuery: "jquery",
             //"window.jQuery": "jquery"
         })

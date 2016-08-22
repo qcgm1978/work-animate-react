@@ -17,6 +17,15 @@ export default React.createClass({
     generateNodesFromJson(){
         this.getJson('modules/data/1.json');
     },
+    checkClick(){
+        //$('#words img,#pics img').connections();
+        $('#words img:first').connections({to: '#pics img:first', 'class': 'correct-color', borderClasses: {
+            top: 'connection-border-top',
+            right: 'connection-border-right',
+            bottom: 'connection-border-bottom',
+            left: 'connection-border-left'
+        }});
+    },
     render() {
         return (
             <div id='hard-three' className='container'>
@@ -35,6 +44,7 @@ export default React.createClass({
                     <img id='title' src='./images/phonics/hard/3/car.png'/>
                     <img id='title' src='./images/phonics/hard/3/ball.png'/>
                 </div>
+                <div id='check' onClick={this.checkClick}></div>
                 {
                     this.getPublicControl(false, {}, [
                         'ask the stundent to connect',

@@ -1,58 +1,66 @@
-body {
-  overflow: hidden;
-  .container {
-    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+html {
+  .correct-color {
+    color: #7dd839;
+  }
+  .wrong-color {
+    color: #ff6a52;
+  }
+  body {
+    overflow: hidden;
+    .container {
+      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 
-    margin: 0 auto;
-    width: 1920px;
-    height: 1080px;
-    p {
-      margin: 0;
+      margin: 0 auto;
+      width: 1920px;
+      height: 1080px;
+      p {
+        margin: 0;
+      }
+
+      .none {
+        display: none;
+      }
+      .right-txt {
+        color: #7DD839;
+      }
+      .wrong-txt {
+        color: #FE735C;
+      }
+      .loop {
+        animation-iteration-count: infinite;
+      }
     }
 
-    .none {
-      display: none;
+    .block {
+      display: block;
     }
-    .right-txt {
-      color: #7DD839;
+
+    .d-i-b {
+      display: inline-block;
     }
-    .wrong-txt {
-      color: #FE735C;
+
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-40%, -50%);
     }
-    .loop {
-      animation-iteration-count: infinite;
+
+    .noselect {
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Chrome/Safari/Opera */
+      -khtml-user-select: none; /* Konqueror */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none;
+      /* Non-prefixed version, currently
+                             not supported by any browser */
     }
-  }
 
-  .block {
-    display: block;
-  }
-
-  .d-i-b {
-    display: inline-block;
-  }
-
-  .center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-40%, -50%);
-  }
-
-  .noselect {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Chrome/Safari/Opera */
-    -khtml-user-select: none; /* Konqueror */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none;
-    /* Non-prefixed version, currently
-                           not supported by any browser */
-  }
-
-  .txt-click {
-    transform: translate(0, -5px);
-    font-size: 3rem;
-    color: #FD8A3D;
+    .txt-click {
+      transform: translate(0, -5px);
+      font-size: 3rem;
+      color: #FD8A3D;
+    }
   }
 }

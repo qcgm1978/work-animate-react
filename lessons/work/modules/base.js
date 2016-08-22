@@ -45,7 +45,7 @@ export default   {
             $('.container').css('transform', 'scale(' + scaleX + ',' + scaleY + ')')
         }).resize()
     },
-    setHeightFullScreen() {
+    setWidthOrHeightFull() {
         $('.container').css('transform-origin', '0 0')
         $(window).resize(()=> {
             var width = $(window).width();
@@ -61,7 +61,7 @@ export default   {
     },
     componentDidMount(){
         //this.setFullScreen();
-        this.setHeightFullScreen();
+        this.setWidthOrHeightFull();
     },
     componentDidUpdate(){
         this.sentences = $('#animateContainer img');
