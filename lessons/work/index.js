@@ -26,6 +26,7 @@ import Test from './modules/test'
 import PublicControl from './modules/public-control'
 import HardTwo from './modules/phonics-hard/one'
 import HardThree from './modules/phonics-hard/three'
+import NotFoundRoute from './modules/not-found-route'
 
 render((
     <Router history={hashHistory}>
@@ -49,6 +50,7 @@ render((
 
         <Route path="/phonics-hard/one" component={HardTwo}/>
         <Route path="/phonics-hard/three" component={HardThree}/>
+        <Route path="*" component={NotFoundRoute} />
 
 
     </Router>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+//    debugger
+    let obj = {
+        '00': 'zero',
+        '01':'one',
+        '02':'two',
+        '03':'eight',
+        '04':'nine',
+    }
+    let item = location.href.split('/').splice(-2)[0];
+    location.href = '../#/' + obj[item]
+
+</script>
+</body>
+</html>
