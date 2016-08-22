@@ -19,8 +19,8 @@ export default React.createClass({
                     </ul>
                     <ul>Lesson Two
                         <li>
-                            <Link to="/phonics-hard/one">One</Link>
-                            <Link to="/phonics-hard/three">Three</Link>
+                            <Link to="/phonics-hard/one">One</Link></li>
+                        <li><Link to="/phonics-hard/three">Three</Link>
                         </li>
 
                     </ul>

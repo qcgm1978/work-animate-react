@@ -15,7 +15,7 @@ export default React.createClass({
         }
     },
     generateNodesFromJson(){
-        this.getJson('modules/data/1.json');
+        //this.getJson('modules/data/1.json');
     },
     render() {
         return (

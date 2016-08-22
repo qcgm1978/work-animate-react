@@ -46,18 +46,36 @@ export default   {
         }).resize()
     },
     setWidthOrHeightFull() {
-        $('.container').css('transform-origin', '0 0')
+        //$('.container').css('transform-origin', '0 0')
         $(window).resize(()=> {
-            var width = $(window).width();
+            let width = $(window).width();
+            let height = $(window).height()
             let scaleX = width / 1920, scaleY = $(window).height() / 1080
-            let scale=scaleX<scaleY?scaleX:scaleY
+            let minX = 640 / 1920, minY = 360 / 1080
+            if (scaleX < minX || scaleY < minY) {
+                $('body').css({
+                    overflow: 'scroll'
+                })
+                return;
+            }
+            $('body').css({
+                overflow: 'hidden'
+            })
+            let scale = scaleX < scaleY ? scaleX : scaleY
             var $container = $('.container');
             $container
-                .css('transform', 'scale(' + scale + ')')
-            let marginLeft=(width-$('.container').width())/2
-            $container.css('margin-left',marginLeft)
-
+                .css('transform', 'scale(' + scale + ')' /*+ ' translate(-50%,-50%)'*/)
         }).resize()
+        $('.container').on('transitionend', function () {
+            let width = $(window).width();
+            let height = $(window).height()
+            let $containerScale = $('.container');
+            let marginLeft = (width - $containerScale.width()) / 2,
+                marginTop = (height - $containerScale.height()) / 2
+            $containerScale
+                .css('margin-left', marginLeft)
+            //.css('margin-top', marginTop)
+        });
     },
     componentDidMount(){
         //this.setFullScreen();
