@@ -22,6 +22,20 @@ $ npm install & bower install
 
 ### Dev and Build
 
+AC测试账号：
+AC测试账号：
+学生账号：phsupport002@51talk.com
+老师账号：kelvintest@51talk.com
+
+
+
+AC测试账号：
+学生账号：phsupport002@51talk.com
+老师账号：lucilletest@51talk.com
+密码都是123456
+
+resource pos: C:\51talk\2.4.65.22502\html\HtmlWhiteBoard\web\src\ppt
+
 run the command and open /index.html in local server
 
 ```sh: 
